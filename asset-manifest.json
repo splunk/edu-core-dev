@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/edu-core-dev/static/js/main.d71e3a1a.js",
+    "main.js": "/edu-core-dev/static/js/main.b017fc8a.js",
     "static/css/923.c6546b39.chunk.css": "/edu-core-dev/static/css/923.c6546b39.chunk.css",
     "static/js/923.f536e73b.chunk.js": "/edu-core-dev/static/js/923.f536e73b.chunk.js",
     "static/css/780.c6546b39.chunk.css": "/edu-core-dev/static/css/780.c6546b39.chunk.css",
     "static/js/780.b6d30a79.chunk.js": "/edu-core-dev/static/js/780.b6d30a79.chunk.js",
     "static/css/829.c6546b39.chunk.css": "/edu-core-dev/static/css/829.c6546b39.chunk.css",
-    "static/js/829.2c2b040a.chunk.js": "/edu-core-dev/static/js/829.2c2b040a.chunk.js",
+    "static/js/829.a8ac912e.chunk.js": "/edu-core-dev/static/js/829.a8ac912e.chunk.js",
     "static/css/550.c6546b39.chunk.css": "/edu-core-dev/static/css/550.c6546b39.chunk.css",
     "static/js/550.52be7def.chunk.js": "/edu-core-dev/static/js/550.52be7def.chunk.js",
     "static/css/775.c6546b39.chunk.css": "/edu-core-dev/static/css/775.c6546b39.chunk.css",
@@ -18,13 +18,13 @@
     "static/js/842.17593e36.chunk.js": "/edu-core-dev/static/js/842.17593e36.chunk.js",
     "static/js/78.c71864d5.chunk.js": "/edu-core-dev/static/js/78.c71864d5.chunk.js",
     "index.html": "/edu-core-dev/index.html",
-    "main.d71e3a1a.js.map": "/edu-core-dev/static/js/main.d71e3a1a.js.map",
+    "main.b017fc8a.js.map": "/edu-core-dev/static/js/main.b017fc8a.js.map",
     "923.c6546b39.chunk.css.map": "/edu-core-dev/static/css/923.c6546b39.chunk.css.map",
     "923.f536e73b.chunk.js.map": "/edu-core-dev/static/js/923.f536e73b.chunk.js.map",
     "780.c6546b39.chunk.css.map": "/edu-core-dev/static/css/780.c6546b39.chunk.css.map",
     "780.b6d30a79.chunk.js.map": "/edu-core-dev/static/js/780.b6d30a79.chunk.js.map",
     "829.c6546b39.chunk.css.map": "/edu-core-dev/static/css/829.c6546b39.chunk.css.map",
-    "829.2c2b040a.chunk.js.map": "/edu-core-dev/static/js/829.2c2b040a.chunk.js.map",
+    "829.a8ac912e.chunk.js.map": "/edu-core-dev/static/js/829.a8ac912e.chunk.js.map",
     "550.c6546b39.chunk.css.map": "/edu-core-dev/static/css/550.c6546b39.chunk.css.map",
     "550.52be7def.chunk.js.map": "/edu-core-dev/static/js/550.52be7def.chunk.js.map",
     "775.c6546b39.chunk.css.map": "/edu-core-dev/static/css/775.c6546b39.chunk.css.map",
@@ -37,6 +37,6 @@
     "78.c71864d5.chunk.js.map": "/edu-core-dev/static/js/78.c71864d5.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.d71e3a1a.js"
+    "static/js/main.b017fc8a.js"
   ]
 }
