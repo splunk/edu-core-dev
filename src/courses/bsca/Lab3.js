@@ -35,7 +35,7 @@ const step17 = `...
         <Solution step="9" code={step9} language="language-bash" lines=""/>
         <Solution step="10" code={step10} language="language-bash" lines=""/>
         <Solution step="11" code={step11} language="language-bash" lines=""/>
-        <Solution step="17" code={step17} language="language-xml" lines="2-4"/>
+        <Solution step="17" code={step17} language="language-xml" lines="2,3,4"/>
     </div>);
 
 }
