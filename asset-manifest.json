@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/edu-core-dev/static/js/main.f41f5e09.js",
+    "main.js": "/edu-core-dev/static/js/main.d8593876.js",
     "static/css/7.2e9dd2cf.chunk.css": "/edu-core-dev/static/css/7.2e9dd2cf.chunk.css",
     "static/js/7.5cc3e137.chunk.js": "/edu-core-dev/static/js/7.5cc3e137.chunk.js",
     "static/css/210.2e9dd2cf.chunk.css": "/edu-core-dev/static/css/210.2e9dd2cf.chunk.css",
@@ -16,9 +16,13 @@
     "static/js/741.e2dcbfdd.chunk.js": "/edu-core-dev/static/js/741.e2dcbfdd.chunk.js",
     "static/css/600.2e9dd2cf.chunk.css": "/edu-core-dev/static/css/600.2e9dd2cf.chunk.css",
     "static/js/600.c2dc4f2f.chunk.js": "/edu-core-dev/static/js/600.c2dc4f2f.chunk.js",
+    "static/js/824.d314e0fa.chunk.js": "/edu-core-dev/static/js/824.d314e0fa.chunk.js",
+    "static/js/11.de0f51a2.chunk.js": "/edu-core-dev/static/js/11.de0f51a2.chunk.js",
     "static/js/550.16354dd6.chunk.js": "/edu-core-dev/static/js/550.16354dd6.chunk.js",
+    "static/media/bcgEndpoints.py": "/edu-core-dev/static/media/bcgEndpoints.fad9501f3b775f783131.py",
+    "static/media/bcgReviewScores.py": "/edu-core-dev/static/media/bcgReviewScores.96ae57583fa4be24ba5e.py",
     "index.html": "/edu-core-dev/index.html",
-    "main.f41f5e09.js.map": "/edu-core-dev/static/js/main.f41f5e09.js.map",
+    "main.d8593876.js.map": "/edu-core-dev/static/js/main.d8593876.js.map",
     "7.2e9dd2cf.chunk.css.map": "/edu-core-dev/static/css/7.2e9dd2cf.chunk.css.map",
     "7.5cc3e137.chunk.js.map": "/edu-core-dev/static/js/7.5cc3e137.chunk.js.map",
     "210.2e9dd2cf.chunk.css.map": "/edu-core-dev/static/css/210.2e9dd2cf.chunk.css.map",
@@ -37,6 +41,6 @@
     "550.16354dd6.chunk.js.map": "/edu-core-dev/static/js/550.16354dd6.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.f41f5e09.js"
+    "static/js/main.d8593876.js"
   ]
 }
