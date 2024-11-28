@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkedu_core_dev=self.webpackChunkedu_core_dev||[]).push([[824],{9824:(e,s,c)=>{e.exports=c.p+"static/media/bcgEndpoints.fad9501f3b775f783131.py"}}]);
