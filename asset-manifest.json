@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/edu-core-dev/static/js/main.5b54c72f.js",
+    "main.js": "/edu-core-dev/static/js/main.d71e3a1a.js",
     "static/css/923.c6546b39.chunk.css": "/edu-core-dev/static/css/923.c6546b39.chunk.css",
     "static/js/923.f536e73b.chunk.js": "/edu-core-dev/static/js/923.f536e73b.chunk.js",
     "static/css/780.c6546b39.chunk.css": "/edu-core-dev/static/css/780.c6546b39.chunk.css",
@@ -18,7 +18,7 @@
     "static/js/842.17593e36.chunk.js": "/edu-core-dev/static/js/842.17593e36.chunk.js",
     "static/js/78.c71864d5.chunk.js": "/edu-core-dev/static/js/78.c71864d5.chunk.js",
     "index.html": "/edu-core-dev/index.html",
-    "main.5b54c72f.js.map": "/edu-core-dev/static/js/main.5b54c72f.js.map",
+    "main.d71e3a1a.js.map": "/edu-core-dev/static/js/main.d71e3a1a.js.map",
     "923.c6546b39.chunk.css.map": "/edu-core-dev/static/css/923.c6546b39.chunk.css.map",
     "923.f536e73b.chunk.js.map": "/edu-core-dev/static/js/923.f536e73b.chunk.js.map",
     "780.c6546b39.chunk.css.map": "/edu-core-dev/static/css/780.c6546b39.chunk.css.map",
@@ -37,6 +37,6 @@
     "78.c71864d5.chunk.js.map": "/edu-core-dev/static/js/78.c71864d5.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.5b54c72f.js"
+    "static/js/main.d71e3a1a.js"
   ]
 }
