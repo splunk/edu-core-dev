@@ -1,16 +1,42 @@
 {
   "files": {
-    "main.css": "/edu-core-dev/static/css/main.f855e6bc.css",
-    "main.js": "/edu-core-dev/static/js/main.d6344c19.js",
-    "static/js/453.613be0b4.chunk.js": "/edu-core-dev/static/js/453.613be0b4.chunk.js",
-    "static/media/logo.svg": "/edu-core-dev/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.js": "/edu-core-dev/static/js/main.f41f5e09.js",
+    "static/css/7.2e9dd2cf.chunk.css": "/edu-core-dev/static/css/7.2e9dd2cf.chunk.css",
+    "static/js/7.5cc3e137.chunk.js": "/edu-core-dev/static/js/7.5cc3e137.chunk.js",
+    "static/css/210.2e9dd2cf.chunk.css": "/edu-core-dev/static/css/210.2e9dd2cf.chunk.css",
+    "static/js/210.c9bc8789.chunk.js": "/edu-core-dev/static/js/210.c9bc8789.chunk.js",
+    "static/css/489.2e9dd2cf.chunk.css": "/edu-core-dev/static/css/489.2e9dd2cf.chunk.css",
+    "static/js/489.a0f06c69.chunk.js": "/edu-core-dev/static/js/489.a0f06c69.chunk.js",
+    "static/css/892.2e9dd2cf.chunk.css": "/edu-core-dev/static/css/892.2e9dd2cf.chunk.css",
+    "static/js/892.931259cb.chunk.js": "/edu-core-dev/static/js/892.931259cb.chunk.js",
+    "static/css/835.2e9dd2cf.chunk.css": "/edu-core-dev/static/css/835.2e9dd2cf.chunk.css",
+    "static/js/835.b7ebd61d.chunk.js": "/edu-core-dev/static/js/835.b7ebd61d.chunk.js",
+    "static/js/350.98c09590.chunk.js": "/edu-core-dev/static/js/350.98c09590.chunk.js",
+    "static/css/741.2e9dd2cf.chunk.css": "/edu-core-dev/static/css/741.2e9dd2cf.chunk.css",
+    "static/js/741.e2dcbfdd.chunk.js": "/edu-core-dev/static/js/741.e2dcbfdd.chunk.js",
+    "static/css/600.2e9dd2cf.chunk.css": "/edu-core-dev/static/css/600.2e9dd2cf.chunk.css",
+    "static/js/600.c2dc4f2f.chunk.js": "/edu-core-dev/static/js/600.c2dc4f2f.chunk.js",
+    "static/js/550.16354dd6.chunk.js": "/edu-core-dev/static/js/550.16354dd6.chunk.js",
     "index.html": "/edu-core-dev/index.html",
-    "main.f855e6bc.css.map": "/edu-core-dev/static/css/main.f855e6bc.css.map",
-    "main.d6344c19.js.map": "/edu-core-dev/static/js/main.d6344c19.js.map",
-    "453.613be0b4.chunk.js.map": "/edu-core-dev/static/js/453.613be0b4.chunk.js.map"
+    "main.f41f5e09.js.map": "/edu-core-dev/static/js/main.f41f5e09.js.map",
+    "7.2e9dd2cf.chunk.css.map": "/edu-core-dev/static/css/7.2e9dd2cf.chunk.css.map",
+    "7.5cc3e137.chunk.js.map": "/edu-core-dev/static/js/7.5cc3e137.chunk.js.map",
+    "210.2e9dd2cf.chunk.css.map": "/edu-core-dev/static/css/210.2e9dd2cf.chunk.css.map",
+    "210.c9bc8789.chunk.js.map": "/edu-core-dev/static/js/210.c9bc8789.chunk.js.map",
+    "489.2e9dd2cf.chunk.css.map": "/edu-core-dev/static/css/489.2e9dd2cf.chunk.css.map",
+    "489.a0f06c69.chunk.js.map": "/edu-core-dev/static/js/489.a0f06c69.chunk.js.map",
+    "892.2e9dd2cf.chunk.css.map": "/edu-core-dev/static/css/892.2e9dd2cf.chunk.css.map",
+    "892.931259cb.chunk.js.map": "/edu-core-dev/static/js/892.931259cb.chunk.js.map",
+    "835.2e9dd2cf.chunk.css.map": "/edu-core-dev/static/css/835.2e9dd2cf.chunk.css.map",
+    "835.b7ebd61d.chunk.js.map": "/edu-core-dev/static/js/835.b7ebd61d.chunk.js.map",
+    "350.98c09590.chunk.js.map": "/edu-core-dev/static/js/350.98c09590.chunk.js.map",
+    "741.2e9dd2cf.chunk.css.map": "/edu-core-dev/static/css/741.2e9dd2cf.chunk.css.map",
+    "741.e2dcbfdd.chunk.js.map": "/edu-core-dev/static/js/741.e2dcbfdd.chunk.js.map",
+    "600.2e9dd2cf.chunk.css.map": "/edu-core-dev/static/css/600.2e9dd2cf.chunk.css.map",
+    "600.c2dc4f2f.chunk.js.map": "/edu-core-dev/static/js/600.c2dc4f2f.chunk.js.map",
+    "550.16354dd6.chunk.js.map": "/edu-core-dev/static/js/550.16354dd6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.d6344c19.js"
+    "static/js/main.f41f5e09.js"
   ]
 }
