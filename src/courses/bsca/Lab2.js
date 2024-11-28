@@ -38,7 +38,9 @@ source = bcg
 sourcetype = sales:web`;
 
 // eslint-disable-next-line
-const step39 = `token.0.token = \d{2}/\w{3}/\d{4}:\d{2}:\d{2}:\d{2}
+const step39 = `sourcetype = sales:web
+
+token.0.token = \d{2}/\w{3}/\d{4}:\d{2}:\d{2}:\d{2}
 token.0.replacementType = replaytimestamp
 token.0.replacement = %d/%b/%Y:%H:%M:%S`;
 
@@ -86,18 +88,24 @@ host = bcg_eventgen
 source = bcg
 sourcetype = sales:addons`;
 
-const step74 = `token.0.token = !timestamp!
+const step74 = `sourcetype = sales:addons
+
+token.0.token = !timestamp!
 token.0.replacementType = timestamp
 token.0.replacement = %d/%b/%Y:%H:%M:%S`;
 
-const step75 = `token.1.token = !1!
+const step75 = `token.0.replacement = %d/%b/%Y:%H:%M:%S
+
+token.1.token = !1!
 token.1.replacementType = file
 token.1.replacement = $SPLUNK_HOME/etc/apps/bcg_eventgen/samples/games.sample
 token.2.token = !2!
 token.2.replacementType = file
 token.2.replacement = $SPLUNK_HOME/etc/apps/bcg_eventgen/samples/addons.sample`;
 
-const step76 = `token.3.token = !3!
+const step76 = `token.2.replacement = $SPLUNK_HOME/etc/apps/bcg_eventgen/samples/addons.sample
+
+token.3.token = !3!
 token.3.replacementType = random
 token.3.replacement = float[1.00:5]`;
 
@@ -106,26 +114,26 @@ const step78 = `/opt/splunk/bin/splunk restart`;
 
 
     return(<div style={{margin:50}}>
-        <Solution step="32" code={step32} language="language-bash"/>
-        <Solution step="33" code={step33} language="language-bash"/>
-        <Solution step="34" code={step34} language="language-bash"/>
-        <Solution step="37" code={step37} language="language-bash"/>
-        <Solution step="38" code={step38} language="language-solution-file"/>
-        <Solution step="39" code={step39} language="language-solution-file"/>
-        <Solution step="41" code={step41} language="language-bash"/>
-        <Solution step="61" code={step61} language="language-bash"/>
-        <Solution step="62" code={step62} language="language-bash"/>
-        <Solution step="63" code={step63} language="language-solution-file"/>
-        <Solution step="65" code={step65} language="language-bash"/>
-        <Solution step="66" code={step66} language="language-solution-file"/>
-        <Solution step="68" code={step68} language="language-bash"/>
-        <Solution step="69" code={step69} language="language-solution-file"/>
-        <Solution step="72" code={step72} language="language-bash"/>
-        <Solution step="73" code={step73} language="language-solution-file"/>
-        <Solution step="74" code={step74} language="language-solution-file"/>
-        <Solution step="75" code={step75} language="language-solution-file"/>
-        <Solution step="76" code={step76} language="language-solution-file"/>
-        <Solution step="78" code={step78} language="language-bash"/>
+        <Solution step="32" code={step32} language="language-bash" lines=""/>
+        <Solution step="33" code={step33} language="language-bash" lines=""/>
+        <Solution step="34" code={step34} language="language-bash" lines=""/>
+        <Solution step="37" code={step37} language="language-bash" lines=""/>
+        <Solution step="38" code={step38} language="language-solution-file" lines=""/>
+        <Solution step="39" code={step39} language="language-solution-file" lines="3-5"/>
+        <Solution step="41" code={step41} language="language-bash" lines=""/>
+        <Solution step="61" code={step61} language="language-bash" lines=""/>
+        <Solution step="62" code={step62} language="language-bash" lines=""/>
+        <Solution step="63" code={step63} language="language-solution-file" lines=""/>
+        <Solution step="65" code={step65} language="language-bash" lines=""/>
+        <Solution step="66" code={step66} language="language-solution-file" lines=""/>
+        <Solution step="68" code={step68} language="language-bash" lines=""/>
+        <Solution step="69" code={step69} language="language-solution-file" lines=""/>
+        <Solution step="72" code={step72} language="language-bash" lines=""/>
+        <Solution step="73" code={step73} language="language-solution-file" lines=""/>
+        <Solution step="74" code={step74} language="language-solution-file" lines="3-5"/>
+        <Solution step="75" code={step75} language="language-solution-file" lines="3-9"/>
+        <Solution step="76" code={step76} language="language-solution-file" lines="3-5"/>
+        <Solution step="78" code={step78} language="language-bash" lines=""/>
     </div>);
 
 }

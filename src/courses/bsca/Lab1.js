@@ -21,8 +21,8 @@ const step7 = `/opt/splunk/bin/splunk version
 
 
     return(<div style={{margin:50}}>
-        <Solution step="6" code={step6} language="language-bash"/>
-        <Solution step="7" code={step7} language="language-bash"/>
+        <Solution step="6" code={step6} language="language-bash" lines=""/>
+        <Solution step="7" code={step7} language="language-bash" lines=""/>
     </div>);
 
 }

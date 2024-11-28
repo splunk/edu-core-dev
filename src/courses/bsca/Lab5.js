@@ -24,13 +24,12 @@ class Echo(PersistentServerConnectionApplication):
         super(PersistentServerConnectionApplication, self).__init__()
 
     def handle(self, in_bytes):
-        request = json.loads(in_bytes)        
-        #payload = json.dumps(request)
+        request = json.loads(in_bytes)    
+        payload = json.dumps(request)
         return {
             'payload': payload,
             'status': 200
-        }
-`;
+        }`;
 
 const step8 = `nano local/restmap.conf`;
 
@@ -58,27 +57,37 @@ const step19 = `curl -k -X POST -u {splunk-id}:{password} \
 const step21 = `nano bin/bcgEndpoints.py`;
 
 const step22 = `
+    def handle(self, in_bytes):
+        request = json.loads(in_bytes)
+
         method = request['method'].lower()
         if method == "post":
             data = request['form']
         elif method == "get":
             data = request['query']
-`;
+
+        payload = json.dumps(request)`;
 
 const step23 = `
+        elif method == "get":
+            data = request['query']
+
         payload = {}
         for key,val in data:
             payload[key] = val
-`;
+        
+        payload = json.dumps(request)`;
 
 const step24 = `
+        for key,val in data:
+            payload[key] = val
+        
         #payload = json.dumps(request)
         return {
             'payload': payload,
             'status': 200,
             'headers': { 'Content-Type':'application/json' }
-        }
-`;
+        }`;
 
 const step26 = `curl -k -X GET -u {splunk-id}:{password} \
 --url "https://localhost:8089/services/bcg/echo?myGetArg=myvalue"`;
@@ -92,23 +101,23 @@ const step30 = `curl -k -X GET -u {splunk-id}:{password} \
 
 
     return(<div style={{margin:50}}>
-        <Solution step="2" code={step2} language="language-bash"/>
-        <Solution step="3" code={step3} language="language-bash"/>
-        <Solution step="4" code={step4} language="language-python"/>
-        <Solution step="8" code={step8} language="language-bash"/>
-        <Solution step="9" code={step9} language="language-solution-file"/>
-        <Solution step="13" code={step13} language="language-bash"/>
-        <Solution step="14" code={step14} language="language-solution-file"/>
-        <Solution step="16" code={step16} language="language-bash"/>
-        <Solution step="17" code={step17} language="language-bash"/>
-        <Solution step="19" code={step19} language="language-bash"/>
-        <Solution step="21" code={step21} language="language-bash"/>
-        <Solution step="22" code={step22} language="language-python"/>
-        <Solution step="23" code={step23} language="language-python"/>
-        <Solution step="24" code={step24} language="language-python"/>
-        <Solution step="26" code={step26} language="language-bash"/>
-        <Solution step="28" code={step28} language="language-bash"/>
-        <Solution step="30" code={step30} language="language-bash"/>
+        <Solution step="2" code={step2} language="language-bash" lines=""/>
+        <Solution step="3" code={step3} language="language-bash" lines=""/>
+        <Solution step="4" code={step4} language="language-python" lines=""/>
+        <Solution step="8" code={step8} language="language-bash" lines=""/>
+        <Solution step="9" code={step9} language="language-solution-file" lines=""/>
+        <Solution step="13" code={step13} language="language-bash" lines=""/>
+        <Solution step="14" code={step14} language="language-solution-file" lines=""/>
+        <Solution step="16" code={step16} language="language-bash" lines=""/>
+        <Solution step="17" code={step17} language="language-bash" lines=""/>
+        <Solution step="19" code={step19} language="language-bash" lines=""/>
+        <Solution step="21" code={step21} language="language-bash" lines=""/>
+        <Solution step="22" code={step22} language="language-python" lines="5-9"/>
+        <Solution step="23" code={step23} language="language-python" lines="5-7"/>
+        <Solution step="24" code={step24} language="language-python" lines="5,8-9"/>
+        <Solution step="26" code={step26} language="language-bash" lines=""/>
+        <Solution step="28" code={step28} language="language-bash" lines=""/>
+        <Solution step="30" code={step30} language="language-bash" lines=""/>
     </div>);
 
 }

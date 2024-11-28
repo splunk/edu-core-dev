@@ -10,7 +10,11 @@ import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-solution-file';
 import '../../prism.css';
 
-function Solution({step, code, language}) {
+import 'prismjs/plugins/line-highlight/prism-line-highlight.js';
+// eslint-disable-next-line
+import 'prismjs/plugins/line-highlight/prism-line-highlight.css';
+
+function Solution({step, code, language, lines}) {
 
     useEffect(() => {
         Prism.highlightAll();
@@ -20,7 +24,7 @@ function Solution({step, code, language}) {
         <Divider/>
         <Stack direction="row" spacing={5} sx={{margin:3}}>
             <Avatar sx={{ margin: 2 }}>{step}</Avatar>
-            <pre style={{width:'80%'}}><code className={language}>{code}</code></pre>
+            <pre className="line-numbers" data-line={lines} style={{width:'80%'}}><code className={language}>{code}</code></pre>
         </Stack>
     </div>);
 

@@ -38,7 +38,10 @@ rm -rf local`;
 
 const step17 = `nano default/app.conf`;
 
-const step18 = `[package]
+const step18 = `description =
+version = 1.0.0
+
+[package]
 id = buttercup`;
 
 const step20 = `sudo pip install splunk-appinspect`;
@@ -64,23 +67,23 @@ const step30 = `./splunk install app /opt/splunk/share/splunk/app_packages/butte
 
 
     return(<div style={{margin:50}}>
-        <Solution step="6" code={step6} language="language-bash"/>
-        <Solution step="7" code={step7} language="language-bash"/>
-        <Solution step="8" code={step8} language="language-solution-file"/>
-        <Solution step="10" code={step10} language="language-bash"/>
-        <Solution step="11" code={step11} language="language-bash"/>
-        <Solution step="12" code={step12} language="language-bash"/>
-        <Solution step="13" code={step13} language="language-bash"/>
-        <Solution step="14" code={step14} language="language-bash"/>
-        <Solution step="17" code={step17} language="language-bash"/>
-        <Solution step="18" code={step18} language="language-solution-file"/>
-        <Solution step="20" code={step20} language="language-bash"/>
-        <Solution step="21" code={step21} language="language-bash"/>
-        <Solution step="24" code={step24} language="language-bash"/>
-        <Solution step="25" code={step25} language="language-bash"/>
-        <Solution step="26" code={step26} language="language-bash"/>
-        <Solution step="28" code={step28} language="language-bash"/>
-        <Solution step="30" code={step30} language="language-bash"/>
+        <Solution step="6" code={step6} language="language-bash" lines=""/>
+        <Solution step="7" code={step7} language="language-bash" lines=""/>
+        <Solution step="8" code={step8} language="language-solution-file" lines=""/>
+        <Solution step="10" code={step10} language="language-bash" lines=""/>
+        <Solution step="11" code={step11} language="language-bash" lines=""/>
+        <Solution step="12" code={step12} language="language-bash" lines=""/>
+        <Solution step="13" code={step13} language="language-bash" lines=""/>
+        <Solution step="14" code={step14} language="language-bash" lines=""/>
+        <Solution step="17" code={step17} language="language-bash" lines=""/>
+        <Solution step="18" code={step18} language="language-solution-file" lines="4-5"/>
+        <Solution step="20" code={step20} language="language-bash" lines=""/>
+        <Solution step="21" code={step21} language="language-bash" lines=""/>
+        <Solution step="24" code={step24} language="language-bash" lines=""/>
+        <Solution step="25" code={step25} language="language-bash" lines=""/>
+        <Solution step="26" code={step26} language="language-bash" lines=""/>
+        <Solution step="28" code={step28} language="language-bash" lines=""/>
+        <Solution step="30" code={step30} language="language-bash" lines=""/>
     </div>);
 
 }

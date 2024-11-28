@@ -41,7 +41,7 @@ function App() {
   return (<div>
     <Stack direction="row" spacing={5} sx={{margin:5}}>
       <Paper elevation={10}>
-        <Avatar alt="Buttercup" src="%PUBLIC_URL%/buttercup.png" sx={{ width: 150, height: 150, margin: 5 }} />
+        <Avatar alt="Buttercup" src={process.env.PUBLIC_URL + '/buttercup.png'} sx={{ width: 150, height: 150, margin: 5 }} />
       </Paper>
       <Paper elevation={10} sx={{width:'100%'}}>
         <Typography variant="h3" sx={{margin:5, color:'#ee0884', fontWeight:'bold'}}>Splunk Education: Core Developer</Typography>
