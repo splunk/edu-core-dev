@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkedu_core_dev=self.webpackChunkedu_core_dev||[]).push([[803],{4803:(e,c,d)=>{e.exports=d.p+"static/media/bcg_icons.5d6b6adace3364d82d6e.zip"}}]);

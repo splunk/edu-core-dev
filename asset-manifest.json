@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/edu-core-dev/static/js/main.ed88dbc9.js",
+    "main.js": "/edu-core-dev/static/js/main.5b54c72f.js",
     "static/css/923.c6546b39.chunk.css": "/edu-core-dev/static/css/923.c6546b39.chunk.css",
     "static/js/923.f536e73b.chunk.js": "/edu-core-dev/static/js/923.f536e73b.chunk.js",
     "static/css/780.c6546b39.chunk.css": "/edu-core-dev/static/css/780.c6546b39.chunk.css",
@@ -16,11 +16,9 @@
     "static/js/697.e542b2ac.chunk.js": "/edu-core-dev/static/js/697.e542b2ac.chunk.js",
     "static/css/842.c6546b39.chunk.css": "/edu-core-dev/static/css/842.c6546b39.chunk.css",
     "static/js/842.17593e36.chunk.js": "/edu-core-dev/static/js/842.17593e36.chunk.js",
-    "static/js/803.f305d329.chunk.js": "/edu-core-dev/static/js/803.f305d329.chunk.js",
     "static/js/78.c71864d5.chunk.js": "/edu-core-dev/static/js/78.c71864d5.chunk.js",
-    "static/media/bcg_icons.zip": "/edu-core-dev/static/media/bcg_icons.5d6b6adace3364d82d6e.zip",
     "index.html": "/edu-core-dev/index.html",
-    "main.ed88dbc9.js.map": "/edu-core-dev/static/js/main.ed88dbc9.js.map",
+    "main.5b54c72f.js.map": "/edu-core-dev/static/js/main.5b54c72f.js.map",
     "923.c6546b39.chunk.css.map": "/edu-core-dev/static/css/923.c6546b39.chunk.css.map",
     "923.f536e73b.chunk.js.map": "/edu-core-dev/static/js/923.f536e73b.chunk.js.map",
     "780.c6546b39.chunk.css.map": "/edu-core-dev/static/css/780.c6546b39.chunk.css.map",
@@ -39,6 +37,6 @@
     "78.c71864d5.chunk.js.map": "/edu-core-dev/static/js/78.c71864d5.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.ed88dbc9.js"
+    "static/js/main.5b54c72f.js"
   ]
 }
