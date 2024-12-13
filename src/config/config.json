@@ -4,6 +4,9 @@
             "id": 1,
             "dir": "bsca",
             "name": "Building Splunk Classic Apps",
+            "downloads": [
+                "BuildingSplunkClassicApps92_LabFiles.zip"
+            ],
             "labs": [
                 {"id": 1, "name": "Getting Started"},
                 {"id": 2, "name": "Generate Sample Data"},
@@ -18,6 +21,7 @@
             "id": 2,
             "dir": "bsua",
             "name": "Building Splunk UI Apps",
+            "downloads": [],
             "labs": [
                 {"id": 1, "name": "Getting Started"},
                 {"id": 2, "name": "Create a Splunk UI App"},
@@ -32,6 +36,9 @@
             "id": 3,
             "dir": "usra",
             "name": "Using the Splunk REST API",
+            "downloads": [
+                "UsingSplunkRestApi92_LabFiles.zip"
+            ],
             "labs": [
                 {"id": 1, "name": "Set Up Token-based Authentication"},
                 {"id": 2, "name": "Parse Server Response Data"},

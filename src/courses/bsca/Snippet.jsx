@@ -10,11 +10,9 @@ import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-solution-file';
 import '../../prism.css';
 
-import 'prismjs/plugins/line-highlight/prism-line-highlight.js';
-// eslint-disable-next-line
-import 'prismjs/plugins/line-highlight/prism-line-highlight.css';
+//import Gist from 'react-embed-gist';
 
-function Solution({step, code, language, lines}) {
+function Snippet({step, code, language}) {
 
     useEffect(() => {
         Prism.highlightAll();
@@ -23,11 +21,11 @@ function Solution({step, code, language, lines}) {
     return(<div>
         <Divider/>
         <Stack direction="row" spacing={5} sx={{margin:3}}>
-            <Avatar sx={{ margin: 2 }}>{step}</Avatar>
-            <pre className="line-numbers" data-line={lines} style={{width:'80%'}}><code className={language}>{code}</code></pre>
+            <Avatar sx={{ bgcolor:'#f56a00', margin: 2 }}>{step}</Avatar>
+            <pre style={{width:'80%'}}><code className={language}>{code}</code></pre>
         </Stack>
     </div>);
 
 }
 
-export default Solution;
+export default Snippet;
