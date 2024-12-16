@@ -58,14 +58,14 @@ const step30 = `./splunk install app /opt/splunk/share/splunk/app_packages/butte
     return(<div style={{margin:50}}>
         <Snippet step="6" code={step6} language="language-bash"/>
         <Snippet step="7" code={step7} language="language-bash"/>
-        <Snippet step="8" code={step8} language="language-solution-file"/>
+        <Snippet step="8" code={step8} language="language-makefile"/>
         <Snippet step="10" code={step10} language="language-bash"/>
         <Snippet step="11" code={step11} language="language-bash"/>
         <Snippet step="12" code={step12} language="language-bash"/>
         <Snippet step="13" code={step13} language="language-bash"/>
         <Snippet step="14" code={step14} language="language-bash"/>
         <Snippet step="17" code={step17} language="language-bash"/>
-        <Snippet step="18" code={step18} language="language-solution-file"/>
+        <Snippet step="18" code={step18} language="language-properties"/>
         <Snippet step="20" code={step20} language="language-bash"/>
         <Snippet step="21" code={step21} language="language-bash"/>
         <Snippet step="24" code={step24} language="language-bash"/>

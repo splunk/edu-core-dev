@@ -68,13 +68,13 @@ const step24 = `
             'headers': { 'Content-Type':'application/json' }
         }`;
 
-const step26 = `curl -k -X GET -u {splunk-id}:{password} \
+const step26 = `curl -k -X GET -u {splunk-id}:{password} \\
 --url "https://localhost:8089/services/bcg/echo?myGetArg=myvalue"`;
 
-const step28 = `curl -k -X POST -u {splunk-id}:{password} \
+const step28 = `curl -k -X POST -u {splunk-id}:{password} \\
 --url https://localhost:8089/services/bcg/echo -d "myPostArg=myvalue"`;
 
-const step30 = `curl -k -X GET -u {splunk-id}:{password} \
+const step30 = `curl -k -X GET -u {splunk-id}:{password} \\
 --url https://localhost:8089/services/bcg/echo -d "myGetArg=myvalue" -i`;
 
 
@@ -84,9 +84,9 @@ const step30 = `curl -k -X GET -u {splunk-id}:{password} \
         <Snippet step="3" code={step3} language="language-bash"/>
         <Snippet step="4" code={step4} language="language-python"/>
         <Snippet step="8" code={step8} language="language-bash"/>
-        <Snippet step="9" code={step9} language="language-solution-file"/>
+        <Snippet step="9" code={step9} language="language-properties"/>
         <Snippet step="13" code={step13} language="language-bash"/>
-        <Snippet step="14" code={step14} language="language-solution-file"/>
+        <Snippet step="14" code={step14} language="language-properties"/>
         <Snippet step="16" code={step16} language="language-bash"/>
         <Snippet step="17" code={step17} language="language-bash"/>
         <Snippet step="19" code={step19} language="language-bash"/>

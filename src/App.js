@@ -3,7 +3,6 @@ import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import Paper from '@mui/material/Paper';
@@ -52,8 +51,8 @@ function App() {
     <Stack direction="row" spacing={5} sx={{margin:5}}>
       <Box sx={{ minWidth: 350 }}>
         <FormControl fullWidth>
-          <InputLabel id="course-label">Course</InputLabel>
-          <Select value={course.id} labelId="course-label" onChange={handleChangeCourse}>
+          <Typography variant="button">Course</Typography>
+          <Select value={course.id} onChange={handleChangeCourse}>
             {config.courses.map((curCourse,i) => (
               <MenuItem key={'c'+curCourse.id} value={curCourse.id}>{curCourse.name}</MenuItem>
             ))}
@@ -62,8 +61,8 @@ function App() {
       </Box>
       <Box sx={{ minWidth: 350 }}>
         <FormControl fullWidth>
-          <InputLabel id="lab-label">Lab</InputLabel>
-          <Select value={lab.id} labelId="lab-label" onChange={handleChangeLab}>
+          <Typography variant="button">Lab</Typography>
+          <Select value={lab.id} onChange={handleChangeLab}>
             {(course.labs.length > 0) ? (
               course.labs.map((curLab,i) => (
                 <MenuItem key={'l'+curLab.id} value={curLab.id}>Lab {curLab.id} - {curLab.name}</MenuItem>
@@ -73,6 +72,7 @@ function App() {
         </FormControl>
       </Box>
       <Box sx={{ typography: 'subtitle1', minWidth: 350 }}>
+        <Typography variant="button">Downloads</Typography>
         {course.downloads.map((file,i) => (
           <div key={'f'+i}><Link href={process.env.PUBLIC_URL + '/' + course.dir + "/" + file}>{file}</Link></div>
         ))}

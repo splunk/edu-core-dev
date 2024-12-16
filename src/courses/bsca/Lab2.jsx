@@ -36,6 +36,8 @@ token.0.replacement = %d/%b/%Y:%H:%M:%S`;
 
 const step41 = `/opt/splunk/bin/splunk restart`;
 
+const step57 = `index=bcg_sales sourcetype="sales:web"`;
+
 const step61 = `cd /opt/splunk/etc/apps/bcg_eventgen`;
 
 const step62 = `nano samples/mtx_event.sample`;
@@ -95,6 +97,8 @@ token.3.replacement = float[1.00:5]`;
 
 const step78 = `/opt/splunk/bin/splunk restart`;
 
+const step87 = `index=bcg_sales sourcetype=sales:addons`;
+
 
 
     return(<div style={{margin:50}}>
@@ -102,22 +106,24 @@ const step78 = `/opt/splunk/bin/splunk restart`;
         <Snippet step="33" code={step33} language="language-bash"/>
         <Snippet step="34" code={step34} language="language-bash"/>
         <Snippet step="37" code={step37} language="language-bash"/>
-        <Snippet step="38" code={step38} language="language-solution-file"/>
-        <Snippet step="39" code={step39} language="language-solution-file"/>
+        <Snippet step="38" code={step38} language="language-properties"/>
+        <Snippet step="39" code={step39} language="language-properties"/>
         <Snippet step="41" code={step41} language="language-bash"/>
+        <Snippet step="57" code={step57} language="language-splunk-spl"/>
         <Snippet step="61" code={step61} language="language-bash"/>
         <Snippet step="62" code={step62} language="language-bash"/>
-        <Snippet step="63" code={step63} language="language-solution-file"/>
+        <Snippet step="63" code={step63} language="language-makefile"/>
         <Snippet step="65" code={step65} language="language-bash"/>
-        <Snippet step="66" code={step66} language="language-solution-file"/>
+        <Snippet step="66" code={step66} language="language-makefile"/>
         <Snippet step="68" code={step68} language="language-bash"/>
-        <Snippet step="69" code={step69} language="language-solution-file"/>
+        <Snippet step="69" code={step69} language="language-makefile"/>
         <Snippet step="72" code={step72} language="language-bash"/>
-        <Snippet step="73" code={step73} language="language-solution-file"/>
-        <Snippet step="74" code={step74} language="language-solution-file"/>
-        <Snippet step="75" code={step75} language="language-solution-file"/>
-        <Snippet step="76" code={step76} language="language-solution-file"/>
+        <Snippet step="73" code={step73} language="language-properties"/>
+        <Snippet step="74" code={step74} language="language-properties"/>
+        <Snippet step="75" code={step75} language="language-properties"/>
+        <Snippet step="76" code={step76} language="language-properties"/>
         <Snippet step="78" code={step78} language="language-bash"/>
+        <Snippet step="87" code={step87} language="language-splunk-spl"/>
     </div>);
 
 }

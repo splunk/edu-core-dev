@@ -51,6 +51,19 @@ usage = public`;
 
 const step20 = `/opt/splunk/bin/splunk restart`;
 
+const step22 = `| getrev`;
+
+const step23 = `tag=bcg_sales
+| stats sum(price) as "Total Sales" by productName, productId
+| getreviews`;
+
+const step27 = `tag=bcg_sales
+| eval web=if(eventtype="bcg_web_sales",price,null())
+| eval mtx=if(eventtype="bcg_mtx_sales",price,null())
+| stats sum(web) as "Web", sum(mtx) as "Micro", sum(price) as "Total" by productName, productId
+| getreviews
+| rename productId as "ID", productName as "Name", review as "Avg Review"`;
+
 
 
     return(<div style={{margin:50}}>
@@ -62,10 +75,13 @@ const step20 = `/opt/splunk/bin/splunk restart`;
         <Snippet step="7" code={step7} language="language-python"/>
         <Snippet step="8" code={step8} language="language-python"/>
         <Snippet step="12" code={step12} language="language-bash"/>
-        <Snippet step="13" code={step13} language="language-solution-file"/>
+        <Snippet step="13" code={step13} language="language-properties"/>
         <Snippet step="17" code={step17} language="language-bash"/>
-        <Snippet step="18" code={step18} language="language-solution-file"/>
+        <Snippet step="18" code={step18} language="language-properties"/>
         <Snippet step="20" code={step20} language="language-bash"/>
+        <Snippet step="22" code={step22} language="language-splunk-spl"/>
+        <Snippet step="23" code={step23} language="language-splunk-spl"/>
+        <Snippet step="27" code={step27} language="language-splunk-spl"/>
     </div>);
 
 }
