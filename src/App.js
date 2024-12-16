@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 import config from './config/config.json';
 
 function App() {
-  const [course, setCourse] = React.useState({"id":0,"downloads":[],"labs":[]});
+  const [course, setCourse] = React.useState({"id":0,"downloads":[],"labs":[],"solutions":[]});
   //const [labs, setLabs] = React.useState([]);
   const [lab, setLab] = React.useState({"id":0});
   const [component, setComponent] = React.useState(null);
@@ -74,7 +74,7 @@ function App() {
       <Box sx={{ typography: 'subtitle1', minWidth: 350 }}>
         <Typography variant="button">Downloads</Typography>
         {course.downloads.map((file,i) => (
-          <div key={'f'+i}><Link href={process.env.PUBLIC_URL + '/' + course.dir + "/" + file}>{file}</Link></div>
+          <div key={'f'+i}><Link href={process.env.PUBLIC_URL + '/downloads/' + file}>{file}</Link></div>
         ))}
       </Box>
     </Stack>
