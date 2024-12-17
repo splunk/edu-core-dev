@@ -49,7 +49,7 @@ function App() {
       </Paper>
     </Stack>
     <Stack direction="row" spacing={5} sx={{margin:5}}>
-      <Box sx={{ minWidth: 350 }}>
+      <Box sx={{ minWidth: 300 }}>
         <FormControl fullWidth>
           <Typography variant="button">Course</Typography>
           <Select value={course.id} onChange={handleChangeCourse}>
@@ -59,7 +59,7 @@ function App() {
           </Select>
         </FormControl>
       </Box>
-      <Box sx={{ minWidth: 350 }}>
+      <Box sx={{ minWidth: 400 }}>
         <FormControl fullWidth>
           <Typography variant="button">Lab</Typography>
           <Select value={lab.id} onChange={handleChangeLab}>

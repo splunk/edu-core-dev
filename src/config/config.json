@@ -4,9 +4,6 @@
             "id": 1,
             "dir": "bsca",
             "name": "Building Splunk Classic Apps",
-            "downloads": [
-                "BuildingSplunkClassicApps92_LabFiles.zip"
-            ],
             "labs": [
                 {"id": 1, "name": "Getting Started"},
                 {"id": 2, "name": "Generate Sample Data"},
@@ -15,30 +12,28 @@
                 {"id": 5, "name": "Create a Custom REST Endpoint"},
                 {"id": 6, "name": "Create Custom Workflow Actions"},
                 {"id": 7, "name": "Validate and Package an App"}
-            ]
+            ],
+            "downloads": ["BuildingSplunkClassicApps92_LabFiles.zip"]
         },
         {
             "id": 2,
             "dir": "bsua",
             "name": "Building Splunk UI Apps",
-            "downloads": [],
             "labs": [
                 {"id": 1, "name": "Getting Started"},
                 {"id": 2, "name": "Create a Splunk UI App"},
                 {"id": 3, "name": "Utilize Splunk UI Components"},
-                {"id": 4, "name": "Enhance the User Interface"},
-                {"id": 5, "name": "Use the Splunk REST API"},
-                {"id": 6, "name": "Design a Search Interface"},
-                {"id": 7, "name": "Package an App"}
-            ]
+                {"id": 4, "name": "Use the Splunk REST API"},
+                {"id": 5, "name": "Design a Search Interface"},
+                {"id": 6, "name": "Enhance the User Interface"},
+                {"id": 7, "name": "Validate and Package an App"}
+            ],
+            "downloads": []
         },
         {
             "id": 3,
             "dir": "usra",
             "name": "Using the Splunk REST API",
-            "downloads": [
-                "UsingSplunkRestApi92_LabFiles.zip"
-            ],
             "labs": [
                 {"id": 1, "name": "Set Up Token-based Authentication"},
                 {"id": 2, "name": "Parse Server Response Data"},
@@ -48,7 +43,8 @@
                 {"id": 6, "name": "Develop Advanced Searches"},
                 {"id": 7, "name": "Ingest Data with the HTTP Event Collector"},
                 {"id": 8, "name": "Integrate the Key-Value Store"}
-            ]
+            ],
+            "downloads": ["UsingSplunkRestApi92_LabFiles.zip"]
         }     
     ]
 }
