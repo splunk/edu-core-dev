@@ -2,13 +2,19 @@ import Snippet from './Snippet';
 
 function Lab5() {
 
+    return(<div style={{margin:50}}>
 
 
-const step2 = `cd /opt/splunk/etc/apps/buttercup`;
+<Snippet step="2" language="bash"
+    code={`cd /opt/splunk/etc/apps/buttercup`}
+/>
 
-const step3 = `nano bin/bcgEndpoints.py`;
+<Snippet step="3" language="bash"
+    code={`nano bin/bcgEndpoints.py`}
+/>
 
-const step4 = `from splunk.persistconn.application import PersistentServerConnectionApplication
+<Snippet step="4" language="python"
+    code={`from splunk.persistconn.application import PersistentServerConnectionApplication
 import json
 
 class Echo(PersistentServerConnectionApplication):
@@ -21,82 +27,92 @@ class Echo(PersistentServerConnectionApplication):
         return {
             'payload': payload,
             'status': 200
-        }`;
+        }`}
+/>
 
-const step8 = `nano local/restmap.conf`;
+<Snippet step="8" language="bash"
+    code={`nano local/restmap.conf`}
+/>
 
-const step9 = `[script:bcg_echo]
+<Snippet step="9" language="properties"
+    code={`[script:bcg_echo]
 match = /bcg/echo
 script = bcgEndpoints.py
 scripttype = persist
 handler = bcgEndpoints.Echo
-python.version = python3`;
+python.version = python3`}
+/>
 
-const step13 = `nano local/web.conf`;
+<Snippet step="13" language="bash"
+    code={`nano local/web.conf`}
+/>
 
-const step14 = `[expose:bcg_echo]
+<Snippet step="14" language="properties"
+    code={`[expose:bcg_echo]
 methods = GET,POST
-pattern = /bcg/echo`;
+pattern = /bcg/echo`}
+/>
 
-const step16 = `/opt/splunk/bin/splunk restart`;
+<Snippet step="16" language="bash"
+    code={`/opt/splunk/bin/splunk restart`}
+/>
 
-const step17 = `curl -k -X GET -u {splunk-id}:{password} \
---url "https://localhost:8089/services/bcg/echo?myGetArg=myvalue"`;
+<Snippet step="17" language="bash"
+    code={`curl -k -X GET -u {splunk-id}:{password} \\
+--url "https://localhost:8089/services/bcg/echo?myGetArg=myvalue"`}
+/>
 
-const step19 = `curl -k -X POST -u {splunk-id}:{password} \
---url https://localhost:8089/services/bcg/echo -d "myPostArg=myvalue"`;
+<Snippet step="19" language="bash"
+    code={`curl -k -X POST -u {splunk-id}:{password} \\
+--url https://localhost:8089/services/bcg/echo -d "myPostArg=myvalue"`}
+/>
 
-const step21 = `nano bin/bcgEndpoints.py`;
+<Snippet step="21" language="bash"
+    code={`nano bin/bcgEndpoints.py`}
+/>
 
-const step22 = `
+<Snippet step="22" language="python"
+    code={`
         method = request['method'].lower()
         if method == "post":
             data = request['form']
         elif method == "get":
-            data = request['query']`;
+            data = request['query']`}
+/>
 
-const step23 = `
+<Snippet step="23" language="python"
+    code={`
         payload = {}
         for key,val in data:
-            payload[key] = val`;
+            payload[key] = val`}
+/>
 
-const step24 = `
+<Snippet step="24" language="python"
+    code={`
         #payload = json.dumps(request)
         return {
             'payload': payload,
             'status': 200,
             'headers': { 'Content-Type':'application/json' }
-        }`;
+        }`}
+/>
 
-const step26 = `curl -k -X GET -u {splunk-id}:{password} \\
---url "https://localhost:8089/services/bcg/echo?myGetArg=myvalue"`;
+<Snippet step="26" language="bash"
+    code={`curl -k -X GET -u {splunk-id}:{password} \\
+--url "https://localhost:8089/services/bcg/echo?myGetArg=myvalue"`}
+/>
 
-const step28 = `curl -k -X POST -u {splunk-id}:{password} \\
---url https://localhost:8089/services/bcg/echo -d "myPostArg=myvalue"`;
+<Snippet step="28" language="bash"
+    code={`curl -k -X POST -u {splunk-id}:{password} \\
+--url https://localhost:8089/services/bcg/echo -d "myPostArg=myvalue"`}
+/>
 
-const step30 = `curl -k -X GET -u {splunk-id}:{password} \\
---url https://localhost:8089/services/bcg/echo -d "myGetArg=myvalue" -i`;
+<Snippet step="30" language="bash"
+    code={`curl -k -X GET -u {splunk-id}:{password} \\
+--url https://localhost:8089/services/bcg/echo -d "myGetArg=myvalue" -i`}
+/>
 
 
-
-    return(<div style={{margin:50}}>
-        <Snippet step="2" code={step2} language="language-bash"/>
-        <Snippet step="3" code={step3} language="language-bash"/>
-        <Snippet step="4" code={step4} language="language-python"/>
-        <Snippet step="8" code={step8} language="language-bash"/>
-        <Snippet step="9" code={step9} language="language-properties"/>
-        <Snippet step="13" code={step13} language="language-bash"/>
-        <Snippet step="14" code={step14} language="language-properties"/>
-        <Snippet step="16" code={step16} language="language-bash"/>
-        <Snippet step="17" code={step17} language="language-bash"/>
-        <Snippet step="19" code={step19} language="language-bash"/>
-        <Snippet step="21" code={step21} language="language-bash"/>
-        <Snippet step="22" code={step22} language="language-python"/>
-        <Snippet step="23" code={step23} language="language-python"/>
-        <Snippet step="24" code={step24} language="language-python"/>
-        <Snippet step="26" code={step26} language="language-bash"/>
-        <Snippet step="28" code={step28} language="language-bash"/>
-        <Snippet step="30" code={step30} language="language-bash"/>
     </div>);
 
 }

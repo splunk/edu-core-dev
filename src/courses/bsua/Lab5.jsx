@@ -2,8 +2,11 @@ import Snippet from './Snippet';
 
 function Lab5() {
 
+    return(<div style={{margin:50}}>
 
-const step10 = `import React, { useState } from 'react';
+
+<Snippet step="9" language="jsx"
+    code={`import React, { useState } from 'react';
 
 const TabSearch = () => {
     return (<div style={{ margin: 25 }}>
@@ -11,53 +14,75 @@ const TabSearch = () => {
     </div>);
 };
 
-export default TabSearch;`;
+export default TabSearch;`}
+/>
 
-const step13 = `import TabSearch from './TabSearch';`;
+<Snippet step="12" language="jsx"
+    code={`import TabSearch from './TabSearch';`}
+/>
 
-const step14 = `<TabSearch/>`;
+<Snippet step="13" language="jsx"
+    code={`<TabSearch/>`}
+/>
 
-const step16 = `cd ~/code/packages/my-react-component
+<Snippet step="15" language="bash"
+    code={`cd ~/code/packages/my-react-component
 yarn add @splunk/react-search
-yarn add @splunk/dashboard-utils`;
+yarn add @splunk/dashboard-utils`}
+/>
 
-const step18 = `import SearchBar from '@splunk/react-search/components/Bar';
-import searchBNF from "@splunk/dashboard-utils/defaultSPLSyntax.json";`;
+<Snippet step="17" language="jsx"
+    code={`import SearchBar from '@splunk/react-search/components/Bar';
+import searchBNF from "@splunk/dashboard-utils/defaultSPLSyntax.json";`}
+/>
 
-const step20 = `    const [options, setOptions] = useState({
+<Snippet step="19" language="jsx"
+    code={`    const [options, setOptions] = useState({
         "earliest": "-7d@d",
         "latest": "now",
         "search": "",
         "syntax": searchBNF
-    });`;
+    });`}
+/>
 
-const step22 = `const handleOptionsChange = (option) => {
+<Snippet step="21" language="jsx"
+    code={`const handleOptionsChange = (option) => {
     console.log(option);
     setOptions({...options, ...option});
 };
 
 const handleEventTrigger = (eventType) => {
     console.log(eventType);
-};`;
+};`}
+/>
 
-const step23 = `    <SearchBar
+<Snippet step="22" language="jsx"
+    code={`    <SearchBar
         options={options}
         onOptionsChange={handleOptionsChange}
         onEventTrigger={handleEventTrigger}
-    />`;
+    />`}
+/>
 
-const step26 = `cd ~/code/packages/my-react-component
-yarn add @splunk/search-job`;
+<Snippet step="25" language="bash"
+    code={`cd ~/code/packages/my-react-component
+yarn add @splunk/search-job`}
+/>
 
-const step28 = `import SearchJob from '@splunk/search-job';
-import * as config from '@splunk/splunk-utils/config';`;
+<Snippet step="27" language="jsx"
+    code={`import SearchJob from '@splunk/search-job';
+import * as config from '@splunk/splunk-utils/config';`}
+/>
 
-const step31 = `    const job = SearchJob.create(options, {
+<Snippet step="30" language="jsx"
+    code={`    const job = SearchJob.create(options, {
         app: config.app,
         owner: config.username
-    });`;
+    });`}
+/>
 
-const step34 = `    const progress = job.getProgress().subscribe({
+<Snippet step="33" language="jsx"
+    code={`    const progress = job.getProgress().subscribe({
         next: searchState => {
             console.log(searchState);
         },
@@ -67,9 +92,11 @@ const step34 = `    const progress = job.getProgress().subscribe({
         complete: () => {
             console.log("search complete!");
         }
-    });`;
+    });`}
+/>
 
-const step37 = `    const results = job.getResults().subscribe({
+<Snippet step="36" language="jsx"
+    code={`    const results = job.getResults().subscribe({
         next: response => {
             console.log(response);
         },
@@ -79,33 +106,49 @@ const step37 = `    const results = job.getResults().subscribe({
         complete: () => {
             console.log("results retrieved!");
         }
-    });`;
+    });`}
+/>
 
-const step41 = `index=bcg_sales sourcetype=sales:web`;
+<Snippet step="40" language="splunk-spl"
+    code={`index=bcg_sales sourcetype=sales:web`}
+/>
 
-const step45 = `const [fields, setFields] = useState([]);
+<Snippet step="44" language="jsx"
+    code={`const [fields, setFields] = useState([]);
 const [events, setEvents] = useState([]);
 const [status, setStatus] = useState("");
-const [duration, setDuration] = useState("");`;
+const [duration, setDuration] = useState("");`}
+/>
 
-const step47 = `        setStatus(searchState.content.dispatchState);
-        setDuration(searchState.content.runDuration);`;
+<Snippet step="46" language="jsx"
+    code={`        setStatus(searchState.content.dispatchState);
+        setDuration(searchState.content.runDuration);`}
+/>
 
-const step49 = `        setFields(response.fields);
-        setEvents(response.results);`;
+<Snippet step="48" language="jsx"
+    code={`        setFields(response.fields);
+        setEvents(response.results);`}
+/>
 
-const step52 = `import JSONTree from '@splunk/react-ui/JSONTree';
-import StaticContent from '@splunk/react-ui/StaticContent';`;
+<Snippet step="51" language="jsx"
+    code={`import JSONTree from '@splunk/react-ui/JSONTree';
+import StaticContent from '@splunk/react-ui/StaticContent';`}
+/>
 
-const step54 = `    <StaticContent>Status: {status} {duration}</StaticContent>
+<Snippet step="53" language="jsx"
+    code={`    <StaticContent>Status: {status} {duration}</StaticContent>
     <StaticContent>Fields</StaticContent>
     <JSONTree json={fields} expandChildrenOnShiftKey />
     <StaticContent>Events</StaticContent>
-    <JSONTree json={events} expandChildrenOnShiftKey />`;
+    <JSONTree json={events} expandChildrenOnShiftKey />`}
+/>
 
-const step57 = `import Table from '@splunk/react-ui/Table';`;
+<Snippet step="56" language="jsx"
+    code={`import Table from '@splunk/react-ui/Table';`}
+/>
 
-const step59 = `    <Table>
+<Snippet step="58" language="jsx"
+    code={`    <Table>
         <Table.Head>
             {fields.map((field,i) => (
                 <Table.HeadCell key={'f'+i}>{field.name}</Table.HeadCell>
@@ -120,38 +163,17 @@ const step59 = `    <Table>
                 </Table.Row>
             ))}
         </Table.Body>
-    </Table>`;
+    </Table>`}
+/>
 
-const step62 = `        let filtered = response.fields.filter(f => !f.name.startsWith("_"));
+<Snippet step="61" language="jsx"
+    code={`        let filtered = response.fields.filter(f => !f.name.startsWith("_"));
         filtered.push({"name": "_raw"});
 
-        setFields(filtered);`;
+        setFields(filtered);`}
+/>
 
 
-
-    return(<div style={{margin:50}}>
-        <Snippet step="10" code={step10} language="language-jsx"/>
-        <Snippet step="13" code={step13} language="language-jsx"/>
-        <Snippet step="14" code={step14} language="language-jsx"/>
-        <Snippet step="16" code={step16} language="language-bash"/>
-        <Snippet step="18" code={step18} language="language-jsx"/>
-        <Snippet step="20" code={step20} language="language-jsx"/>
-        <Snippet step="22" code={step22} language="language-jsx"/>
-        <Snippet step="23" code={step23} language="language-jsx"/>
-        <Snippet step="26" code={step26} language="language-bash"/>
-        <Snippet step="28" code={step28} language="language-jsx"/>
-        <Snippet step="31" code={step31} language="language-jsx"/>
-        <Snippet step="34" code={step34} language="language-jsx"/>
-        <Snippet step="37" code={step37} language="language-jsx"/>
-        <Snippet step="41" code={step41} language="language-splunk-spl"/>
-        <Snippet step="45" code={step45} language="language-jsx"/>
-        <Snippet step="47" code={step47} language="language-jsx"/>
-        <Snippet step="49" code={step49} language="language-jsx"/>
-        <Snippet step="52" code={step52} language="language-jsx"/>
-        <Snippet step="54" code={step54} language="language-jsx"/>
-        <Snippet step="57" code={step57} language="language-jsx"/>
-        <Snippet step="59" code={step59} language="language-jsx"/>
-        <Snippet step="62" code={step62} language="language-jsx"/>
     </div>);
 
 }

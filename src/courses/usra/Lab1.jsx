@@ -2,45 +2,53 @@ import Snippet from './Snippet';
 
 function Lab1() {
 
-
-
-const step13 = `/opt/splunk/bin/splunk version
-/opt/splunk/bin/splunk show web-port
-/opt/splunk/bin/splunk show splunkd-port`;
-
-const step17 = `cd ~/labs/lab1
-nano get.sh`;
-
-const step18 = `/services/authentication/users`;
-
-const step19 = `-u restclient:splunk3du`;
-
-const step26 = `/services/auth/login`;
-
-const step27 = `\\
---data-urlencode "username=restclient" \\
---data-urlencode "password=splunk3du"`;
-
-const step33 = `\\
--H "Authorization: Splunk {sessionKey}"`;
-
-const step47 = `export TOKEN={paste token value}
-echo $TOKEN`;
-
-const step50 = `-H "Authorization: Bearer $TOKEN"`;
-
-
-
    return(<div style={{margin:50}}>
-        <Snippet step="13" code={step13} language="language-bash"/>
-        <Snippet step="17" code={step17} language="language-bash"/>
-        <Snippet step="18" code={step18} language="language-uri"/>
-        <Snippet step="19" code={step19} language="language-bash"/>
-        <Snippet step="26" code={step26} language="language-uri"/>
-        <Snippet step="27" code={step27} language="language-bash"/>
-        <Snippet step="33" code={step33} language="language-bash"/>
-        <Snippet step="47" code={step47} language="language-bash"/>
-        <Snippet step="50" code={step50} language="language-bash"/>
+  
+
+<Snippet step="13" language="bash"
+    code={`/opt/splunk/bin/splunk version
+/opt/splunk/bin/splunk show web-port
+/opt/splunk/bin/splunk show splunkd-port`}
+/>
+
+<Snippet step="17" language="bash"
+    code={`cd ~/labs/lab1
+nano get.sh`}
+/>
+
+<Snippet step="18" language="uri"
+    code={`/services/authentication/users`}
+/>
+
+<Snippet step="19" language="bash"
+    code={`-u restclient:splunk3du`}
+/>
+
+<Snippet step="26" language="uri"
+    code={`/services/auth/login`}
+/>
+
+<Snippet step="27" language="bash"
+    code={`\\
+--data-urlencode "username=restclient" \\
+--data-urlencode "password=splunk3du"`}
+/>
+
+<Snippet step="33" language="bash"
+    code={`\\
+-H "Authorization: Splunk {sessionKey}"`}
+/>
+
+<Snippet step="47" language="bash"
+    code={`export TOKEN={paste token value}
+echo $TOKEN`}
+/>
+
+<Snippet step="50" language="bash"
+    code={`-H "Authorization: Bearer $TOKEN"`}
+/>
+
+
     </div>);
 
 }

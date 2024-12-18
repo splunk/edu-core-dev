@@ -2,72 +2,82 @@ import Snippet from './Snippet';
 
 function Lab2() {
 
+    return(<div style={{margin:50}}>
 
 
-const step3 = `cd ~/labs/lab2
-nano get.sh`;
+<Snippet step="3" language="bash"
+    code={`cd ~/labs/lab2
+nano get.sh`}
+/>
 
-const step4 = `/services/data/indexes`;
+<Snippet step="4" language="uri"
+    code={`/services/data/indexes`}
+/>
 
-const step9 = `\\
+<Snippet step="9" language="bash"
+    code={`\\
 | xmlstarlet sel -N a="http://www.w3.org/2005/Atom" -t \\
--m /a:feed/a:entry -v a:title -n`;
+-m /a:feed/a:entry -v a:title -n`}
+/>
 
-const step14 = `/services/data/indexes`;
+<Snippet step="14" language="uri"
+    code={`/services/data/indexes`}
+/>
 
-const step19 = `#print(response.content)
+<Snippet step="19" language="python"
+    code={`#print(response.content)
 print("Request: [" + response.request.method + "] " + response.request.url)
-print("Response: [" + str(response.status_code) + "] " + response.reason)`;
+print("Response: [" + str(response.status_code) + "] " + response.reason)`}
+/>
 
-const step20 = `# XML / Atom namespaces
+<Snippet step="20" language="python"
+    code={`# XML / Atom namespaces
 # '' = atom, s = splunk
 ns = {
     '': 'http://www.w3.org/2005/Atom',
     's': 'http://dev.splunk.com/ns/rest',
     'opensearch': 'http://a9.com/-/spec/opensearch/1.1/'
-}`;
+}`}
+/>
 
-const step21 = `if (response.status_code == 200):
+<Snippet step="21" language="python"
+    code={`if (response.status_code == 200):
     # get xml root element
     root = ET.fromstring(response.text)
     # for all entries in the atom namespace
     for entry in root.findall('entry', ns):
         # print the entry title
-        print(" " + entry.find('title', ns).text)`;
+        print(" " + entry.find('title', ns).text)`}
+/>
 
-const step26 = `\\
---data-urlencode "output_mode=json" \\
-| jq '.'`;
+<Snippet step="26" language="bash"
+    code={`--data-urlencode "output_mode=json" \\
+| jq '.'`}
+/>
 
-const step32 = `'.entry[].name'`;
+<Snippet step="32" language="bash"
+    code={`'.entry[].name'`}
+/>
 
-const step37 = `/services/data/indexes?output_mode=json`;
+<Snippet step="37" language="uri"
+    code={`/services/data/indexes?output_mode=json`}
+/>
 
-const step42 = `//console.log(data);
+<Snippet step="42" language="javascript"
+    code={`//console.log(data);
 console.log("Request: [GET] " + response.url);
-console.log("Response: [" + response.status + "] " + response.statusText);`;
+console.log("Response: [" + response.status + "] " + response.statusText);`}
+/>
 
-const step43 = `if (response.status === 200) {
+<Snippet step="43" language="javascript"
+    code={`if (response.status === 200) {
     data.entry.forEach(function(entry) {
         console.log(" " + entry.name);
     });
-}`;
+}`}
+/>
 
 
-
-    return(<div style={{margin:50}}>
-        <Snippet step="3" code={step3} language="language-bash"/>
-        <Snippet step="4" code={step4} language="language-uri"/>
-        <Snippet step="9" code={step9} language="language-bash"/>
-        <Snippet step="14" code={step14} language="language-uri"/>
-        <Snippet step="19" code={step19} language="language-python"/>
-        <Snippet step="20" code={step20} language="language-python"/>
-        <Snippet step="21" code={step21} language="language-python"/>
-        <Snippet step="26" code={step26} language="language-bash"/>
-        <Snippet step="32" code={step32} language="language-bash"/>
-        <Snippet step="37" code={step37} language="language-uri"/>
-        <Snippet step="42" code={step42} language="language-javascript"/>
-        <Snippet step="43" code={step43} language="language-javascript"/>
     </div>);
 
 }

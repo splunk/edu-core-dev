@@ -4,6 +4,8 @@ import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 
+// https://prismjs.com/#languages-list
+
 import Prism from 'prismjs';
 import 'prismjs/components/prism-python';               // Python
 import 'prismjs/components/prism-bash';                 // CLI
@@ -26,7 +28,7 @@ function Snippet({step, code, language}) {
         <Divider/>
         <Stack direction="row" spacing={5} sx={{margin:3}}>
             <Avatar sx={{ bgcolor:'#f56a00', margin: 2 }}>{step}</Avatar>
-            <pre style={{width:'80%'}}><code className={language}>{code}</code></pre>
+            <pre style={{width:'80%'}}><code className={`language-${language}`}>{code}</code></pre>
         </Stack>
     </div>);
 
