@@ -4,7 +4,6 @@ function Lab1() {
 
    return(<div style={{margin:50}}>
 
-
 <Snippet step="15" language="bash"
     code={`ll /opt/splunk/etc/apps`}
 />
@@ -23,7 +22,6 @@ cacheBytesLimit = 0`}
 <Snippet step="20" language="bash"
     code={`/opt/splunk/bin/splunk restart`}
 />
-
 
     </div>);
 

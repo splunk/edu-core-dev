@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import Avatar from '@mui/material/Avatar';
+import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
 import Link from '@mui/material/Link';
@@ -79,6 +80,12 @@ function App() {
       </Box>
     </Stack>
     {component}
+    <Box sx={{ typography: 'subtitle1', height: 50 }}></Box>
+    <AppBar position="fixed" sx={{ bgcolor:'#7f7f7f', top:'auto', bottom:0 }}>
+      <Typography variant="body1" sx={{margin:2}}>
+        {lab.id !==0 ? ( `${course.name} - Lab ${lab.id} - ${lab.name}` ) : ( <span>&#8203;</span> )}
+      </Typography>
+    </AppBar>
   </div>);
 }
 
