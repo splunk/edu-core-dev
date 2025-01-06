@@ -14,12 +14,18 @@ function Lab1() {
 /opt/splunk/bin/splunk show splunkd-port`}
 />
 
-<Snippet step="18" language="properties"
+<Snippet step="17" language="bash"
+    code={`node --version
+npm --version
+yarn --version`}
+/>
+
+<Snippet step="19" language="properties"
     code={`cacheEntriesLimit = 0
 cacheBytesLimit = 0`}
 />
 
-<Snippet step="20" language="bash"
+<Snippet step="21" language="bash"
     code={`/opt/splunk/bin/splunk restart`}
 />
 
