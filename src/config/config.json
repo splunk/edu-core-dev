@@ -28,7 +28,7 @@
                 {"id": 6, "name": "Enhance the User Interface"},
                 {"id": 7, "name": "Validate and Package an App"}
             ],
-            "downloads": ["BuildingSplunkUIApps93_LabFiles.zip"]
+            "downloads": ["BuildingSplunkUIApps93_LabFiles.zip", "bcg_icons.zip"]
         },
         {
             "id": 3,
