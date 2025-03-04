@@ -15,32 +15,31 @@ import { createRESTURL } from '@splunk/splunk-utils/url';
 import { getDefaultFetchInit } from '@splunk/splunk-utils/fetch';`}
 />
 
-<Snippet step="8" language="jsx"
-    code={`    const url = createRESTURL(uri + "?output_mode=json", {
-        app: config.app,
-        owner: config.username,
-        sharing: 'app'
-    });`}
-/>
-
-<Snippet step="9" language="jsx"
-    code={`    let fetchInit = getDefaultFetchInit();
-    fetchInit.method = method;
-    if (method.toLowerCase() === 'post') {
-        fetchInit.body = new URLSearchParams(JSON.parse(body));
-    }`}
-/>
-
 <Snippet step="10" language="jsx"
-    code={`    const response = await fetch(url, fetchInit);
-    setData(await response.json());`}
+    code={`        const url = createRESTURL(uri + "?output_mode=json", {
+            app: config.app,
+            owner: config.username
+        });`}
 />
 
-<Snippet step="17" language="json"
+<Snippet step="14" language="jsx"
+    code={`        let fetchInit = getDefaultFetchInit();
+        fetchInit.method = method;
+        if (method.toLowerCase() === 'post') {
+            fetchInit.body = new URLSearchParams(JSON.parse(body));
+        }`}
+/>
+
+<Snippet step="16" language="jsx"
+    code={`        const response = await fetch(url, fetchInit);
+        setData(await response.json());`}
+/>
+
+<Snippet step="25" language="json"
     code={`{"name": "myindex"}`}
 />
 
-<Snippet step="30" language="json"
+<Snippet step="38" language="json"
     code={`{"name": "myuser", "password": "mypassword", "realm": "myrealm"}`}
 />
 

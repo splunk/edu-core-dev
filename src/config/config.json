@@ -1,6 +1,23 @@
 {
     "courses": [
         {
+            "id": 2,
+            "dir": "bsua",
+            "name": "Building Splunk UI Apps",
+            "labs": [
+                {"id": 1, "name": "Getting Started"},
+                {"id": 2, "name": "Create a Splunk UI App"},
+                {"id": 3, "name": "Implement Splunk React UI"},
+                {"id": 4, "name": "Use the Splunk REST API"},
+                {"id": 5, "name": "Use Splunk UI Search Utilities"},
+                {"id": 6, "name": "Enhance the User Interface"},
+                {"id": 7, "name": "Validate and Package an App"}
+            ],
+            "downloads": ["BuildingSplunkUIApps94_LabFiles.zip", "bcg_icons.zip"]
+        }
+    ],
+    "next": [
+        {
             "id": 1,
             "dir": "bsca",
             "name": "Building Splunk Classic Apps",
@@ -14,21 +31,6 @@
                 {"id": 7, "name": "Validate and Package an App"}
             ],
             "downloads": ["BuildingSplunkClassicApps92_LabFiles.zip"]
-        },
-        {
-            "id": 2,
-            "dir": "bsua",
-            "name": "Building Splunk UI Apps",
-            "labs": [
-                {"id": 1, "name": "Getting Started"},
-                {"id": 2, "name": "Create a Splunk UI App"},
-                {"id": 3, "name": "Utilize Splunk UI Components"},
-                {"id": 4, "name": "Use the Splunk REST API"},
-                {"id": 5, "name": "Design a Search Interface"},
-                {"id": 6, "name": "Enhance the User Interface"},
-                {"id": 7, "name": "Validate and Package an App"}
-            ],
-            "downloads": ["BuildingSplunkUIApps93_LabFiles.zip", "bcg_icons.zip"]
         },
         {
             "id": 3,

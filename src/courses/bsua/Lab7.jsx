@@ -20,7 +20,8 @@ This is the latest release of the Buttercup Games app.`}
 />
 
 <Snippet step="20" language="bash"
-    code={`sudo pip install splunk-appinspect`}
+    code={`cd ~/
+sudo pip install splunk-appinspect`}
 />
 
 <Snippet step="21" language="bash"

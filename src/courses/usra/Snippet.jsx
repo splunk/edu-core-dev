@@ -28,7 +28,7 @@ function Snippet({step, code, language}) {
         <Divider/>
         <Stack direction="row" spacing={5} sx={{margin:3}}>
             <Avatar sx={{ bgcolor:'#f56a00', margin: 2 }}>{step}</Avatar>
-            <pre style={{width:'80%'}}><code className={`language-${language}`}>{code}</code></pre>
+            <pre style={{width:'90%'}}><code className={`language-${language}`}>{code}</code></pre>
         </Stack>
     </div>);
 
