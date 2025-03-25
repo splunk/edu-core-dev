@@ -3,7 +3,7 @@ import Snippet from './Snippet';
 function Lab1() {
 
    return(<div style={{margin:50}}>
-<div>Hello World!</div>
+
 <Snippet step="15" language="bash"
     code={`ll /opt/splunk/etc/apps`}
 />
