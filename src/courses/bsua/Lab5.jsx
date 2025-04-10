@@ -75,7 +75,11 @@ import * as config from '@splunk/splunk-utils/config';`}
 />
 
 <Snippet step="33" language="jsx"
-    code={`        const job = SearchJob.create(options, {
+    code={`        const job = SearchJob.create({
+            search: options.search,
+            earliest_time: options.earliest,
+            latest_time: options.latest
+        }, {
             app: config.app,
             owner: config.username
         });`}
