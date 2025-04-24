@@ -75,7 +75,7 @@ icon={<MinusCircle/>}`}
     code={`import React from 'react';
 import Message from '@splunk/react-ui/Message';
 
-const TabLogs = ({messages}) => {
+const TabLogs = ({messages = []}) => {
     return (<div style={{ margin: 25 }}>
         {messages.map((item,i) => (
             <Message key={i} type={item.type}>{item.text}</Message>

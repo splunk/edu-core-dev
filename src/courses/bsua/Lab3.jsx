@@ -83,13 +83,13 @@ import TextArea from '@splunk/react-ui/TextArea';`}
 />
 
 <Snippet step="35" language="jsx"
-    code={`        <ControlGroup label="URI">
+    code={`        <ControlGroup label="URI" labelPosition='left'>
             <Text value={uri} canClear onChange={handleUri}/>
         </ControlGroup>`}
 />
 
 <Snippet step="36" language="jsx"
-    code={`        <ControlGroup label="Method" controlsLayout='none'>
+    code={`        <ControlGroup label="Method" labelPosition='left' controlsLayout='none'>
             <Select value={method} onChange={handleMethod}>
                 <Select.Option label="GET" value="get"/>
                 <Select.Option label="POST" value="post"/>
@@ -99,13 +99,13 @@ import TextArea from '@splunk/react-ui/TextArea';`}
 />
 
 <Snippet step="37" language="jsx"
-    code={`        <ControlGroup label="Body">
+    code={`        <ControlGroup label="Body" labelPosition='left'>
             <TextArea value={body} onChange={handleBody}/>
         </ControlGroup>`}
 />
 
 <Snippet step="38" language="jsx"
-    code={`        <ControlGroup label=" " controlsLayout='none'>
+    code={`        <ControlGroup label=" " labelPosition='left' controlsLayout='none'>
             <Button label="Submit" onClick={handleSubmit}/>
         </ControlGroup>`}
 />

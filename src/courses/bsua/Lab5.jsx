@@ -33,7 +33,7 @@ yarn add @splunk/dashboard-utils`}
 
 <Snippet step="18" language="jsx"
     code={`import SearchBar from '@splunk/react-search/components/Bar';
-import searchBNF from "@splunk/dashboard-utils/defaultSPLSyntax.json";`}
+import searchBNF from '@splunk/dashboard-utils/defaultSPLSyntax.json';`}
 />
 
 <Snippet step="20" language="jsx"
@@ -80,8 +80,7 @@ import * as config from '@splunk/splunk-utils/config';`}
             earliest_time: options.earliest,
             latest_time: options.latest
         }, {
-            app: config.app,
-            owner: config.username
+            app: config.app, owner: config.username
         });`}
 />
 
