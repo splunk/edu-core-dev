@@ -6,21 +6,9 @@ function Lab4() {
 
 
 <Snippet step="2" language="bash"
-    code={`pip install -t /tmp splunk-sdk
+    code={`cd ~/
+pip install -t /tmp splunk-sdk
 cp -r /tmp/splunklib /opt/splunk/etc/apps/buttercup/bin`}
-/>
-
-<Snippet step="3" language="bash"
-    code={`ll /opt/splunk/etc/apps/buttercup/bin
-ll /opt/splunk/etc/apps/buttercup/bin/splunklib/searchcommands`}
-/>
-
-<Snippet step="4" language="bash"
-    code={`cd /opt/splunk/etc/apps/buttercup`}
-/>
-
-<Snippet step="5" language="bash"
-    code={`nano bin/bcgReviewScores.py`}
 />
 
 <Snippet step="6" language="python"
@@ -46,47 +34,38 @@ def getAvgReviewScore(productId):
 />
 
 <Snippet step="8" language="python"
-    code={`
-            productId = event["productId"]
+    code={`            productId = event["productId"]
             event["review"] = getAvgReviewScore(productId)`}
 />
 
-<Snippet step="12" language="bash"
-    code={`nano local/commands.conf`}
-/>
-
-<Snippet step="13" language="properties"
+<Snippet step="14" language="properties"
     code={`[getreviews]
 chunked = true
 filename = bcgReviewScores.py`}
 />
 
-<Snippet step="17" language="bash"
-    code={`nano local/searchbnf.conf`}
-/>
-
-<Snippet step="18" language="properties"
+<Snippet step="20" language="properties"
     code={`[getreviews-command]
 syntax = getreviews
 shortdesc = get online game reviews
 usage = public`}
 />
 
-<Snippet step="20" language="bash"
+<Snippet step="22" language="bash"
     code={`/opt/splunk/bin/splunk restart`}
 />
 
-<Snippet step="22" language="splunk-spl"
+<Snippet step="24" language="splunk-spl"
     code={`| getrev`}
 />
 
-<Snippet step="23" language="splunk-spl"
+<Snippet step="25" language="splunk-spl"
     code={`tag=bcg_sales
 | stats sum(price) as "Total Sales" by productName, productId
 | getreviews`}
 />
 
-<Snippet step="27" language="splunk-spl"
+<Snippet step="29" language="splunk-spl"
     code={`tag=bcg_sales
 | eval web=if(eventtype="bcg_web_sales",price,null())
 | eval mtx=if(eventtype="bcg_mtx_sales",price,null())

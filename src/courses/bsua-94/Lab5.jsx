@@ -25,66 +25,69 @@ export default TabSearch;`}
     code={`<TabSearch/>`}
 />
 
-<Snippet step="16" language="bash"
-    code={`cd ~/code/packages/my-react-component
-yarn add @splunk/react-search
-yarn add @splunk/dashboard-utils`}
-/>
-
-<Snippet step="18" language="jsx"
-    code={`import SearchBar from '@splunk/react-search/components/Bar';
-import searchBNF from '@splunk/dashboard-utils/defaultSPLSyntax.json';`}
+<Snippet step="17" language="jsx"
+    code={`    const [earliest, setEarliest] = useState('-7d@d');
+    const [search, setSearch] = useState('');`}
 />
 
 <Snippet step="20" language="jsx"
-    code={`    const [options, setOptions] = useState({
-        "earliest": "-7d@d",
-        "latest": "now",
-        "search": "",
-        "syntax": searchBNF
-    });`}
-/>
+    code={`    const handleEarliest = (e, {value}) => { setEarliest(value); console.log(value); };
+    const handleSearch = (e, {value}) => { setSearch(value); console.log(value); };
 
-<Snippet step="22" language="jsx"
-    code={`    const handleOptionsChange = (option) => {
-        console.log(option);
-        setOptions({...options, ...option});
-    };
-    
-    const handleEventTrigger = (e) => {
-    
+    const handleSubmit = (e) => {
+
     };`}
 />
 
-<Snippet step="23" language="jsx"
-    code={`        <SearchBar
-            options={options}
-            onOptionsChange={handleOptionsChange}
-            onEventTrigger={handleEventTrigger}
-        />`}
+<Snippet step="24" language="jsx"
+    code={`import Button from '@splunk/react-ui/Button';
+import ColumnLayout from '@splunk/react-ui/ColumnLayout';
+import Select from '@splunk/react-ui/Select';
+import Text from '@splunk/react-ui/Text';
+`}
 />
 
-<Snippet step="27" language="bash"
+<Snippet step="26" language="jsx"
+    code={`        <ColumnLayout>
+            <ColumnLayout.Row>
+                <ColumnLayout.Column span={10}>
+                    <Text value={search} canClear onChange={handleSearch}/>
+                </ColumnLayout.Column>
+                <ColumnLayout.Column span={1}>
+                    <Select value={earliest} onChange={handleEarliest} >
+                        <Select.Option label="1 hour ago" value="-1h"/>
+                        <Select.Option label="24 hours ago" value="-24h"/>
+                        <Select.Option label="7 days ago" value="-7d@d"/>
+                    </Select>
+                </ColumnLayout.Column>
+                <ColumnLayout.Column span={1}>
+                    <Button label="Search!" appearance="primary" onClick={handleSubmit}/>
+                </ColumnLayout.Column>
+            </ColumnLayout.Row>
+        </ColumnLayout>`}
+/>
+
+<Snippet step="30" language="bash"
     code={`cd ~/code/packages/my-react-component
 yarn add @splunk/search-job`}
 />
 
-<Snippet step="29" language="jsx"
+<Snippet step="32" language="jsx"
     code={`import SearchJob from '@splunk/search-job';
 import * as config from '@splunk/splunk-utils/config';`}
 />
 
-<Snippet step="33" language="jsx"
+<Snippet step="36" language="jsx"
     code={`        const job = SearchJob.create({
-            search: options.search,
-            earliest_time: options.earliest,
-            latest_time: options.latest
+            search: search,
+            earliest_time: earliest,
+            latest_time: 'now'
         }, {
             app: config.app, owner: config.username
         });`}
 />
 
-<Snippet step="37" language="jsx"
+<Snippet step="40" language="jsx"
     code={`        const progress = job.getProgress().subscribe({
             next: searchState => {
                 console.log("\\njob.getProgress.next");
@@ -99,7 +102,7 @@ import * as config from '@splunk/splunk-utils/config';`}
         });`}
 />
 
-<Snippet step="41" language="jsx"
+<Snippet step="44" language="jsx"
     code={`        const results = job.getResults().subscribe({
             next: response => {
                 console.log("\\njob.getResults.next");
@@ -114,33 +117,33 @@ import * as config from '@splunk/splunk-utils/config';`}
         });`}
 />
 
-<Snippet step="47" language="splunk-spl"
+<Snippet step="48" language="splunk-spl"
     code={`index=bcg_sales sourcetype=sales:web`}
 />
 
-<Snippet step="49" language="jsx"
+<Snippet step="52" language="jsx"
     code={`    const [fields, setFields] = useState([]);
     const [events, setEvents] = useState([]);
     const [status, setStatus] = useState("");
     const [duration, setDuration] = useState("");`}
 />
 
-<Snippet step="51" language="jsx"
+<Snippet step="53" language="jsx"
     code={`                setStatus(searchState.content.dispatchState);
                 setDuration(searchState.content.runDuration);`}
 />
 
-<Snippet step="53" language="jsx"
+<Snippet step="54" language="jsx"
     code={`                setFields(response.fields);
                 setEvents(response.results);`}
 />
 
-<Snippet step="56" language="jsx"
+<Snippet step="57" language="jsx"
     code={`import JSONTree from '@splunk/react-ui/JSONTree';
 import StaticContent from '@splunk/react-ui/StaticContent';`}
 />
 
-<Snippet step="58" language="jsx"
+<Snippet step="59" language="jsx"
     code={`        <StaticContent>Status: {status} {duration}</StaticContent>
         <StaticContent>Fields</StaticContent>
         <JSONTree json={fields} expandChildrenOnShiftKey />
@@ -148,11 +151,11 @@ import StaticContent from '@splunk/react-ui/StaticContent';`}
         <JSONTree json={events} expandChildrenOnShiftKey />`}
 />
 
-<Snippet step="63" language="jsx"
+<Snippet step="64" language="jsx"
     code={`import Table from '@splunk/react-ui/Table';`}
 />
 
-<Snippet step="64" language="jsx"
+<Snippet step="65" language="jsx"
     code={`        <Table>
             <Table.Head>
                 {fields.map((field,i) => (
@@ -171,7 +174,7 @@ import StaticContent from '@splunk/react-ui/StaticContent';`}
         </Table>`}
 />
 
-<Snippet step="68" language="jsx"
+<Snippet step="69" language="jsx"
     code={`                let filtered = response.fields.filter(f => !f.name.startsWith("_"));
                 filtered.push({"name": "_raw"});
 

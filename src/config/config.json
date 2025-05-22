@@ -1,9 +1,9 @@
 {
     "courses": [
         {
-            "id": 2,
-            "dir": "bsua",
-            "name": "Building Splunk UI Apps",
+            "id": 1,
+            "dir": "bsua-94",
+            "name": "Building Splunk UI Apps (9.4)",
             "labs": [
                 {"id": 1, "name": "Getting Started"},
                 {"id": 2, "name": "Create a Splunk UI App"},
@@ -17,10 +17,25 @@
         }
     ],
     "next": [
+         {
+            "id": 2,
+            "dir": "bsua-10",
+            "name": "Building Splunk UI Apps (10.0)",
+            "labs": [
+                {"id": 1, "name": "Getting Started"},
+                {"id": 2, "name": "Create a Splunk UI App"},
+                {"id": 3, "name": "Implement Splunk React UI"},
+                {"id": 4, "name": "Use the Splunk REST API"},
+                {"id": 5, "name": "Use Splunk UI Search Utilities"},
+                {"id": 6, "name": "Enhance the User Interface"},
+                {"id": 7, "name": "Validate and Package an App"}
+            ],
+            "downloads": ["bcg_icons.zip"]
+        },
         {
-            "id": 1,
-            "dir": "bsca",
-            "name": "Building Splunk Classic Apps",
+            "id": 3,
+            "dir": "bsca-10",
+            "name": "Building Splunk Classic Apps (10.0)",
             "labs": [
                 {"id": 1, "name": "Getting Started"},
                 {"id": 2, "name": "Generate Sample Data"},
@@ -30,12 +45,12 @@
                 {"id": 6, "name": "Create Custom Workflow Actions"},
                 {"id": 7, "name": "Validate and Package an App"}
             ],
-            "downloads": ["BuildingSplunkClassicApps92_LabFiles.zip"]
+            "downloads": ["BuildingSplunkClassicApps92_LabFiles.zip", "bcg_icons.zip"]
         },
         {
-            "id": 3,
-            "dir": "usra",
-            "name": "Using the Splunk REST API",
+            "id": 4,
+            "dir": "usra-10",
+            "name": "Using the Splunk REST API (10.0)",
             "labs": [
                 {"id": 1, "name": "Set Up Token-based Authentication"},
                 {"id": 2, "name": "Parse Server Response Data"},
@@ -47,6 +62,6 @@
                 {"id": 8, "name": "Integrate the Key-Value Store"}
             ],
             "downloads": ["UsingSplunkRestApi92_LabFiles.zip"]
-        }     
+        }
     ]
 }
