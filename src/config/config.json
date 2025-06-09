@@ -14,6 +14,19 @@
                 {"id": 7, "name": "Validate and Package an App"}
             ],
             "downloads": ["BuildingSplunkUIApps94_LabFiles.zip", "bcg_icons.zip"]
+        },
+        {
+            "id": 2,
+            "dir": "dsud-94",
+            "name": "Developing Splunk UI Dashboards (9.4)",
+            "labs": [
+                {"id": 1, "name": "Set Up Your Environment"},
+                {"id": 2, "name": "Create an App with a Component"},
+                {"id": 3, "name": "Add Visualizations"},
+                {"id": 4, "name": "Add a Table and Dropdown Input"},
+                {"id": 5, "name": "Add a Menu"}
+            ],
+            "downloads": ["bccIcons.zip"]
         }
     ],
     "next": [
