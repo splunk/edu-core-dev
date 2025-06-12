@@ -157,11 +157,11 @@ return () => {
                 primary: {
                     data: {
                         fields: ['Country', 'KilosPurchased'],
-                    columns:
-                        columnChartResults.results?.length > 0 ? [
-                            columnChartResults.results.map((result) => result.Country),
-                            columnChartResults.results.map((result) => result.KilosPurchased),
-                        ] : [[], []],
+                        columns:
+                            columnChartResults.results?.length > 0 ? [
+                                columnChartResults.results.map((result) => result.Country),
+                                columnChartResults.results.map((result) => result.KilosPurchased),
+                            ] : [[], []],
                     }
                 }
             }}
@@ -170,7 +170,7 @@ return () => {
 </div>`}
 />
 
-<Snippet step="25" language="json"
+<Snippet step="25" language="js"
     code={`resolve: {
     alias: {
         '@splunk/overview': path.resolve(__dirname, '../overview/src/Overview.jsx'),
@@ -244,26 +244,18 @@ return () => {
                 primary: {
                     data: {
                         fields: [
-                            {
-                                name: 'warehouse',
-                            },
-                            {
-                            name: 'Arabica',
-                            },
-                            {
-                            name: 'Excelsa',
-                            },
-                            {
-                            name: 'Robusta',
-                            }
+                            { name: 'warehouse', },
+                            { name: 'Arabica', },
+                            { name: 'Excelsa', },
+                            { name: 'Robusta', }
                         ],
-                    columns:
-                        barChartResults.results?.length > 0 ? [
-                            barChartResults.results.map((result) => result.warehouse),
-                            barChartResults.results.map((result) => parseFloat(result.Arabica) || 0),
-                            barChartResults.results.map((result) => parseFloat(result.Excelsa) || 0),
-                            barChartResults.results.map((result) => parseFloat(result.Robusta) || 0),
-                        ] : [[], [], [], []],
+                        columns:
+                            barChartResults.results?.length > 0 ? [
+                                barChartResults.results.map((result) => result.warehouse),
+                                barChartResults.results.map((result) => parseFloat(result.Arabica) || 0),
+                                barChartResults.results.map((result) => parseFloat(result.Excelsa) || 0),
+                                barChartResults.results.map((result) => parseFloat(result.Robusta) || 0),
+                            ] : [[], [], [], []],
                     }
                 }
             }}

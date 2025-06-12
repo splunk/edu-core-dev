@@ -4,7 +4,7 @@ function Lab4() {
 
     return(<div style={{margin:50}}>
 
-<Snippet step="3" language="bash"
+<Snippet step="2" language="bash"
     code={`cd ~/code
 splunk-create`}
 />
@@ -66,7 +66,7 @@ export {
 };`}
 />
 
-<Snippet step="12" language="jsx"
+<Snippet step="12" language="js"
     code={`'@splunk/inventory': path.resolve(__dirname, '../inventory/src/Inventory.jsx'),`}
 />
 
@@ -160,10 +160,10 @@ return () => {
                 ))}
             </Table.Body>
         </Table>
-    </>
-) : (
-    <div>No table data available.</div>
-)}
+        </>
+    ) : (
+        <div>No table data available.</div>
+    )}
 </div>`}
 />
 
@@ -193,8 +193,13 @@ return () => {
     code={`const displayedRows = tableResults.results.slice(startIndex, startIndex + rowsPerPage);`}
 />
 
+<Snippet step="42" language="jsx"
+    code={`displayedRows`}
+/>
+
 <Snippet step="43" language="jsx"
     code={`{tableResults.results.length > 0 && (
+
 )}`}
 />
 
@@ -226,7 +231,7 @@ return () => {
 />
 
 <Snippet step="54" language="jsx"
-    code={`<const dropdownButtonStyle = {
+    code={`const dropdownButtonStyle = {
     width: '170px',
     textAlign: 'left',
     display: 'flex',
@@ -265,7 +270,6 @@ import Menu from '@splunk/react-ui/Menu';`}
 
 <Snippet step="58" language="jsx"
     code={`,
-labelStyle,
 dropdownButtonStyle,
 menuItemStyle,
 arrowStyle`}
@@ -291,16 +295,16 @@ const handleMenuItemClick = (label) => {
     code={`// ===== Dropdown Search =====
 useEffect(() => {
     setLoadingDropdown(true);
+
     const dropdownSearch = SearchJob.create({
         search: \`| inputlookup purchasesByCountry | fields Country\`,
-    ...SEARCH_TIME_RANGE
+        ...SEARCH_TIME_RANGE
     });
 
     const subscription = dropdownSearch.getResults().subscribe({
         next: (results) => {
             if (results && results.results && results.fields) {
-                const countries = results.results.map(result =>
-                result.Country || 'Unknown');
+                const countries = results.results.map(result => result.Country || 'Unknown');
                 setDropdownOptions(['All Countries', ...countries]);
             } else {
                 setDropdownOptions(['All Countries']);
@@ -308,8 +312,7 @@ useEffect(() => {
             setLoadingDropdown(false);
         },
         error: (err) => {
-            console.error("Error fetching data:", err, "with countryToken:",
-            countryToken || "Not provided");
+            console.error("Error fetching data:", err, "with countryToken:", countryToken || "Not provided");
             setDropdownOptions(['All Countries']);
             setTotalSystemCount(0);
             setLoadingDropdown(false);
@@ -337,12 +340,11 @@ useEffect(() => {
                 <span style={arrowStyle}></span>
             </Button>
     }>
-    <Menu style={{ width: 270 }}>
-        {dropdownOptions.map((country, index) => (
-            <Menu.Item key={index} onClick={() => handleMenuItemClick(country)}
-            style={menuItemStyle}>{country}</Menu.Item>
-        ))}
-    </Menu>
+        <Menu style={{ width: 270 }}>
+            {dropdownOptions.map((country, index) => (
+                <Menu.Item key={index} onClick={() => handleMenuItemClick(country)} style={menuItemStyle}>{country}</Menu.Item>
+            ))}
+        </Menu>
     </Dropdown>
 )}
 <p />`}
