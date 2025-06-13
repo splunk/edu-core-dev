@@ -26,7 +26,16 @@ export default Menu;`}
     code={`'@splunk/menu': path.resolve(__dirname, '../menu/src/Menu.jsx'),`}
 />
 
-<Snippet step="12" language="jsx"
+<Snippet step="11" language="bash"
+    code={`yarn run build
+yarn run start`}
+/>
+
+<Snippet step="12" language="bash"
+    code={`/opt/splunk/bin/splunk restart`}
+/>
+
+<Snippet step="14" language="jsx"
     code={`import styled from 'styled-components';
 import { variables, mixins } from '@splunk/themes';
 
@@ -51,18 +60,18 @@ export {
 };`}
 />
 
-<Snippet step="15" language="jsx"
+<Snippet step="17" language="jsx"
     code={`import TabLayout from '@splunk/react-ui/TabLayout';
 import House from '@splunk/react-icons/House';
 import Table from '@splunk/react-icons/Table';
 import Ship from '@splunk/react-icons/Ship';`}
 />
 
-<Snippet step="16" language="jsx"
+<Snippet step="18" language="jsx"
     code={`, StyledSidebar`}
 />
 
-<Snippet step="17" language="jsx"
+<Snippet step="19" language="jsx"
     code={`<StyledSidebar>
 	<TabLayout defaultActivePanelId="overview" layout="vertical">
 		<TabLayout.Panel label="Overview" panelId="overview" icon={<House />}>
@@ -78,7 +87,7 @@ import Ship from '@splunk/react-icons/Ship';`}
 </StyledSidebar>`}
 />
 
-<Snippet step="21" language="jsx"
+<Snippet step="23" language="jsx"
     code={`const sectionTitle = {
 	fontSize: '24px',
 	fontWeight: 'bold',
@@ -89,16 +98,17 @@ import Ship from '@splunk/react-icons/Ship';`}
 , sectionTitle`}
 />
 
-<Snippet step="24" language="jsx"
+<Snippet step="26" language="jsx"
     code={`import Menu from '@splunk/menu';`}
 />
 
-<Snippet step="26" language="jsx"
-    code={`<h1 style={sectionTitle}>Buttercup Coffee Supply Chain</h1>`}
+<Snippet step="27" language="jsx"
+    code={`, sectionTitle`}
 />
 
-<Snippet step="27" language="jsx"
-    code={`<Menu />
+<Snippet step="31" language="jsx"
+    code={`<h1 style={sectionTitle}>Buttercup Coffee Supply Chain</h1>
+<Menu />
 
 
 {
@@ -106,16 +116,16 @@ import Ship from '@splunk/react-icons/Ship';`}
 },`}
 />
 
-<Snippet step="31" language="jsx"
+<Snippet step="35" language="jsx"
 	code={`import Overview from '@splunk/overview';
 import Inventory from '@splunk/inventory';`}
 />
 
-<Snippet step="32" language="jsx"
+<Snippet step="36" language="jsx"
     code={`<Overview />`}
 />
 
-<Snippet step="33" language="jsx"
+<Snippet step="37" language="jsx"
     code={`<Inventory />`}
 />
 

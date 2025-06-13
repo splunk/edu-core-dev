@@ -20,7 +20,7 @@ cd ~/code`}
 
 <Snippet step="12" language="json"
     code={`,
-"link:app": "lerna run link:app"`}
+"link:app": "lerna run link:app --scope @splunk/buttercup-coffee"`}
 />
 
 <Snippet step="20" language="bash"
@@ -41,7 +41,6 @@ yarn run setup`}
 <Snippet step="26" language="bash"
     code={`cd ~/code
 export SPLUNK_HOME=/opt/splunk
-cd packages/buttercup-coffee
 yarn run link:app`}
 />
 

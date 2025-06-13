@@ -141,16 +141,16 @@ useEffect(() => {
 />
 
 <Snippet step="21" language="jsx"
-    code={`	const transformDataForMap = (results) => {
-		if (!results?.results?.length || !results?.fields?.length) {
-			return {
-				fields: [],
-				columns: []
-			};
-		}
+    code={`const transformDataForMap = (results) => {
+	if (!results?.results?.length || !results?.fields?.length) {
+		return {
+			fields: [],
+			columns: []
+		};
+	}
 
-		const fieldNames = results.fields.map(field => field.name);
-		const columns = fieldNames.map(fieldName => {
+	const fieldNames = results.fields.map(field => field.name);
+	const columns = fieldNames.map(fieldName => {
 		const field = results.fields.find(f => f.name === fieldName);
 		return results.results.map(row => {
 			const value = row[fieldName];
@@ -190,6 +190,7 @@ const valueField = transformedData.fields?.find(f =>
     code={`{/* ===== Map ===== */}
 <h1 style={sectionTitle}>Shipments</h1>
 <div style={vizContainer}>
+
 </div>`}
 />
 
@@ -262,11 +263,20 @@ const valueField = transformedData.fields?.find(f =>
     code={`'@splunk/shipping': path.resolve(__dirname, '../shipping/src/Shipping.jsx'),`}
 />
 
-<Snippet step="31" language="jsx"
+<Snippet step="30" language="bash"
+    code={`yarn run build
+yarn run start`}
+/>
+
+<Snippet step="31" language="bash"
+    code={`/opt/splunk/bin/splunk restart`}
+/>
+
+<Snippet step="33" language="jsx"
     code={`import Shipping from '@splunk/shipping';`}
 />
 
-<Snippet step="32" language="jsx"
+<Snippet step="34" language="jsx"
     code={`<Shipping />`}
 />
 

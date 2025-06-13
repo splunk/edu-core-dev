@@ -26,16 +26,16 @@ colStyle,
 columnRowStyles,`}
 />
 
-<Snippet step="7" language="jsx"
+<Snippet step="8" language="jsx"
     code={`import ColumnLayout from '@splunk/react-ui/ColumnLayout';
 import SingleValue from "@splunk/visualizations/SingleValue";`}
 />
 
-<Snippet step="8" language="jsx"
+<Snippet step="9" language="jsx"
     code={`colStyle, headingStyle, columnRowStyles, singleValueStyles`}
 />
 
-<Snippet step="9" language="jsx"
+<Snippet step="10" language="jsx"
     code={`const [KiloBags, setKiloBags] = useState(0);
 const [KilosPurchased, setKilosPurchased] = useState(0);
 const [ShippingCosts, setShippingCosts] = useState(0);
@@ -44,7 +44,7 @@ const [loadingKilosPurchased, setLoadingKilosPurchased] = useState(true);
 const [loadingShippingCosts, setLoadingShippingCosts] = useState(true);`}
 />
 
-<Snippet step="10" language="jsx"
+<Snippet step="11" language="jsx"
     code={`// ==== Single Value 1 Search - Kilos Purchased ====
 useEffect(() => {
 	const sv1Search = SearchJob.create({
@@ -75,7 +75,7 @@ useEffect(() => {
 }, []);`}
 />
 
-<Snippet step="11" language="jsx"
+<Snippet step="12" language="jsx"
     code={`// ==== Single Value 2 Search – Total Bags ====
 useEffect(() => {
 	const sv2Search = SearchJob.create({
@@ -105,7 +105,7 @@ useEffect(() => {
 }, []);`}
 />
 
-<Snippet step="12" language="jsx"
+<Snippet step="13" language="jsx"
     code={`// ==== Single Value 3 Search – Shipping Costs ====
 useEffect(() => {
 	const sv3Search = SearchJob.create({
@@ -140,13 +140,13 @@ useEffect(() => {
 }, []);`}
 />
 
-<Snippet step="13" language="jsx"
+<Snippet step="14" language="jsx"
     code={`<ColumnLayout gutter={8}>
 	<ColumnLayout.Row style={columnRowStyles}>
 		<ColumnLayout.Column span={4} style={colStyle}>`}
 />
 
-<Snippet step="14" language="jsx"
+<Snippet step="15" language="jsx"
     code={`	{/* ===== SV 1 Viz Total Kilos Purchased ===== */}
 	<p style={labelStyle}>Kilos Purchased</p>
 	<SingleValue
@@ -179,7 +179,7 @@ useEffect(() => {
 </ColumnLayout.Column>`}
 />
 
-<Snippet step="15" language="jsx"
+<Snippet step="16" language="jsx"
     code={`<ColumnLayout.Column span={4} style={colStyle}>
 {/* ===== SV 2 Viz Total Bags Shipped ===== */}
 	<p style={labelStyle}>Total Bags (70kg) Shipped</p>
@@ -210,7 +210,7 @@ useEffect(() => {
 </ColumnLayout.Column>`}
 />
 
-<Snippet step="16" language="jsx"
+<Snippet step="17" language="jsx"
     code={`	<ColumnLayout.Column span={4} style={colStyle}>
 	{/* ===== SV 3 Viz Shipping Costs ===== */}
 		<p style={labelStyle}>Shipping Costs</p>
@@ -244,17 +244,17 @@ useEffect(() => {
 </ColumnLayout.Row>`}
 />
 
-<Snippet step="17" language="jsx"
+<Snippet step="18" language="jsx"
     code={`<ColumnLayout.Row style={columnRowStyles}>
 	<ColumnLayout.Column span={6} style={colStyle}>`}
 />
 
-<Snippet step="19" language="jsx"
+<Snippet step="20" language="jsx"
     code={`</ColumnLayout.Column>
 <ColumnLayout.Column span={6} style={colStyle}>`}
 />
 
-<Snippet step="21" language="jsx"
+<Snippet step="22" language="jsx"
     code={`		</ColumnLayout.Column>
 	</ColumnLayout.Row>
 </ColumnLayout>`}

@@ -282,7 +282,7 @@ vizRowStyle,`}
 <Snippet step="44" language="jsx"
     code={`<div style={vizRowStyle}>
 
-<div>`}
+</div>`}
 />
 
 

@@ -76,11 +76,20 @@ export {
 <Inventory />`}
 />
 
-<Snippet step="20" language="jsx"
+<Snippet step="19" language="bash"
+    code={`yarn run build
+yarn run start`}
+/>
+
+<Snippet step="20" language="bash"
+    code={`/opt/splunk/bin/splunk restart`}
+/>
+
+<Snippet step="22" language="jsx"
     code={`, { useState, useEffect }`}
 />
 
-<Snippet step="21" language="jsx"
+<Snippet step="23" language="jsx"
     code={`// ==== SEARCHES ====
 // ==== Table Search ====
 useEffect(() => {
@@ -88,26 +97,26 @@ useEffect(() => {
 },[]);`}
 />
 
-<Snippet step="26" language="jsx"
+<Snippet step="28" language="jsx"
     code={`import Table from '@splunk/react-ui/Table';
 import SearchJob from '@splunk/search-job';
 import WaitSpinner from '@splunk/react-ui/WaitSpinner';`}
 />
 
-<Snippet step="27" language="jsx"
+<Snippet step="29" language="jsx"
     code={`, sectionTitle, vizContainer, labelStyle`}
 />
 
-<Snippet step="28" language="jsx"
+<Snippet step="30" language="jsx"
     code={`const SEARCH_TIME_RANGE = { earliest_time: "-7d@d", latest_time: "now" };`}
 />
 
-<Snippet step="29" language="jsx"
+<Snippet step="31" language="jsx"
     code={`const [tableResults, setTableResults] = useState({ fields: [], results: [] });
 const [loadingTable, setLoadingTable] = useState(true);`}
 />
 
-<Snippet step="30" language="jsx"
+<Snippet step="32" language="jsx"
     code={`setLoadingTable(true);
 const tableSearch = SearchJob.create({
     search: \`index=bccscm | table orderNo, Country, Roast, schedule, shipDate, deliveryDate, Amount, warehouse\`,
@@ -135,7 +144,7 @@ return () => {
 };`}
 />
 
-<Snippet step="31" language="jsx"
+<Snippet step="33" language="jsx"
     code={`{/* ===== Table ===== */}
 <div style={vizContainer}>
     {loadingTable ? (
@@ -167,43 +176,43 @@ return () => {
 </div>`}
 />
 
-<Snippet step="36" language="jsx"
+<Snippet step="38" language="jsx"
     code={`import Paginator from '@splunk/react-ui/Paginator';`}
 />
 
-<Snippet step="37" language="jsx"
+<Snippet step="39" language="jsx"
     code={`const [currentPage, setCurrentPage] = useState(1);`}
 />
 
-<Snippet step="38" language="jsx"
+<Snippet step="40" language="jsx"
     code={`const rowsPerPage = 11;`}
 />
 
-<Snippet step="39" language="jsx"
+<Snippet step="41" language="jsx"
     code={`const handlePageChange = (e, { page }) => {
     setCurrentPage(page);
 };`}
 />
 
-<Snippet step="40" language="jsx"
+<Snippet step="42" language="jsx"
     code={`const startIndex = (currentPage - 1) * rowsPerPage;`}
 />
 
-<Snippet step="41" language="jsx"
+<Snippet step="43" language="jsx"
     code={`const displayedRows = tableResults.results.slice(startIndex, startIndex + rowsPerPage);`}
 />
 
-<Snippet step="42" language="jsx"
+<Snippet step="44" language="jsx"
     code={`displayedRows`}
 />
 
-<Snippet step="43" language="jsx"
+<Snippet step="45" language="jsx"
     code={`{tableResults.results.length > 0 && (
 
 )}`}
 />
 
-<Snippet step="44" language="jsx"
+<Snippet step="46" language="jsx"
     code={`<Paginator
     current={currentPage}
     totalPages={Math.max(1, Math.ceil(tableResults.results.length / rowsPerPage))}
@@ -211,15 +220,15 @@ return () => {
 />`}
 />
 
-<Snippet step="48" language="jsx"
+<Snippet step="50" language="jsx"
     code={`<h1 style={sectionTitle}>Inventory</h1>`}
 />
 
-<Snippet step="49" language="jsx"
+<Snippet step="51" language="jsx"
     code={`<h2 style={labelStyle}>Coffee Shipments</h2>`}
 />
 
-<Snippet step="50" language="jsx"
+<Snippet step="52" language="jsx"
     code={`<Table.HeadCell>Order No.</Table.HeadCell>
 <Table.HeadCell>Country</Table.HeadCell>
 <Table.HeadCell>Roast</Table.HeadCell>
@@ -230,7 +239,7 @@ return () => {
 <Table.HeadCell>Warehouse</Table.HeadCell>`}
 />
 
-<Snippet step="54" language="jsx"
+<Snippet step="56" language="jsx"
     code={`const dropdownButtonStyle = {
     width: '170px',
     textAlign: 'left',
@@ -262,20 +271,20 @@ const menuItemStyle = {
 dropdownButtonStyle, arrowStyle, menuItemStyle`}
 />
 
-<Snippet step="57" language="jsx"
+<Snippet step="59" language="jsx"
     code={`import Dropdown from '@splunk/react-ui/Dropdown';
 import Button from '@splunk/react-ui/Button';
 import Menu from '@splunk/react-ui/Menu';`}
 />
 
-<Snippet step="58" language="jsx"
+<Snippet step="60" language="jsx"
     code={`,
 dropdownButtonStyle,
 menuItemStyle,
 arrowStyle`}
 />
 
-<Snippet step="60" language="jsx"
+<Snippet step="62" language="jsx"
     code={`const [countryToken, setCountryToken] = useState('*');
 const [displayCountry, setDisplayCountry] = useState('All Countries');
 const [dropdownOptions, setDropdownOptions] = useState(['All Countries']);
@@ -291,7 +300,7 @@ const handleMenuItemClick = (label) => {
 };`}
 />
 
-<Snippet step="61" language="jsx"
+<Snippet step="63" language="jsx"
     code={`// ===== Dropdown Search =====
 useEffect(() => {
     setLoadingDropdown(true);
@@ -327,7 +336,7 @@ useEffect(() => {
 }, [countryToken]);`}
 />
 
-<Snippet step="62" language="jsx"
+<Snippet step="64" language="jsx"
     code={`{/* ===== Dropdown Input ===== */}
 <p style={labelStyle}>Select a Country:</p>
 {loadingDropdown ? (
@@ -350,16 +359,16 @@ useEffect(() => {
 <p />`}
 />
 
-<Snippet step="63" language="jsx"
+<Snippet step="65" language="jsx"
     code={`| search Country="\${countryToken}"`}
 />
 
-<Snippet step="64" language="jsx"
+<Snippet step="66" language="jsx"
     code={`countryToken`}
 />
 
-<Snippet step="65" language="jsx"
-    code={`{displayCountry}`}
+<Snippet step="67" language="jsx"
+    code={`: {displayCountry}`}
 />
 
 
