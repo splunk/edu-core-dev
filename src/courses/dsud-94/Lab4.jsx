@@ -182,7 +182,7 @@ return () => {
     code={`import Paginator from '@splunk/react-ui/Paginator';`}
 />
 
-<Snippet step=40" language="jsx"
+<Snippet step="40" language="jsx"
     code={`const [currentPage, setCurrentPage] = useState(1);`}
 />
 
