@@ -16,6 +16,7 @@ import { StyledContainer } from './MenuStyles';
 const Menu = () => {
 	return (
 		<StyledContainer>
+                  Hello World!
 		</StyledContainer>
 	);
 };
@@ -42,11 +43,8 @@ import { variables, mixins } from '@splunk/themes';
 const StyledContainer = styled.div\`
 	\${mixins.reset('inline')};
 	display: flex;
+        flex-direction: column;
 	font-size: \${variables.fontSizeLarge};
-	margin-top: '6px';
-	margin-bottom: \${variables.spacingXXLarge};
-	margin-left: \${variables.spacingXXLarge};
-	margin-right: \${variables.spacingXXLarge};
 \`;
 
 const StyledSidebar = styled.div\`
@@ -90,10 +88,7 @@ import Ship from '@splunk/react-icons/Ship';`}
 <Snippet step="23" language="jsx"
     code={`const sectionTitle = {
 	fontSize: '24px',
-	fontWeight: 'bold',
-	marginBottom: '20px',
 };
-
 
 , sectionTitle`}
 />
@@ -106,7 +101,7 @@ import Ship from '@splunk/react-icons/Ship';`}
     code={`, sectionTitle`}
 />
 
-<Snippet step="31" language="jsx"
+<Snippet step="29" language="jsx"
     code={`<h1 style={sectionTitle}>Buttercup Coffee Supply Chain</h1>
 <Menu />
 
@@ -116,16 +111,16 @@ import Ship from '@splunk/react-icons/Ship';`}
 },`}
 />
 
-<Snippet step="35" language="jsx"
+<Snippet step="33" language="jsx"
 	code={`import Overview from '@splunk/overview';
 import Inventory from '@splunk/inventory';`}
 />
 
-<Snippet step="36" language="jsx"
+<Snippet step="34" language="jsx"
     code={`<Overview />`}
 />
 
-<Snippet step="37" language="jsx"
+<Snippet step="35" language="jsx"
     code={`<Inventory />`}
 />
 

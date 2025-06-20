@@ -6,7 +6,9 @@ function Lab3a() {
 
 
 <Snippet step="4" language="jsx"
-    code={`const colStyle = {
+    code={`height: 30 vw;
+    
+    const colStyle = {
 	border: '1px solid #d3d3d3',
 	padding: 10,
 	minHeight: 80,
@@ -32,7 +34,7 @@ import SingleValue from "@splunk/visualizations/SingleValue";`}
 />
 
 <Snippet step="9" language="jsx"
-    code={`colStyle, headingStyle, columnRowStyles, singleValueStyles`}
+    code={`colStyle, columnRowStyles`}
 />
 
 <Snippet step="10" language="jsx"
@@ -48,7 +50,7 @@ const [loadingShippingCosts, setLoadingShippingCosts] = useState(true);`}
     code={`// ==== Single Value 1 Search - Kilos Purchased ====
 useEffect(() => {
 	const sv1Search = SearchJob.create({
-		search: \`index=bccscm | stats sum(Amount) as KilosPurchased\`,
+		search: \`index=bccscm sourcetype=scm:logistics | stats sum(Amount) as KilosPurchased\`,
 		...SEARCH_TIME_RANGE,
 	});
 
@@ -56,36 +58,39 @@ useEffect(() => {
 		next: (results) => {
 			console.log("KilosPurchased data received:", results);
 			setKilosPurchased(Number(results?.results?.[0]?.KilosPurchased) || 0);
+   
 			if (results?.results?.length) {
-				setKilosSparklineData(
-					results.results.map((row) => Number(row.KilosPurchased) || 0)
-				);
-			}
-			setLoadingKilosPurchased(false);
-		},
-		error: (err) => {
-			console.error("Error fetching KilosPurchased results:", err);
-			setKilosPurchased(0);
-			setKilosSparklineData([]);
-			setLoadingKilosPurchased(false);
-		},
-	});
+   			setKilosPurchased(Number(latestDataPoint?.KilosPurchased) || 0);
+		       } else {
+			  setKiloBags(0);
+		       }
+		       setLoadingKilosPurchased(false);
+		   },
+		   error: (err) => {
+		      console.error("Error fetching KilosPurchased results:", err);
+		      setKilosPurchased(0);
+		      setLoadingKilosPurchased(false);
+		  },
+	      });
 	
-	return () => subscription.unsubscribe();
-}, []);`}
+	  return () => {
+		  subscription.unsubscribe();
+	      };
+	  }, []);`}
 />
 
 <Snippet step="12" language="jsx"
     code={`// ==== Single Value 2 Search – Total Bags ====
 useEffect(() => {
 	const sv2Search = SearchJob.create({
-		search: \`index=bccscm | stats sum(Amount) as KiloBags | eval KiloBags=round(KiloBags/70,2)\`,
+		search: \`index=bccscm sourcetype=scm:logistics | stats sum(Amount) as KiloBags | eval KiloBags=round(KiloBags/70,2)\`,
 		...SEARCH_TIME_RANGE,
 	});
 
 	const subscription = sv2Search.getResults().subscribe({
 		next: (results) => {
 			console.log("KiloBags data received:", results);
+   
 			if (results?.results?.length) {
 				const latestDataPoint = results.results[results.results.length - 1];
 				setKiloBags(Number(latestDataPoint?.KiloBags) || 0);
@@ -109,7 +114,7 @@ useEffect(() => {
     code={`// ==== Single Value 3 Search – Shipping Costs ====
 useEffect(() => {
 	const sv3Search = SearchJob.create({
-		search: \`index=bccscm | stats sum(shipCost) as ShippingCosts\`,
+		search: \`index=bccscm sourcetype=scm:logistics | stats sum(shipCost) as ShippingCosts\`,
 		...SEARCH_TIME_RANGE,
 	});
 
@@ -119,9 +124,6 @@ useEffect(() => {
 			if (results?.results?.length) {
 				const latestDataPoint = results.results[results.results.length - 1];
 				setShippingCosts(Number(latestDataPoint?.ShippingCosts) || 0);
-				setShippingSparklineData(
-					results.results.map((row) => Number(row.ShippingCosts) || 0)
-				);
 			} else {
 				setShippingCosts(0);
 				setShippingSparklineData([]);
@@ -131,7 +133,6 @@ useEffect(() => {
 		error: (err) => {
 			console.error("Error fetching Shipping Costs results:", err);
 			setShippingCosts(0);
-			setShippingSparklineData([]);
 			setLoadingShippingCosts(false);
 		},
 	});
@@ -143,12 +144,13 @@ useEffect(() => {
 <Snippet step="14" language="jsx"
     code={`<ColumnLayout gutter={8}>
 	<ColumnLayout.Row style={columnRowStyles}>
-		<ColumnLayout.Column span={4} style={colStyle}>`}
+	  <ColumnLayout.Column span={4} style={colStyle}>`}
 />
 
 <Snippet step="15" language="jsx"
-    code={`	{/* ===== SV 1 Viz Total Kilos Purchased ===== */}
+    code={`{/* ===== SV 1 Viz Total Kilos Purchased ===== */}
 	<p style={labelStyle}>Kilos Purchased</p>
+ 
 	<SingleValue
 		height={100}
 		context={{
@@ -181,6 +183,7 @@ useEffect(() => {
 
 <Snippet step="16" language="jsx"
     code={`<ColumnLayout.Column span={4} style={colStyle}>
+    
 {/* ===== SV 2 Viz Total Bags Shipped ===== */}
 	<p style={labelStyle}>Total Bags (70kg) Shipped</p>
 	<SingleValue
@@ -211,7 +214,8 @@ useEffect(() => {
 />
 
 <Snippet step="17" language="jsx"
-    code={`	<ColumnLayout.Column span={4} style={colStyle}>
+    code={`<ColumnLayout.Column span={4} style={colStyle}>
+    
 	{/* ===== SV 3 Viz Shipping Costs ===== */}
 		<p style={labelStyle}>Shipping Costs</p>
 		<SingleValue

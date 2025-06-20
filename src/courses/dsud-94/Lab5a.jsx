@@ -16,6 +16,7 @@ import { StyledContainer } from './ShippingStyles';
 const Shipping = () => {
 	return (
 		<StyledContainer>
+                  Hello World!
 		</StyledContainer>
 	);
 };
@@ -30,10 +31,7 @@ const StyledContainer = styled.div\`
 	\${mixins.reset('inline')};
 	display: block;
 	font-size: \${variables.fontSizeLarge};
-	margin-top: '6px';
-	margin-bottom: \${variables.spacingXXLarge};
-	margin-left: \${variables.spacingXXLarge};
-	margin-right: \${variables.spacingXXLarge};
+	margin: \${variables.spacingLarge};
 \`;
 
 const vizContainer = {
@@ -46,9 +44,7 @@ const vizContainer = {
 };
 
 const sectionTitle = {
-	fontSize: '22px',
-	marginBottom: '0px',
-	marginBottom: '20px',
+	fontSize: '24px',
 };
 
 export {
@@ -119,22 +115,31 @@ const [error, setError] = useState(null);`}
 
 <Snippet step="20" language="jsx"
     code={`// ==== SEARCH ====
+    
 // ==== Map Search ====
 useEffect(() => {
 	setLoadingMap(true);
 	setError(null);
 	
 	const mapSearch = SearchJob.create({
-		search: \`index=bccscm | eval location_info="Vendor: "+vendor+",
-			Roast: "+Roast+", shipDate: "+shipDate | geostats latfield=Latitude
-			longfield=Longitude sum(Amount) by location_info limit=10000\`,
+		search: \`index=bccscm sourcetype=scm:logistics vendor=* | eval shipDate=strftime(strptime(shipDate, "%Y-%m-%d"), "%Y-%m") | eval location_info="Vendor: "+vendor+",
+			Roast: "+Roast+", shipDate: "+shipDate | geostats latfield=vendorLatitude
+			longfield=vendorLongitude sum(Amount) by location_info\`,
 		...SEARCH_TIME_RANGE,
 	});
 
 	const subscription = mapSearch.getResults().subscribe({
-		next: (results) => { /* handle success */ },
-		error: (err) => { /* handle errors */ },
-	});
+		next: (results) => {
+		      console.log('Search results:', results); 
+		      setMapResults(results); 
+		      setLoadingMap(false); 
+		    },
+	       error: (err) => {
+		      console.error('Error fetching map results:', err); // Debug: log errors
+		      setError(err); 
+		      setLoadingMap(false); 
+	    },   
+	  });
 
 	return () => subscription.unsubscribe();
 }, []);`}
@@ -151,7 +156,7 @@ useEffect(() => {
 
 	const fieldNames = results.fields.map(field => field.name);
 	const columns = fieldNames.map(fieldName => {
-		const field = results.fields.find(f => f.name === fieldName);
+	const field = results.fields.find(f => f.name === fieldName);
 		return results.results.map(row => {
 			const value = row[fieldName];
 			if (field?.type === 'number' && !['lat', 'lon', 'Latitude', 'Longitude', '_geo'].includes(fieldName)) {
@@ -188,7 +193,9 @@ const valueField = transformedData.fields?.find(f =>
 
 <Snippet step="24" language="jsx"
     code={`{/* ===== Map ===== */}
+    
 <h1 style={sectionTitle}>Shipments</h1>
+
 <div style={vizContainer}>
 
 </div>`}
@@ -233,8 +240,7 @@ const valueField = transformedData.fields?.find(f =>
 				primary: {
 					requestParams: {
 						offset: 0,
-						count: 10000,
-						search: 'index=bccscm sourcetype=scm:logistics | geostats latfield=Latitude longfield=Longitude sum(Amount) by Roast'
+						search: 'index=bccscm sourcetype=scm:logistics vendor=* | eval shipDate=strftime(strptime(shipDate, "%Y-%m-%d"), "%Y-%m") | eval location_info="Vendor: "+vendor+", Roast: "+Roast+", shipDate: "+shipDate | geostats latfield=vendorLatitude longfield=vendorLongitude sum(Amount) by location_info'
 					},
 					data: {
 						fields: transformedData.fields || [],
@@ -256,23 +262,41 @@ const valueField = transformedData.fields?.find(f =>
 		)}
 	</>
 	)}
+ {error && (
+    <div>Error loading map data: {error.message || 'Unknown error occurred.'}</div>)}
 </MapContextProvider>`}
 />
 
 <Snippet step="28" language="js"
-    code={`'@splunk/shipping': path.resolve(__dirname, '../shipping/src/Shipping.jsx'),`}
+    code={`'@splunk/shipping': path.resolve(__dirname, '../shipping/src/Shipping.jsx'),
+    
+        , '.css'
+
+        module: {
+        rules: [
+            {
+                test: /\.css$/i, 
+                use: ['style-loader', 'css-loader'], 
+            },
+        ],
+    },`}
 />
 
 <Snippet step="30" language="bash"
+    code={`cd ~/code
+yarn add -W --dev style-loader css-loader`}
+/>
+
+<Snippet step="31" language="bash"
     code={`yarn run build
 yarn run start`}
 />
 
-<Snippet step="31" language="bash"
+<Snippet step="32" language="bash"
     code={`/opt/splunk/bin/splunk restart`}
 />
 
-<Snippet step="33" language="jsx"
+<Snippet step="34" language="jsx"
     code={`import Shipping from '@splunk/shipping';`}
 />
 

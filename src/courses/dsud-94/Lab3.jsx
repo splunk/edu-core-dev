@@ -6,43 +6,46 @@ function Lab3() {
 
 <Snippet step="2" language="bash"
     code={`cd ~/code
-yarn add @splunk/search-job -W
-yarn add @splunk/visualizations -W
-yarn add @splunk/visualization-context -W`}
+yarn add -W react@^18 react-dom@^18 @splunk/react-ui@^5 @splunk/themes@^1 styled-components@^5 @splunk/search-job@^3 @splunk/visualization-context@^27 @splunk/visualizations@^27`}
+/>
+
+<Snippet step="3" language="jsx"
+    code={`yarn run build
+    yarn run start`}
 />
 
 <Snippet step="4" language="jsx"
+    code={`/opt/splunk/bin/splunk restart`}
+/>
+
+<Snippet step="6" language="jsx"
     code={`import React from 'react';
 import { StyledContainer } from './OverviewStyles';
 const Overview = () => {
     return (
         <StyledContainer>
+          Hello World!
         </StyledContainer>
     );
 };
 export default Overview;`}
 />
 
-<Snippet step="7" language="jsx"
+<Snippet step="9" language="jsx"
     code={`import styled from 'styled-components';
 import { variables, mixins } from '@splunk/themes';
 
 const StyledContainer = styled.div\`
     \${mixins.reset('inline')};
     display: block;
-    width: '100%',
     font-size: \${variables.fontSizeLarge};
-    margin-top: '6px';
-    margin-bottom: \${variables.spacingXXLarge};
-    margin-left: \${variables.spacingXXLarge};
-    margin-right: \${variables.spacingXXLarge};
+    flex-direction: row;
+    margin: ${variables.spacingLarge};
     width: 80vw;
 \`;
 
 const sectionTitle = {
     fontSize: '24px',
-    fontWeight: 'bold',
-    marginBottom: '20px',
 };
 
 const vizContainer = {
@@ -69,44 +72,45 @@ export {
 };`}
 />
 
-<Snippet step="10" language="jsx"
+<Snippet step="12" language="jsx"
     code={`, { useState, useEffect }`}
 />
 
-<Snippet step="11" language="jsx"
+<Snippet step="13" language="jsx"
     code={`import SearchJob from '@splunk/search-job';`}
 />
 
-<Snippet step="12" language="jsx"
+<Snippet step="14" language="jsx"
     code={`, vizContainer, sectionTitle, labelStyle`}
 />
 
-<Snippet step="13" language="jsx"
+<Snippet step="15" language="jsx"
     code={`const SEARCH_TIME_RANGE = { earliest_time: "-24h@h", latest_time: "now" };`}
 />
 
-<Snippet step="14" language="jsx"
+<Snippet step="16" language="jsx"
     code={`// ==== SEARCHES ====
+    
 // ==== Column Chart Search ====
 useEffect(() => {
     console.log('hello')
 },[]);`}
 />
 
-<Snippet step="19" language="jsx"
+<Snippet step="21" language="jsx"
     code={`import Column from '@splunk/visualizations/Column';
 import WaitSpinner from '@splunk/react-ui/WaitSpinner';`}
 />
 
-<Snippet step="20" language="jsx"
+<Snippet step="22" language="jsx"
     code={`const [columnChartResults, setColumnChartResults] = useState({ fields: [], results: [] });
 const [loadingColumnChart, setLoadingColumnChart] = useState(true);`}
 />
 
-<Snippet step="21" language="jsx"
+<Snippet step="23" language="jsx"
     code={`setLoadingColumnChart(true);
 const columnChartSearch = SearchJob.create({
-    search: \`index=bccscm | chart sum(Amount) AS KilosPurchased by Country\`,
+    search: \`index=bccscm sourcetype=scm:logistics | chart sum(Amount) AS KilosPurchased by Country\`,
     ...SEARCH_TIME_RANGE
 });
 
@@ -136,10 +140,11 @@ return () => {
 };`}
 />
 
-<Snippet step="22" language="jsx"
+<Snippet step="24" language="jsx"
     code={`// ==== VISUALIZATIONS ====
 
 <h1 style={sectionTitle}>Overview</h1>
+
 {/* ===== Column Chart ===== */}
 <div style={vizContainer}>
     <h2 style={labelStyle}>Coffee Shipments</h2>
@@ -170,7 +175,7 @@ return () => {
 </div>`}
 />
 
-<Snippet step="25" language="js"
+<Snippet step="27" language="js"
     code={`resolve: {
     alias: {
         '@splunk/overview': path.resolve(__dirname, '../overview/src/Overview.jsx'),
@@ -180,25 +185,35 @@ return () => {
 />
 
 <Snippet step="29" language="jsx"
+    code={`yarn run build
+    yarn run start`}
+/>
+
+<Snippet step="30" language="jsx"
+    code={`/opt/splunk/bin/splunk restart`}
+/>
+
+<Snippet step="33" language="jsx"
     code={`const [barChartResults, setBarChartResults] = useState({ fields: [], results: [] });
 const [loadingBarChart, setLoadingBarChart] = useState(true);`}
 />
 
-<Snippet step="30" language="jsx"
+<Snippet step="34" language="jsx"
     code={`// ==== Bar Chart Search ====
+    
 useEffect(() => {
     console.log('hello')
 },[]);`}
 />
 
-<Snippet step="35" language="jsx"
+<Snippet step="39" language="jsx"
     code={`import Bar from '@splunk/visualizations/Bar';`}
 />
 
-<Snippet step="36" language="jsx"
+<Snippet step="40" language="jsx"
     code={`setLoadingBarChart(true);
 const barChartSearch = SearchJob.create({
-    search: \`index=bccscm | chart count(inventory) AS Inventory by warehouse, Roast\`,
+    search: \`index=bccscm sourcetype=scm:logistics | chart count(inventory) AS Inventory by warehouse, Roast\`,
     ...SEARCH_TIME_RANGE
 });
 
@@ -228,9 +243,11 @@ return () => {
 };`}
 />
 
-<Snippet step="37" language="jsx"
+<Snippet step="41" language="jsx"
     code={`{/* ===== Bar Chart ===== */}
+    
 <div style={vizContainer}>
+
     <h2 style={labelStyle}>Stock Available</h2>
     {loadingBarChart ? (
         <WaitSpinner size="medium" label="Loading bar chart data..." />
@@ -264,7 +281,7 @@ return () => {
 </div>`}
 />
 
-<Snippet step="40" language="jsx"
+<Snippet step="44" language="jsx"
     code={`const vizRowStyle = {
     display: 'flex',
     height: '100%',
@@ -275,11 +292,11 @@ return () => {
 vizRowStyle,`}
 />
 
-<Snippet step="43" language="jsx"
+<Snippet step="47" language="jsx"
     code={`, vizRowStyle`}
 />
 
-<Snippet step="44" language="jsx"
+<Snippet step="48" language="jsx"
     code={`<div style={vizRowStyle}>
 
 </div>`}

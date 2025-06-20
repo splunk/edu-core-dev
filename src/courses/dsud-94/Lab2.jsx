@@ -23,76 +23,68 @@ cd ~/code`}
 "link:app": "lerna run link:app --scope @splunk/buttercup-coffee"`}
 />
 
-<Snippet step="20" language="bash"
-    code={`cd ~/code
-yarn add @splunk/react-ui -W
-yarn add @splunk/themes -W`}
-/>
-
-<Snippet step="24" language="bash"
+<Snippet step="19" language="bash"
     code={`cd ~/code
 yarn run setup`}
 />
 
-<Snippet step="25" language="bash"
+<Snippet step="20" language="bash"
     code={`yarn run build`}
 />
 
-<Snippet step="26" language="bash"
+<Snippet step="21" language="bash"
     code={`cd ~/code
 export SPLUNK_HOME=/opt/splunk
 yarn run link:app`}
 />
 
-<Snippet step="27" language="bash"
+<Snippet step="22" language="bash"
     code={`ls -l /opt/splunk/etc/apps/buttercup-coffee`}
 />
 
-<Snippet step="28" language="bash"
+<Snippet step="23" language="bash"
     code={`cd ~/code
 yarn run start`}
 />
 
-<Snippet step="30" language="bash"
+<Snippet step="25" language="bash"
     code={`/opt/splunk/bin/splunk restart`}
 />
 
-<Snippet step="40" language="properties"
-    code={`[ui]
-label = Buttercup Coffee Company
+<Snippet step="30" language="bash"
+    code={`import layout from '@splunk/react-page/18';`}
+/>
 
-[launcher]
-author = <your name>
+<Snippet step="36" language="properties"
+    code={`label = Buttercup Coffee Company
 description = Supply Chain Management
 version = 1.0.0
-
-[install]
 is_configured = 0`}
 />
 
-<Snippet step="43" language="jsx"
+<Snippet step="39" language="jsx"
     code={`Buttercup Coffee Company`}
 />
 
-<Snippet step="45" language="bash"
+<Snippet step="41" language="bash"
     code={`/opt/splunk/bin/splunk restart`}
 />
 
-<Snippet step="51" language="bash"
+<Snippet step="47" language="bash"
     code={`cd ~/code/packages/buttercup-coffee/src/main/resources/splunk
 mkdir static
 cd static`}
 />
 
-<Snippet step="52" language="bash"
+<Snippet step="48" language="bash"
     code={`wget https://splunk.github.io/edu-core-dev/downloads/bccIcons.zip; unzip bccIcons.zip`}
 />
 
-<Snippet step="53" language="bash"
+<Snippet step="49" language="bash"
     code={`ll`}
 />
 
-<Snippet step="54" language="bash"
+<Snippet step="50" language="bash"
     code={`rm bccIcons.zip`}
 />
 
