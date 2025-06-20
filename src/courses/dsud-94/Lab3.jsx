@@ -40,7 +40,7 @@ const StyledContainer = styled.div\`
     display: block;
     font-size: \${variables.fontSizeLarge};
     flex-direction: row;
-    margin: ${variables.spacingLarge};
+    margin: \${variables.spacingLarge};
     width: 80vw;
 \`;
 
