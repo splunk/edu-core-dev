@@ -54,7 +54,7 @@ const [loadingShippingCosts, setLoadingShippingCosts] = useState(true);`}
         code={`// ==== Single Value 1 Search - Kilos Purchased ====
 useEffect(() => {
 	const sv1Search = SearchJob.create({
-		search: `index=bccscm sourcetype=scm:logistics | stats sum(Amount) as KilosPurchased`,
+		search: \`index=bccscm sourcetype=scm:logistics | stats sum(Amount) as KilosPurchased\`,
 		...SEARCH_TIME_RANGE,
 	});
 
@@ -90,7 +90,7 @@ useEffect(() => {
         code={`// ==== Single Value 2 Search – Total Bags ====
 useEffect(() => {
 	const sv2Search = SearchJob.create({
-		search: `index=bccscm sourcetype=scm:logistics | stats sum(Amount) as KiloBags | eval KiloBags=round(KiloBags/70,2)`,
+		search: \`index=bccscm sourcetype=scm:logistics | stats sum(Amount) as KiloBags | eval KiloBags=round(KiloBags/70,2)\`,
 		...SEARCH_TIME_RANGE,
 	});
 
@@ -123,7 +123,7 @@ useEffect(() => {
         code={`// ==== Single Value 3 Search – Shipping Costs ====
 useEffect(() => {
 	const sv3Search = SearchJob.create({
-		search: `index=bccscm sourcetype=scm:logistics | stats sum(shipCost) as ShippingCosts`,
+		search: \`index=bccscm sourcetype=scm:logistics | stats sum(shipCost) as ShippingCosts\`,
 		...SEARCH_TIME_RANGE,
 	});
 
