@@ -1,14 +1,14 @@
-import Snippet from './Snippet';
+import Snippet from "./Snippet";
 
 function Lab3a() {
-
-    return(<div style={{margin:50}}>
-
-
-<Snippet step="4" language="jsx"
-    code={`height: 30 vw;
+  return (
+    <div style={{ margin: 50 }}>
+      <Snippet
+        step="4"
+        language="jsx"
+        code={`height: 30 vw;
     
-    const colStyle = {
+const colStyle = {
 	border: '1px solid #d3d3d3',
 	padding: 10,
 	minHeight: 80,
@@ -26,28 +26,32 @@ const columnRowStyles = {
 
 colStyle,
 columnRowStyles,`}
-/>
+      />
 
-<Snippet step="8" language="jsx"
-    code={`import ColumnLayout from '@splunk/react-ui/ColumnLayout';
-import SingleValue from "@splunk/visualizations/SingleValue";`}
-/>
+      <Snippet
+        step="8"
+        language="jsx"
+        code={`import ColumnLayout from '@splunk/react-ui/ColumnLayout';
+import SingleValue from '@splunk/visualizations/SingleValue';`}
+      />
 
-<Snippet step="9" language="jsx"
-    code={`colStyle, columnRowStyles`}
-/>
+      <Snippet step="9" language="jsx" code={`colStyle, columnRowStyles`} />
 
-<Snippet step="10" language="jsx"
-    code={`const [KiloBags, setKiloBags] = useState(0);
+      <Snippet
+        step="10"
+        language="jsx"
+        code={`const [KiloBags, setKiloBags] = useState(0);
 const [KilosPurchased, setKilosPurchased] = useState(0);
 const [ShippingCosts, setShippingCosts] = useState(0);
 const [loadingKiloBags, setLoadingKiloBags] = useState(true);
 const [loadingKilosPurchased, setLoadingKilosPurchased] = useState(true);
 const [loadingShippingCosts, setLoadingShippingCosts] = useState(true);`}
-/>
+      />
 
-<Snippet step="11" language="jsx"
-    code={`// ==== Single Value 1 Search - Kilos Purchased ====
+      <Snippet
+        step="11"
+        language="jsx"
+        code={`// ==== Single Value 1 Search - Kilos Purchased ====
 useEffect(() => {
 	const sv1Search = SearchJob.create({
 		search: \`index=bccscm sourcetype=scm:logistics | stats sum(Amount) as KilosPurchased\`,
@@ -77,10 +81,12 @@ useEffect(() => {
 		  subscription.unsubscribe();
 	      };
 	  }, []);`}
-/>
+      />
 
-<Snippet step="12" language="jsx"
-    code={`// ==== Single Value 2 Search – Total Bags ====
+      <Snippet
+        step="12"
+        language="jsx"
+        code={`// ==== Single Value 2 Search – Total Bags ====
 useEffect(() => {
 	const sv2Search = SearchJob.create({
 		search: \`index=bccscm sourcetype=scm:logistics | stats sum(Amount) as KiloBags | eval KiloBags=round(KiloBags/70,2)\`,
@@ -108,10 +114,12 @@ useEffect(() => {
 
 	return () => subscription.unsubscribe();
 }, []);`}
-/>
+      />
 
-<Snippet step="13" language="jsx"
-    code={`// ==== Single Value 3 Search – Shipping Costs ====
+      <Snippet
+        step="13"
+        language="jsx"
+        code={`// ==== Single Value 3 Search – Shipping Costs ====
 useEffect(() => {
 	const sv3Search = SearchJob.create({
 		search: \`index=bccscm sourcetype=scm:logistics | stats sum(shipCost) as ShippingCosts\`,
@@ -139,16 +147,20 @@ useEffect(() => {
 	
 	return () => subscription.unsubscribe();
 }, []);`}
-/>
+      />
 
-<Snippet step="14" language="jsx"
-    code={`<ColumnLayout gutter={8}>
+      <Snippet
+        step="14"
+        language="jsx"
+        code={`<ColumnLayout gutter={8}>
 	<ColumnLayout.Row style={columnRowStyles}>
 	  <ColumnLayout.Column span={4} style={colStyle}>`}
-/>
+      />
 
-<Snippet step="15" language="jsx"
-    code={`{/* ===== SV 1 Viz Total Kilos Purchased ===== */}
+      <Snippet
+        step="15"
+        language="jsx"
+        code={`{/* ===== SV 1 Viz Total Kilos Purchased ===== */}
 	<p style={labelStyle}>Kilos Purchased</p>
  
 	<SingleValue
@@ -179,10 +191,12 @@ useEffect(() => {
 		style={{ height: '100px' }}
 	/>
 </ColumnLayout.Column>`}
-/>
+      />
 
-<Snippet step="16" language="jsx"
-    code={`<ColumnLayout.Column span={4} style={colStyle}>
+      <Snippet
+        step="16"
+        language="jsx"
+        code={`<ColumnLayout.Column span={4} style={colStyle}>
     
 {/* ===== SV 2 Viz Total Bags Shipped ===== */}
 	<p style={labelStyle}>Total Bags (70kg) Shipped</p>
@@ -211,10 +225,12 @@ useEffect(() => {
 		style={{ height: '100px' }}
 	/>
 </ColumnLayout.Column>`}
-/>
+      />
 
-<Snippet step="17" language="jsx"
-    code={`<ColumnLayout.Column span={4} style={colStyle}>
+      <Snippet
+        step="17"
+        language="jsx"
+        code={`<ColumnLayout.Column span={4} style={colStyle}>
     
 	{/* ===== SV 3 Viz Shipping Costs ===== */}
 		<p style={labelStyle}>Shipping Costs</p>
@@ -246,29 +262,31 @@ useEffect(() => {
 		/>
 	</ColumnLayout.Column>
 </ColumnLayout.Row>`}
-/>
+      />
 
-<Snippet step="18" language="jsx"
-    code={`<ColumnLayout.Row style={columnRowStyles}>
+      <Snippet
+        step="18"
+        language="jsx"
+        code={`<ColumnLayout.Row style={columnRowStyles}>
 	<ColumnLayout.Column span={6} style={colStyle}>`}
-/>
+      />
 
-<Snippet step="20" language="jsx"
-    code={`</ColumnLayout.Column>
+      <Snippet
+        step="20"
+        language="jsx"
+        code={`</ColumnLayout.Column>
 <ColumnLayout.Column span={6} style={colStyle}>`}
-/>
+      />
 
-<Snippet step="22" language="jsx"
-    code={`		</ColumnLayout.Column>
+      <Snippet
+        step="22"
+        language="jsx"
+        code={`		</ColumnLayout.Column>
 	</ColumnLayout.Row>
 </ColumnLayout>`}
-/>
-
-
-
-
-    </div>);
-
+      />
+    </div>
+  );
 }
 
 export default Lab3a;

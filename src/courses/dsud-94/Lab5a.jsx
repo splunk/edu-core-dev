@@ -1,30 +1,36 @@
-import Snippet from './Snippet';
+import Snippet from "./Snippet";
 
 function Lab5a() {
-
-    return(<div style={{margin:50}}>
-
-
-<Snippet step="2" language="bash"
-    code={`cd ~/code
+  return (
+    <div style={{ margin: 50 }}>
+      <Snippet
+        step="2"
+        language="bash"
+        code={`cd ~/code
 splunk-create`}
-/>
+      />
 
-<Snippet step="6" language="jsx"
-    code={`import React from 'react';
+      <Snippet
+        step="6"
+        language="jsx"
+        code={`import React from 'react';
 import { StyledContainer } from './ShippingStyles';
+
 const Shipping = () => {
+
 	return (
 		<StyledContainer>
-                  Hello World!
+            Hello World!
 		</StyledContainer>
 	);
 };
 export default Shipping;`}
-/>
+      />
 
-<Snippet step="9" language="jsx"
-    code={`import styled from 'styled-components';
+      <Snippet
+        step="9"
+        language="jsx"
+        code={`import styled from 'styled-components';
 import { variables, mixins } from '@splunk/themes';
 
 const StyledContainer = styled.div\`
@@ -52,38 +58,48 @@ export {
 	vizContainer,
 	sectionTitle,
 };`}
-/>
+      />
 
-<Snippet step="12" language="jsx"
-    code={`, { useMemo, useState, useEffect }`}
-/>
+      <Snippet
+        step="12"
+        language="jsx"
+        code={`, { useMemo, useState, useEffect }`}
+      />
 
-<Snippet step="13" language="jsx"
-    code={`import Map from '@splunk/visualizations/Map';
+      <Snippet
+        step="13"
+        language="jsx"
+        code={`import Map from '@splunk/visualizations/Map';
 import { MapContextProvider, testTileConfig } from '@splunk/visualization-context/MapContext';`}
-/>
+      />
 
-<Snippet step="14" language="jsx"
-    code={`import SearchJob from '@splunk/search-job';
+      <Snippet
+        step="14"
+        language="jsx"
+        code={`import SearchJob from '@splunk/search-job';
 import WaitSpinner from '@splunk/react-ui/WaitSpinner';`}
-/>
+      />
 
-<Snippet step="15" language="jsx"
-    code={`, vizContainer, sectionTitle`}
-/>
+      <Snippet step="15" language="jsx" code={`, vizContainer, sectionTitle`} />
 
-<Snippet step="16" language="jsx"
-    code={`const SEARCH_TIME_RANGE = { earliest_time: "-24h@h", latest_time: "now" };`}
-/>
+      <Snippet
+        step="16"
+        language="jsx"
+        code={`const SEARCH_TIME_RANGE = { earliest_time: "-24h@h", latest_time: "now" };`}
+      />
 
-<Snippet step="17" language="jsx"
-    code={`const [mapResults, setMapResults] = useState({ fields: [], results: [] });
+      <Snippet
+        step="17"
+        language="jsx"
+        code={`const [mapResults, setMapResults] = useState({ fields: [], results: [] });
 const [loadingMap, setLoadingMap] = useState(true);
 const [error, setError] = useState(null);`}
-/>
+      />
 
-<Snippet step="18" language="jsx"
-    code={`const safeConfig = useMemo(() => {
+      <Snippet
+        step="18"
+        language="jsx"
+        code={`const safeConfig = useMemo(() => {
 	const defaultConfig = {
 		url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 		attribution: '© OpenStreetMap contributors',
@@ -104,17 +120,21 @@ const [error, setError] = useState(null);`}
 	}
 	return config;
 }, []);`}
-/>
+      />
 
-<Snippet step="19" language="jsx"
-    code={`const contextValue = useMemo(() => ({
+      <Snippet
+        step="19"
+        language="jsx"
+        code={`const contextValue = useMemo(() => ({
 	defaultTileConfig: safeConfig,
 	...(testTileConfig && { testTileConfig })
 }), [safeConfig]);`}
-/>
+      />
 
-<Snippet step="20" language="jsx"
-    code={`// ==== SEARCH ====
+      <Snippet
+        step="20"
+        language="jsx"
+        code={`// ==== SEARCH ====
     
 // ==== Map Search ====
 useEffect(() => {
@@ -143,10 +163,12 @@ useEffect(() => {
 
 	return () => subscription.unsubscribe();
 }, []);`}
-/>
+      />
 
-<Snippet step="21" language="jsx"
-    code={`const transformDataForMap = (results) => {
+      <Snippet
+        step="21"
+        language="jsx"
+        code={`const transformDataForMap = (results) => {
 	if (!results?.results?.length || !results?.fields?.length) {
 		return {
 			fields: [],
@@ -171,14 +193,18 @@ useEffect(() => {
 		columns: columns
 	};
 };`}
-/>
+      />
 
-<Snippet step="22" language="jsx"
-    code={`const transformedData = useMemo(() => transformDataForMap(mapResults), [mapResults]);`}
-/>
+      <Snippet
+        step="22"
+        language="jsx"
+        code={`const transformedData = useMemo(() => transformDataForMap(mapResults), [mapResults]);`}
+      />
 
-<Snippet step="23" language="jsx"
-    code={`const latField = transformedData.fields?.find(f =>
+      <Snippet
+        step="23"
+        language="jsx"
+        code={`const latField = transformedData.fields?.find(f =>
 	['Latitude', 'lat', '_lat'].includes(f.name)
 )?.name || 'Latitude';
 
@@ -189,20 +215,24 @@ const lonField = transformedData.fields?.find(f =>
 const valueField = transformedData.fields?.find(f =>
 	f.type === 'number' && !['lat', 'lon', 'Latitude', 'Longitude', '_lat', '_lon', '_geo'].includes(f.name)
 )?.name || 'count';`}
-/>
+      />
 
-<Snippet step="24" language="jsx"
-    code={`{/* ===== Map ===== */}
+      <Snippet
+        step="24"
+        language="jsx"
+        code={`{/* ===== Map ===== */}
     
 <h1 style={sectionTitle}>Shipments</h1>
 
 <div style={vizContainer}>
 
 </div>`}
-/>
+      />
 
-<Snippet step="25" language="jsx"
-    code={`<MapContextProvider value={contextValue}>
+      <Snippet
+        step="25"
+        language="jsx"
+        code={`<MapContextProvider value={contextValue}>
 	{loadingMap ? (
 		<WaitSpinner size="medium" label="Loading map data..." />
 	) : (
@@ -223,7 +253,6 @@ const valueField = transformedData.fields?.find(f =>
 						opacity: 0.8,
 						tooltip: {
 							enabled: true,
-							format: customTooltipContent,
 							excludeFields: ['lat', 'lon', 'Latitude', 'Longitude', '_lat', '_lon']
 						}
 					},
@@ -232,7 +261,6 @@ const valueField = transformedData.fields?.find(f =>
 				showTooltip: true,
 				tooltip: {
 					enabled: true,
-					format: customTooltipContent,
 					excludeFields: ['lat', 'lon', 'Latitude', 'Longitude', '_lat', '_lon']
 				}
 			}}
@@ -265,10 +293,12 @@ const valueField = transformedData.fields?.find(f =>
  {error && (
     <div>Error loading map data: {error.message || 'Unknown error occurred.'}</div>)}
 </MapContextProvider>`}
-/>
+      />
 
-<Snippet step="28" language="js"
-    code={`'@splunk/shipping': path.resolve(__dirname, '../shipping/src/Shipping.jsx'),
+      <Snippet
+        step="28"
+        language="js"
+        code={`'@splunk/shipping': path.resolve(__dirname, '../shipping/src/Shipping.jsx'),
     
         , '.css'
 
@@ -280,33 +310,37 @@ const valueField = transformedData.fields?.find(f =>
             },
         ],
     },`}
-/>
+      />
 
-<Snippet step="30" language="bash"
-    code={`cd ~/code
+      <Snippet
+        step="30"
+        language="bash"
+        code={`cd ~/code
 yarn add -W --dev style-loader css-loader`}
-/>
+      />
 
-<Snippet step="31" language="bash"
-    code={`yarn run build
+      <Snippet
+        step="31"
+        language="bash"
+        code={`yarn run build
 yarn run start`}
-/>
+      />
 
-<Snippet step="32" language="bash"
-    code={`/opt/splunk/bin/splunk restart`}
-/>
+      <Snippet
+        step="32"
+        language="bash"
+        code={`/opt/splunk/bin/splunk restart`}
+      />
 
-<Snippet step="34" language="jsx"
-    code={`import Shipping from '@splunk/shipping';`}
-/>
+      <Snippet
+        step="34"
+        language="jsx"
+        code={`import Shipping from '@splunk/shipping';`}
+      />
 
-<Snippet step="34" language="jsx"
-    code={`<Shipping />`}
-/>
-
-
-    </div>);
-
+      <Snippet step="34" language="jsx" code={`<Shipping />`} />
+    </div>
+  );
 }
 
 export default Lab5a;
