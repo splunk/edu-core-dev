@@ -11,7 +11,7 @@ yarn add -W react@^18 react-dom@^18 @splunk/react-ui@^5 @splunk/themes@^1 styled
 
 <Snippet step="3" language="jsx"
     code={`yarn run build
-    yarn run start`}
+yarn run start`}
 />
 
 <Snippet step="4" language="jsx"
@@ -21,7 +21,9 @@ yarn add -W react@^18 react-dom@^18 @splunk/react-ui@^5 @splunk/themes@^1 styled
 <Snippet step="6" language="jsx"
     code={`import React from 'react';
 import { StyledContainer } from './OverviewStyles';
+
 const Overview = () => {
+
     return (
         <StyledContainer>
           Hello World!
@@ -98,16 +100,11 @@ useEffect(() => {
 />
 
 <Snippet step="21" language="jsx"
-    code={`import Column from '@splunk/visualizations/Column';
-import WaitSpinner from '@splunk/react-ui/WaitSpinner';`}
-/>
-
-<Snippet step="22" language="jsx"
     code={`const [columnChartResults, setColumnChartResults] = useState({ fields: [], results: [] });
 const [loadingColumnChart, setLoadingColumnChart] = useState(true);`}
 />
 
-<Snippet step="23" language="jsx"
+<Snippet step="22" language="jsx"
     code={`setLoadingColumnChart(true);
 const columnChartSearch = SearchJob.create({
     search: \`index=bccscm sourcetype=scm:logistics | chart sum(Amount) AS KilosPurchased by Country\`,
@@ -138,6 +135,11 @@ return () => {
         columnChartSearch.cancel();
     }
 };`}
+/>
+
+<Snippet step="23" language="jsx"
+    code={`import Column from '@splunk/visualizations/Column';
+import WaitSpinner from '@splunk/react-ui/WaitSpinner';`}
 />
 
 <Snippet step="24" language="jsx"
@@ -186,7 +188,7 @@ return () => {
 
 <Snippet step="29" language="jsx"
     code={`yarn run build
-    yarn run start`}
+yarn run start`}
 />
 
 <Snippet step="30" language="jsx"

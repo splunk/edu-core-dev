@@ -56,7 +56,8 @@ yarn run start`}
 />
 
 <Snippet step="36" language="properties"
-    code={`label = Buttercup Coffee Company
+    code={`version = 1.0.0
+label = Buttercup Coffee Company
 description = Supply Chain Management
 version = 1.0.0
 is_configured = 0`}

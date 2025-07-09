@@ -16,7 +16,7 @@ import { StyledContainer } from './MenuStyles';
 const Menu = () => {
 	return (
 		<StyledContainer>
-                  Hello World!
+             Hello World!
 		</StyledContainer>
 	);
 };
