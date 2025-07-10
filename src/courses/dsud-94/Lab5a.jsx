@@ -142,8 +142,7 @@ useEffect(() => {
 	setError(null);
 	
 	const mapSearch = SearchJob.create({
-		search: \`index=bccscm sourcetype=scm:logistics vendor=* | eval shipDate=strftime(strptime(shipDate, "%Y-%m-%d"), "%Y-%m") | eval location_info="Vendor: "+vendor+",
-			Roast: "+Roast+", shipDate: "+shipDate | geostats latfield=vendorLatitude
+		search: \`index=bccscm sourcetype=logistics vendor=* | eval shipDate=strftime(strptime(shipDate, "%Y-%m-%d"), "%Y-%m") | eval location_info=Roast+", shipDate: "+shipDate | geostats latfield=vendorLatitude
 			longfield=vendorLongitude sum(Amount) by location_info\`,
 		...SEARCH_TIME_RANGE,
 	});
@@ -155,7 +154,7 @@ useEffect(() => {
 		      setLoadingMap(false); 
 		    },
 	       error: (err) => {
-		      console.error('Error fetching map results:', err); // Debug: log errors
+		      console.error('Error fetching map results:', err); 
 		      setError(err); 
 		      setLoadingMap(false); 
 	    },   
@@ -268,7 +267,7 @@ const valueField = transformedData.fields?.find(f =>
 				primary: {
 					requestParams: {
 						offset: 0,
-						search: 'index=bccscm sourcetype=scm:logistics vendor=* | eval shipDate=strftime(strptime(shipDate, "%Y-%m-%d"), "%Y-%m") | eval location_info="Vendor: "+vendor+", Roast: "+Roast+", shipDate: "+shipDate | geostats latfield=vendorLatitude longfield=vendorLongitude sum(Amount) by location_info'
+						search: 'index=bccscm sourcetype=logistics vendor=* | eval shipDate=strftime(strptime(shipDate, "%Y-%m-%d"), "%Y-%m") | eval location_info=Roast+", shipDate: "+shipDate | geostats latfield=vendorLatitude longfield=vendorLongitude sum(Amount) by location_info'
 					},
 					data: {
 						fields: transformedData.fields || [],
