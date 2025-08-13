@@ -90,7 +90,7 @@ import Ship from '@splunk/react-icons/Ship';`}
 	fontSize: '24px',
 };
 
-, sectionTitle`}
+export { StyledContainer, sectionTitle };`}
 />
 
 <Snippet step="26" language="jsx"
@@ -104,8 +104,7 @@ import Ship from '@splunk/react-icons/Ship';`}
 <Snippet step="29" language="jsx"
     code={`<h1 style={sectionTitle}>Buttercup Coffee Supply Chain</h1>
 <Menu />
-
-
+</StyledContainer>,
 {
 	hideAppBar: true,
 },`}

@@ -30,6 +30,7 @@ const Overview = () => {
         </StyledContainer>
     );
 };
+
 export default Overview;`}
 />
 
@@ -145,6 +146,9 @@ import WaitSpinner from '@splunk/react-ui/WaitSpinner';`}
 <Snippet step="24" language="jsx"
     code={`// ==== VISUALIZATIONS ====
 
+return (
+<StyledContainer>
+
 <h1 style={sectionTitle}>Overview</h1>
 
 {/* ===== Column Chart ===== */}
@@ -177,30 +181,21 @@ import WaitSpinner from '@splunk/react-ui/WaitSpinner';`}
 </div>`}
 />
 
-<Snippet step="27" language="js"
-    code={`resolve: {
-    alias: {
-        '@splunk/overview': path.resolve(__dirname, '../overview/src/Overview.jsx'),
-    },
-    extensions: ['.js', '.jsx'],
-},`}
-/>
-
-<Snippet step="29" language="jsx"
+<Snippet step="26" language="jsx"
     code={`yarn run build
 yarn run start`}
 />
 
-<Snippet step="30" language="jsx"
+<Snippet step="27" language="jsx"
     code={`/opt/splunk/bin/splunk restart`}
 />
 
-<Snippet step="33" language="jsx"
+<Snippet step="30" language="jsx"
     code={`const [barChartResults, setBarChartResults] = useState({ fields: [], results: [] });
 const [loadingBarChart, setLoadingBarChart] = useState(true);`}
 />
 
-<Snippet step="34" language="jsx"
+<Snippet step="31" language="jsx"
     code={`// ==== Bar Chart Search ====
     
 useEffect(() => {
@@ -208,11 +203,11 @@ useEffect(() => {
 },[]);`}
 />
 
-<Snippet step="39" language="jsx"
+<Snippet step="36" language="jsx"
     code={`import Bar from '@splunk/visualizations/Bar';`}
 />
 
-<Snippet step="40" language="jsx"
+<Snippet step="37" language="jsx"
     code={`setLoadingBarChart(true);
 const barChartSearch = SearchJob.create({
     search: \`index=bccscm sourcetype=scm:logistics | chart count(inventory) AS Inventory by warehouse, Roast\`,
@@ -245,7 +240,7 @@ return () => {
 };`}
 />
 
-<Snippet step="41" language="jsx"
+<Snippet step="38" language="jsx"
     code={`{/* ===== Bar Chart ===== */}
     
 <div style={vizContainer}>
@@ -283,7 +278,7 @@ return () => {
 </div>`}
 />
 
-<Snippet step="44" language="jsx"
+<Snippet step="41" language="jsx"
     code={`const vizRowStyle = {
     display: 'flex',
     height: '100%',
@@ -291,14 +286,20 @@ return () => {
     marginBottom: '20px',
 };
 
-vizRowStyle,`}
+export {
+   StyledContainer,
+   sectionTitle,
+   vizContainer,
+   labelStyle,
+   vizRowStyle,
+};`}
 />
 
-<Snippet step="47" language="jsx"
+<Snippet step="44" language="jsx"
     code={`, vizRowStyle`}
 />
 
-<Snippet step="48" language="jsx"
+<Snippet step="45" language="jsx"
     code={`<div style={vizRowStyle}>
 
 </div>`}

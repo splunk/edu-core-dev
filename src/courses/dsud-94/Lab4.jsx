@@ -26,11 +26,19 @@ export default Inventory;`}
 
 <Snippet step="10" language="bash"
     code={`import Inventory from '@splunk/inventory';
+    
 <Inventory />`}
 />
 
 <Snippet step="13" language="bash"
-    code={`'@splunk/inventory': path.resolve(__dirname, '../inventory/src/Inventory.jsx'),`}
+    code={`resolve: {
+    alias: {
+        '@splunk/overview': path.resolve(__dirname, '../overview/src/Overview.jsx'),
+        '@splunk/inventory': path.resolve(__dirname, '../inventory/src/Inventory.jsx'),
+    },
+    extensions: ['.js', '.jsx'],
+    },
+`}
 />
 
 <Snippet step="15" language="bash"
@@ -92,7 +100,9 @@ export {
     
 // ==== Table Search ====
 useEffect(() => {
+
     console.log('hello')
+    
 },[]);`}
 />
 
@@ -148,6 +158,9 @@ return () => {
 
 <Snippet step="33" language="jsx"
     code={`// ==== VISUALIZATIONS ====
+    
+    return (
+      <StyledContainer>
     
     {/* ===== Table ===== */}
 <div style={vizContainer}>
@@ -271,8 +284,7 @@ const menuItemStyle = {
     textAlign: 'left'
 };
 
-
-, dropdownButtonStyle, arrowStyle, menuItemStyle`}
+export { StyledContainer, sectionTitle, vizContainer, labelStyle, dropdownButtonStyle, arrowStyle, menuItemStyle };`}
 />
 
 <Snippet step="59" language="jsx"

@@ -7,7 +7,12 @@ function Lab3a() {
         step="4"
         language="jsx"
         code={`height: 30 vw;
-    
+
+
+const sectionTitle = {
+    fontSize: '24px',
+};
+		
 const colStyle = {
 	border: '1px solid #d3d3d3',
 	padding: 10,
@@ -23,9 +28,14 @@ const columnRowStyles = {
 	height: '150px',
 };
 
-
-colStyle,
-columnRowStyles,`}
+export {
+   StyledContainer,
+   sectionTitle,
+   labelStyle,
+   colStyle,
+   columnRowStyles,
+};
+`}
       />
 
       <Snippet
@@ -43,6 +53,7 @@ import SingleValue from '@splunk/visualizations/SingleValue';`}
         code={`const [KiloBags, setKiloBags] = useState(0);
 const [KilosPurchased, setKilosPurchased] = useState(0);
 const [ShippingCosts, setShippingCosts] = useState(0);
+
 const [loadingKiloBags, setLoadingKiloBags] = useState(true);
 const [loadingKilosPurchased, setLoadingKilosPurchased] = useState(true);
 const [loadingShippingCosts, setLoadingShippingCosts] = useState(true);`}
