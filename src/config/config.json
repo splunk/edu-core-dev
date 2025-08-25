@@ -28,7 +28,7 @@
                 {"id": 5, "name": "Add a Menu"},
                 {"id": "5a", "name": "(Challenge) Create a Map"}
             ],
-            "downloads": ["SUIDash_LabSolutionFiles.zip", "bccIcons.zip"]
+            "downloads": ["SUIDash_LabSolutionFiles.tgz", "bccIcons.zip"]
         }
     ],
     "next": [

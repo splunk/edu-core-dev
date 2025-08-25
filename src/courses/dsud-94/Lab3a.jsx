@@ -8,7 +8,6 @@ function Lab3a() {
         language="jsx"
         code={`height: 30 vw;
 
-
 const sectionTitle = {
     fontSize: '24px',
 };
