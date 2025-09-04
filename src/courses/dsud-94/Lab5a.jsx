@@ -142,7 +142,7 @@ useEffect(() => {
 	setError(null);
 	
 	const mapSearch = SearchJob.create({
-		search: \`index=bccscm sourcetype=logistics vendor=* | eval shipDate=strftime(strptime(shipDate, "%Y-%m-%d"), "%Y-%m") | eval location_info=Roast+", shipDate: "+shipDate | geostats latfield=vendorLatitude
+		search: \`index=bccscm sourcetype=scm:logistics vendor=* | eval shipDate=strftime(strptime(shipDate, "%Y-%m-%d"), "%Y-%m") | eval location_info=Roast+", shipDate: "+shipDate | geostats latfield=vendorLatitude
 			longfield=vendorLongitude sum(Amount) by location_info\`,
 		...SEARCH_TIME_RANGE,
 	});

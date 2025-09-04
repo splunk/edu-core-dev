@@ -13,7 +13,7 @@ cd ~/code`}
       <Snippet
         step="4"
         language="bash"
-        code={`npm install -g @splunk/create`}
+        code={`npm install -g @splunk/create@9.0.1`}
       />
 
       <Snippet step="5" language="bash" code={`splunk-create`} />
@@ -94,7 +94,7 @@ cd static`}
       />
 
       <Snippet
-        step="44"
+        step="45"
         language="bash"
         code={`wget https://splunk.github.io/edu-core-dev/downloads/bccIcons.zip; unzip bccIcons.zip`}
       />

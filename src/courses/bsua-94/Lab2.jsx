@@ -11,7 +11,7 @@ cd ~/code`}
 />
 
 <Snippet step="3" language="bash"
-    code={`npm install -g @splunk/create`}
+    code={`npm install -g @splunk/create@9.0.1`}
 />
 
 <Snippet step="4" language="bash"

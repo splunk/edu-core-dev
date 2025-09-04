@@ -377,7 +377,7 @@ useEffect(() => {
     }>
         <Menu>
             {dropdownOptions.map((country, index) => (
-                <Menu.Item key={index} onClick={() => handleMenuItemClick(country)} style={{ width: 150px }}>{country}</Menu.Item>
+                <Menu.Item key={index} onClick={() => handleMenuItemClick(country)} style={{ width: '150px' }}>{country}</Menu.Item>
             ))}
         </Menu>
     </Dropdown>
