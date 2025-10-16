@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, useEffect } from 'react';
 
 import Avatar from '@mui/material/Avatar';
 import AppBar from '@mui/material/AppBar';
@@ -14,13 +14,19 @@ import Typography from '@mui/material/Typography';
 import config from './config/config.json';
 
 function App() {
-  const [course, setCourse] = React.useState({"id":0,"downloads":[],"labs":[],"solutions":[]});
-  //const [labs, setLabs] = React.useState([]);
-  const [lab, setLab] = React.useState({"id":0});
-  const [component, setComponent] = React.useState(null);
+  const [courses, setCourses] = useState(config.courses);
+  const [course, setCourse] = useState({"id":0,"downloads":[],"labs":[],"solutions":[]});
+  //const [labs, setLabs] = useState([]);
+  const [lab, setLab] = useState({"id":0});
+  const [component, setComponent] = useState(null);
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("type") === "next") { setCourses(config.next) };
+  },[]);
 
   const handleChangeCourse = (event) => {
-    const c = config.courses.find(({id}) => id === event.target.value);
+    const c = courses.find(({id}) => id === event.target.value);
     //console.log(c);
     setCourse(c);
     setLab({"id":0});
@@ -54,7 +60,7 @@ function App() {
         <FormControl fullWidth>
           <Typography variant="button">Course</Typography>
           <Select value={course.id} onChange={handleChangeCourse}>
-            {config.courses.map((curCourse,i) => (
+            {courses.map((curCourse,i) => (
               <MenuItem key={'c'+curCourse.id} value={curCourse.id}>{curCourse.name}</MenuItem>
             ))}
           </Select>
