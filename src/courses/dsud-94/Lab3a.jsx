@@ -7,34 +7,25 @@ function Lab3a() {
         step="4"
         language="jsx"
         code={`height: 30 vw;
+    
+				const colStyle = {
+					border: '1px solid #d3d3d3',
+					padding: 10,
+					minHeight: 80,
+				};
 
-const sectionTitle = {
-    fontSize: '24px',
-};
-		
-const colStyle = {
-	border: '1px solid #d3d3d3',
-	padding: 10,
-	minHeight: 80,
-};
+				const columnRowStyles = {
+					display: 'flex',
+					alignItems: 'flex-start',
+					justifyContent: 'space-between',
+					flexWrap: 'nowrap',
+					display: 'flex',
+					height: '150px',
+				};
 
-const columnRowStyles = {
-	display: 'flex',
-	alignItems: 'flex-start',
-	justifyContent: 'space-between',
-	flexWrap: 'nowrap',
-	display: 'flex',
-	height: '150px',
-};
 
-export {
-   StyledContainer,
-   sectionTitle,
-   labelStyle,
-   colStyle,
-   columnRowStyles,
-};
-`}
+				colStyle,
+				columnRowStyles,`}
       />
 
       <Snippet
@@ -52,7 +43,7 @@ import SingleValue from '@splunk/visualizations/SingleValue';`}
         code={`const [KiloBags, setKiloBags] = useState(0);
 const [KilosPurchased, setKilosPurchased] = useState(0);
 const [ShippingCosts, setShippingCosts] = useState(0);
-
+        
 const [loadingKiloBags, setLoadingKiloBags] = useState(true);
 const [loadingKilosPurchased, setLoadingKilosPurchased] = useState(true);
 const [loadingShippingCosts, setLoadingShippingCosts] = useState(true);`}

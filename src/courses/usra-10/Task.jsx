@@ -28,7 +28,7 @@ function Snippet({num, code, language}) {
         <Divider/>
         <Stack direction="row" spacing={5} sx={{margin:3}}>
             <Avatar variant='rounded' sx={{ bgcolor:'#f56a00', margin: 2, width:'100px' }}>Task {num}</Avatar>
-            <pre style={{width:'80%'}}><code className={`language-${language}`}>{code}</code></pre>
+            <pre style={{width:'90%'}}><code className={`language-${language}`}>{code}</code></pre>
         </Stack>
     </div>);
 
