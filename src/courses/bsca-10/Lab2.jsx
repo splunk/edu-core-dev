@@ -4,6 +4,13 @@ function Lab2() {
 
     return(<div style={{margin:50}}>       
 
+
+<Snippet step="13" language="python"
+    code={`    "disable_existing_loggers": True,
+    
+            "level": DEFAULT_LOGGING_LEVEL,`}
+/>
+
 <Snippet step="38" language="bash"
     code={`cd ~/
 wget https://docs.splunk.com/images/Tutorial/tutorialdata.zip

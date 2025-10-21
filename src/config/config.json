@@ -60,7 +60,7 @@
                 {"id": 6, "name": "Create Custom Workflow Actions"},
                 {"id": 7, "name": "Validate and Package an App"}
             ],
-            "downloads": ["BuildingSplunkClassicApps92_LabFiles.zip", "bcg_icons.zip"]
+            "downloads": ["BuildingSplunkClassicApps10_LabFiles.zip", "bcg_icons.zip", "SplunkTutorialData.zip"]
         },
         {
             "id": 5,
