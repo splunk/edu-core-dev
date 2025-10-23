@@ -28,6 +28,10 @@ curl -k -X POST $URL \\
 echo ""`}
 />
 
+<Snippet step="20" language="splunk-spl"
+    code={`first_name, last_name, contact, city, office, rating, notes, _user, _key`}
+/>
+
 <Snippet step="23" language="splunk-spl"
     code={`| inputlookup employees_lookup | sort last_name`}
 />

@@ -76,7 +76,7 @@
                 {"id": 7, "name": "Ingest Data with the HTTP Event Collector"},
                 {"id": 8, "name": "Integrate the Key-Value Store"}
             ],
-            "downloads": ["UsingSplunkRestApi92_LabFiles.zip"]
+            "downloads": ["UsingSplunkRestApi_LabFiles.zip"]
         }
     ]
 }

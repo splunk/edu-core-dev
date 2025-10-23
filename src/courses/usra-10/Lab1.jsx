@@ -14,15 +14,15 @@ function Lab1() {
 
 <Snippet step="16" language="bash"
     code={`cd ~/
-wget https://splunk.github.io/edu-core-dev/downloads/filename.zip
-unzip filename.zip
+wget https://splunk.github.io/edu-core-dev/downloads/UsingSplunkRestApi_LabFiles.zip
+unzip UsingSplunkRestApi_LabFiles.zip
 `}
 />
 
 <Task num="7" language="bash"
     code={`#!/bin/bash
 
-URL="https://localhost:8089/services/authentication/users""
+URL="https://localhost:8089/services/authentication/users"
 
 curl -k -X GET -u restclient:splunk3du $URL`}
 />
