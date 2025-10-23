@@ -13,11 +13,10 @@ function Lab2() {
 
 <Snippet step="38" language="bash"
     code={`cd ~/
-wget https://docs.splunk.com/images/Tutorial/tutorialdata.zip
-wget https://docs.splunk.com/images/d/db/Prices.csv.zip
-unzip tutorialdata.zip
-unzip Prices.csv.zip -x "__MACOSX/*"
-ll`}
+wget https://splunk.github.io/edu-core-dev/downloads/SplunkTutorialData.zip
+unzip SplunkTutorialData.zip
+ll
+`}
 />
 
 <Snippet step="39" language="bash"
