@@ -44,7 +44,7 @@ ll /opt/splunk/etc/apps`}
 />
 
 <Snippet step="32" language="bash"
-    code={`./splunk/ restart`}
+    code={`./splunk restart`}
 />
 
 <Snippet step="34" language="bash"

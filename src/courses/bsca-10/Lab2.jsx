@@ -43,7 +43,7 @@ sourcetype = sales:web`}
 
 <Snippet step="47" language="properties"
 // eslint-disable-next-line
-    code={`token.0.token = \d{2}/\w{3}/\d{4}:\d{2}:\d{2}:\d{2}
+    code={`token.0.token = \\d{2}/\\w{3}/\\d{4}:\\d{2}:\\d{2}:\\d{2}
 token.0.replacementType = replaytimestamp
 token.0.replacement = %d/%b/%Y:%H:%M:%S`}
 />
