@@ -31,14 +31,33 @@ import { getDefaultFetchInit } from '@splunk/splunk-utils/fetch';`}
         setData(await response.json());`}
 />
 
+<Snippet step="22" language="uri"
+    code={`data/indexes`}
+/>
+
 <Snippet step="24" language="json"
-    code={`{"name": "myindex"}`}
+    code={`data/indexes
+    
+{"name": "myindex"}`}
+/>
+
+<Snippet step="27" language="uri"
+    code={`data/indexes/myindex`}
+/>
+
+<Snippet step="35" language="uri"
+    code={`storage/passwords`}
 />
 
 <Snippet step="37" language="json"
-    code={`{"name": "myuser", "password": "mypassword", "realm": "myrealm"}`}
+    code={`storage/passwords
+    
+{"name": "myuser", "password": "mypassword", "realm": "myrealm"}`}
 />
 
+<Snippet step="43" language="uri"
+    code={`storage/passwords/myrealm:myuser`}
+/>
 
     </div>);
 

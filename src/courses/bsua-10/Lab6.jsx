@@ -91,6 +91,16 @@ icon={<MinusCircle/>}`}
     code={`            <Message type={message.type}>{message.text}</Message>`}
 />
 
+<Snippet step="47" language="uri"
+    code={`data/indexes`}
+/>
+
+<Snippet step="49" language="uri"
+    code={`data/indexes/buttercup`}
+/>
+
+
+
     </div>);
 
 }

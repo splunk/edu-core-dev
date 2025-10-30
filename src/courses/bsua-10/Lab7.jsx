@@ -25,8 +25,7 @@ sudo pip install splunk-appinspect`}
 />
 
 <Snippet step="21" language="bash"
-    code={`cd /opt/splunk/etc/apps
-splunk-appinspect inspect my-splunk-app --mode precert`}
+    code={`splunk-appinspect inspect my-splunk-app --mode precert`}
 />
 
 <Snippet step="26" language="bash"
