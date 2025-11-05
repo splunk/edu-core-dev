@@ -44,11 +44,11 @@ curl -k -X POST $URL \\
 echo ""`}
 />
 
-<Snippet step="46" language="splunk-spl"
+<Snippet step="44" language="splunk-spl"
     code={`index=hec_lab source=single`}
 />
 
-<Snippet step="47" language="splunk-spl"
+<Snippet step="45" language="splunk-spl"
     code={`index=hec_lab source=multi`}
 />
 

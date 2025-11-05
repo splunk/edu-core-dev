@@ -1,6 +1,21 @@
 {
     "courses": [
         {
+            "id": 4,
+            "dir": "bsca-10",
+            "name": "Building Splunk Classic Apps (10.0)",
+            "labs": [
+                {"id": 1, "name": "Getting Started"},
+                {"id": 2, "name": "Generate Sample Data"},
+                {"id": 3, "name": "Create an App"},
+                {"id": 4, "name": "Create a Custom Search Command"},
+                {"id": 5, "name": "Create a Custom REST Endpoint"},
+                {"id": 6, "name": "Create Custom Workflow Actions"},
+                {"id": 7, "name": "Validate and Package an App"}
+            ],
+            "downloads": ["BuildingSplunkClassicApps10_LabFiles.zip", "bcg_icons.zip", "SplunkTutorialData.zip"]
+        },
+        {
             "id": 1,
             "dir": "bsua-94",
             "name": "Building Splunk UI Apps (9.4)",
@@ -15,23 +30,6 @@
             ],
             "downloads": ["BuildingSplunkUIApps94_LabFiles.zip", "bcg_icons.zip"]
         },
-        {
-            "id": 2,
-            "dir": "dsud-94",
-            "name": "Developing Splunk UI Dashboards (9.4)",
-            "labs": [
-                {"id": 1, "name": "Set Up Your Environment"},
-                {"id": 2, "name": "Create an App with a Component"},
-                {"id": 3, "name": "Add Visualizations"},
-                {"id": "3a", "name": "(Challenge) Add a Column Layout"},
-                {"id": 4, "name": "Add a Table and Dropdown Input"},
-                {"id": 5, "name": "Add a Menu"},
-                {"id": "5a", "name": "(Challenge) Create a Map"}
-            ],
-            "downloads": ["SUIDash_LabSolutionFiles.tgz", "bccIcons.zip"]
-        }
-    ],
-    "next": [
         {
             "id": 3,
             "dir": "bsua-10",
@@ -48,19 +46,19 @@
             "downloads": ["BuildingSplunkUIApps10_LabFiles.zip", "bcg_icons.zip"]
         },
         {
-            "id": 4,
-            "dir": "bsca-10",
-            "name": "Building Splunk Classic Apps (10.0)",
+            "id": 2,
+            "dir": "dsud-94",
+            "name": "Developing Splunk UI Dashboards (9.4)",
             "labs": [
-                {"id": 1, "name": "Getting Started"},
-                {"id": 2, "name": "Generate Sample Data"},
-                {"id": 3, "name": "Create an App"},
-                {"id": 4, "name": "Create a Custom Search Command"},
-                {"id": 5, "name": "Create a Custom REST Endpoint"},
-                {"id": 6, "name": "Create Custom Workflow Actions"},
-                {"id": 7, "name": "Validate and Package an App"}
+                {"id": 1, "name": "Set Up Your Environment"},
+                {"id": 2, "name": "Create an App with a Component"},
+                {"id": 3, "name": "Add Visualizations"},
+                {"id": "3a", "name": "(Challenge) Add a Column Layout"},
+                {"id": 4, "name": "Add a Table and Dropdown Input"},
+                {"id": 5, "name": "Add a Menu"},
+                {"id": "5a", "name": "(Challenge) Create a Map"}
             ],
-            "downloads": ["BuildingSplunkClassicApps10_LabFiles.zip", "bcg_icons.zip", "SplunkTutorialData.zip"]
+            "downloads": ["SUIDash_LabSolutionFiles.tgz", "bccIcons.zip"]
         },
         {
             "id": 5,
@@ -78,5 +76,8 @@
             ],
             "downloads": ["UsingSplunkRestApi_LabFiles.zip"]
         }
+    ],
+    "next": [
+        
     ]
 }

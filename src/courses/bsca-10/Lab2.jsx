@@ -6,9 +6,7 @@ function Lab2() {
 
 
 <Snippet step="13" language="python"
-    code={`    "disable_existing_loggers": True,
-    
-            "level": DEFAULT_LOGGING_LEVEL,`}
+    code={`    "disable_existing_loggers": True,`}
 />
 
 <Snippet step="38" language="bash"

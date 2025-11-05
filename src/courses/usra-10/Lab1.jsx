@@ -40,7 +40,7 @@ curl -k -X POST $URL \\
 <Task num="9" language="bash"
     code={`#!/bin/bash
 
-URL="URL="https://localhost:8089/services/authentication/users"
+URL="https://localhost:8089/services/authentication/users"
 
 curl -k -X GET $URL \\
 -H "Authorization: Splunk {sessionKey}"`}
@@ -49,7 +49,7 @@ curl -k -X GET $URL \\
 <Task num="12" language="bash"
     code={`#!/bin/bash
 
-URL="URL="https://localhost:8089/services/authentication/users"
+URL="https://localhost:8089/services/authentication/users"
 
 curl -k -X GET $URL \\
 -H "Authorization: Bearer $TOKEN"`}
