@@ -1,7 +1,7 @@
 {
     "courses": [
         {
-            "id": 4,
+            "id": 1,
             "dir": "bsca-10",
             "name": "Building Splunk Classic Apps (10.0)",
             "labs": [
@@ -16,19 +16,19 @@
             "downloads": ["BuildingSplunkClassicApps10_LabFiles.zip", "bcg_icons.zip", "SplunkTutorialData.zip"]
         },
         {
-            "id": 1,
-            "dir": "bsua-94",
-            "name": "Building Splunk UI Apps (9.4)",
+            "id": 2,
+            "dir": "bsspl2-102",
+            "name": "Building Splunk SPL2 Apps (10.2)",
             "labs": [
                 {"id": 1, "name": "Getting Started"},
-                {"id": 2, "name": "Create a Splunk UI App"},
-                {"id": 3, "name": "Implement Splunk React UI"},
-                {"id": 4, "name": "Use the Splunk REST API"},
-                {"id": 5, "name": "Use Splunk UI Search Utilities"},
-                {"id": 6, "name": "Enhance the User Interface"},
-                {"id": 7, "name": "Validate and Package an App"}
+                {"id": 2, "name": "Set Up the Splunk Extension for VS Code"},
+                {"id": 3, "name": "Create an SPL2 App"},
+                {"id": 4, "name": "Develop SPL2 Modules"},
+                {"id": 5, "name": "Validate and Package an SPL2 App"},
+                {"id": 6, "name": "Update an SPL2 App"},
+                {"id": 7, "name": "Explore the SPL2 REST API"}
             ],
-            "downloads": ["BuildingSplunkUIApps94_LabFiles.zip", "bcg_icons.zip"]
+            "downloads": ["BuildingSPL2Apps_LabFiles.zip"]
         },
         {
             "id": 3,
@@ -46,7 +46,7 @@
             "downloads": ["BuildingSplunkUIApps10_LabFiles.zip", "bcg_icons.zip"]
         },
         {
-            "id": 2,
+            "id": 4,
             "dir": "dsud-94",
             "name": "Developing Splunk UI Dashboards (9.4)",
             "labs": [
@@ -79,5 +79,22 @@
     ],
     "next": [
         
+    ],
+    "archive": [
+        {
+            "id": 10,
+            "dir": "bsua-94",
+            "name": "Building Splunk UI Apps (9.4)",
+            "labs": [
+                {"id": 1, "name": "Getting Started"},
+                {"id": 2, "name": "Create a Splunk UI App"},
+                {"id": 3, "name": "Implement Splunk React UI"},
+                {"id": 4, "name": "Use the Splunk REST API"},
+                {"id": 5, "name": "Use Splunk UI Search Utilities"},
+                {"id": 6, "name": "Enhance the User Interface"},
+                {"id": 7, "name": "Validate and Package an App"}
+            ],
+            "downloads": ["BuildingSplunkUIApps94_LabFiles.zip", "bcg_icons.zip"]
+        }
     ]
 }
