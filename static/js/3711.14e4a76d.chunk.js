@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkedu_core_dev=self.webpackChunkedu_core_dev||[]).push([[3711],{3711:(e,n,s)=>{s.r(n),s.d(n,{default:()=>d});var c=s(579);const d=function(){return(0,c.jsx)("div",{style:{margin:50},children:"This lab exercise does not contain any CLI commands or code snippets."})}}}]);
+//# sourceMappingURL=3711.14e4a76d.chunk.js.map
