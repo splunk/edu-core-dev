@@ -33,8 +33,8 @@ function Lab4() {
 
 <Snippet step="28" language="splunk-spl"
     code={`$view_sales = from bcg_sales 
-    | where productId != "NULL"
-    | where action != "NULL"
+    | where isnotnull(productId)
+    | where isnotnull(action)
 `}
 />
 

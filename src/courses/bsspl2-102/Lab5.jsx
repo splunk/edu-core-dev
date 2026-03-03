@@ -4,7 +4,6 @@ function Lab5() {
 
     return(<div style={{margin:50}}>
 
-
 <Snippet step="7" language="bash"
     code={`cd /opt/splunk/bin
 ./splunk download-spl2-modules app buttercup -dest default -auth {splunk-id}
@@ -14,7 +13,7 @@ function Lab5() {
 <Snippet step="12" language="makefile"
     code={`Buttercup Games vX.Y.Z
 MM YYYY
-The SPL2 modules in this app can be installed and used as follows:`}
+The SPL2 modules in this app can be installed and used as follows`}
 />
 
 <Snippet step="14" language="bash"
@@ -41,7 +40,7 @@ sudo pip install splunk-appinspect`}
 />
 
 <Snippet step="36" language="bash"
-    code={`./splunk install app /opt/splunk/share/splunk/app_packages/buttercup.spl  -auth {splunk-id}:{password}`}
+    code={`./splunk install app /opt/splunk/share/splunk/app_packages/buttercup.spl -auth {splunk-id}:{password}`}
 />
 
 
