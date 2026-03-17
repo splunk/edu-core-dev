@@ -60,8 +60,23 @@
             ],
             "downloads": ["SUIDash_LabSolutionFiles.tgz", "bccIcons.zip"]
         },
-        {
+         {
             "id": 5,
+            "dir": "dsud-102",
+            "name": "Developing Splunk UI Dashboards (10.2)",
+            "labs": [
+                {"id": 1, "name": "Set Up Your Environment"},
+                {"id": 2, "name": "Create a Splunk UI App"},
+                {"id": 3, "name": "Add Visualizations"},
+                {"id": "3a", "name": "Challenge - Add Single Value Visualizations"},
+                {"id": 4, "name": "Add a Table and Dropdown Input"},
+                {"id": 5, "name": "Add a Menu"},
+                {"id": "5a", "name": "Challenge - Create a Map"}
+            ],
+            "downloads": ["SUI_Dashboards10_LabSolutionFiles.zip", "bccIconsLogos.zip"]
+        },
+        {
+            "id": 6,
             "dir": "usra-10",
             "name": "Using the Splunk REST API (10.0)",
             "labs": [
