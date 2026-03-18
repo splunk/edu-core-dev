@@ -52,17 +52,6 @@ const [loadingShippingCosts, setLoadingShippingCosts] = useState(true);`}
   };
  }, []);`} />
 
-      <Snippet
-        step="10"
-        language="jsx"
-        code={`const [KiloBags, setKiloBags] = useState(0);
-const [KilosPurchased, setKilosPurchased] = useState(0);
-const [ShippingCosts, setShippingCosts] = useState(0);
-        
-const [loadingKiloBags, setLoadingKiloBags] = useState(true);
-const [loadingKilosPurchased, setLoadingKilosPurchased] = useState(true);
-const [loadingShippingCosts, setLoadingShippingCosts] = useState(true);`}
-      />
 
       <Snippet
         step="6"

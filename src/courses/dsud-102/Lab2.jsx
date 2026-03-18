@@ -6,8 +6,7 @@ function Lab2() {
 
 
 <Snippet step="2" language="bash"
-    code={`mkdir ~/code
-cd ~/code`}
+    code={`cd ~/code`}
 />
 
 <Snippet step="3" language="bash"
@@ -39,7 +38,7 @@ cat <<EOF > tsconfig.base.json
         ],
         "paths": {
             "@types/*": [
-              "packages/types/*"
+            "packages/types/*"
             ],
             "@shared-types/*": [
                 "packages/types/*"
@@ -115,7 +114,7 @@ cat <<EOF > tsconfig.json
 EOF`}
 />
 
-<Snippet step="17" language="jsx"
+<Snippet step="19" language="jsx"
     code={`cd ~/code/packages/types
 cat <<EOF > declarations.d.ts
 
@@ -239,17 +238,16 @@ is_configured = 0`}
 />
 
 
-<Snippet step="33" language="jsx"
-    code={`Buttercup Coffee Company`}
+<Snippet step="36" language="bash"
+    code={`mkdir -p ~/code/packages/buttercup-coffee/src/main/resources/splunk/static`}
 />
 
-<Snippet step="36" language="bash"
-    code={`mkdir -p ~/code/packages/buttercup-coffee/src/main/resources/splunk/static
-cd ~/code/packages/buttercup-coffee/src/main/resources/splunk/static
-`}
-/>
 
 <Snippet step="37" language="bash"
+    code={`cd ~/code/packages/buttercup-coffee/src/main/resources/splunk/static`}
+/>
+
+<Snippet step="38" language="bash"
     code={`wget https://splunk.github.io/edu-core-dev/downloads/bccIconsLogos.zip; unzip bccIconsLogos.zip`}
 />
 

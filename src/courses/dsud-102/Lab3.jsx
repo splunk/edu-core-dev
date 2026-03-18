@@ -52,7 +52,7 @@ getUserTheme()
                 <StyledContainer>
                     <Overview />
                 </StyledContainer>
-            </>`}
+            </>,`}
 />
 
 <Snippet step="10" language="jsx"
@@ -146,7 +146,7 @@ export const containerStyle = styled.div\`
 
 <Snippet step="15" language="bash"
     code={`yarn build
-    yarn start`}
+yarn start`}
 />
 
 <Snippet step="19" language="jsx"
@@ -196,15 +196,6 @@ type AnyRow = Record<string, unknown>;`}
 
 <Snippet step="23" language="jsx"
     code={`const SEARCH_TIME_RANGE = { earliest_time: "-24h@h", latest_time: "now" };`}
-/>
-
-<Snippet step="27" language="js"
-    code={`resolve: {
-    alias: {
-        '@splunk/overview': path.resolve(__dirname, '../overview/src/Overview.jsx'),
-    },
-    extensions: ['.js', '.jsx'],
-},`}
 />
 
 <Snippet step="24" language="jsx"
@@ -381,7 +372,8 @@ useEffect(() => {
 
 <Snippet step="42" language="jsx"
     code={`const barMeasureRef = useRef<HTMLDivElement | null>(null);
-    const [barWidth, setBarWidth] = useState(0);`}
+    const [barWidth, setBarWidth] = useState(0);
+    const safeBarWidth = Math.max(400, barWidth);`}
 />
 
 <Snippet step="43" language="jsx"

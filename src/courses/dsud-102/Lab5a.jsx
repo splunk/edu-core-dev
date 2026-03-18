@@ -91,7 +91,7 @@ export default Shipping;`}
         code={`import styled from 'styled-components';
 import { variables, mixins } from '@splunk/themes';
 
-export const StyledContainer = styled.div/\`
+export const StyledContainer = styled.div\`
         \${mixins.reset('inline')};
         display: block;
         font-size: \${variables.fontSizeLarge};
@@ -100,14 +100,14 @@ export const StyledContainer = styled.div/\`
         width: 80vw;
         padding-top: 0 !important;
         padding-left: 40px;
-/\`;
+\`;
 
-export const SectionTitle = styled.h2/\`
+export const SectionTitle = styled.h2\`
         font-size: 24px;
         margin: 10; 
-/\`;
+\`;
 
-export const VizContainer = styled.div/\`
+export const VizContainer = styled.div\`
         flex: 1;
         height: 100%;
         width: 100%;
@@ -115,7 +115,8 @@ export const VizContainer = styled.div/\`
         border-radius: 4px;
         padding: 10px;
         overflow-x: auto;
-/\`;`}
+\`;
+`}
       />
 
       <Snippet
@@ -126,6 +127,7 @@ export const VizContainer = styled.div/\`
 
 | 'shipping'
 
+shippingContent: React.ReactNode;
 
 , shippingContent 
 
@@ -143,8 +145,7 @@ export const VizContainer = styled.div/\`
       <Snippet
         step="25"
         language="jsx"
-        code={`import Inventory from '@splunk/inventory';
-import Shipping from '@splunk/shipping';
+        code={`import Shipping from '@splunk/shipping';
 
  | 'shipping'
 
@@ -211,10 +212,10 @@ const SEARCH_TIME_RANGE = { earliest_time: "-24h@h", latest_time: "now" };`}
         step="36"
         language="jsx"
         code={`const [loadingMap, setLoadingMap] = useState(true);
-    const [error, setError] = useState<Error | null>(null);
-    const [rawFields, setRawFields] = useState<MapField[]>([]);
-    const [rawColumns, setRawColumns] = useState<unknown[][]>([]);
-    const [resultCount, setResultCount] = useState(0);`}
+const [error, setError] = useState<Error | null>(null);
+const [rawFields, setRawFields] = useState<MapField[]>([]);
+const [rawColumns, setRawColumns] = useState<unknown[][]>([]);
+const [resultCount, setResultCount] = useState(0);`}
       />
 
       <Snippet
@@ -293,7 +294,7 @@ const SEARCH_TIME_RANGE = { earliest_time: "-24h@h", latest_time: "now" };`}
         isMounted = false;
         subscription.unsubscribe();
     };
- }, []);`}
+`}
       />
 
       <Snippet

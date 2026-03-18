@@ -22,10 +22,6 @@ npx @splunk/create@10.2`}
     code={`yarn install`}
 />
 
-<Snippet step="11" language="bash"
-    code={`Buttercup Coffee Company`}
-/>
-
 <Snippet step="14" language="jsx"
     code={`import React from 'react';
 import styled from 'styled-components';
@@ -89,37 +85,37 @@ const GlobalStyle = createGlobalStyle\`
   html, body, #root {
     background-color: \${variables.white} !important;
   }
-/\`;
+\`;
 
-const PageWrap = styled.div/\`
+const PageWrap = styled.div\`
     padding: 18px 40px;
-/\`;
+\`;
 
-const Header = styled.div/\`
+const Header = styled.div\`
     display: flex;
     align-items: flex-start;
     margin-bottom: 8px;
-/\`;
+\`;
 
-const Logo = styled.img/\`
+const Logo = styled.img\`
     margin: 20px 0 0 0;
     width: 120px;
     height: 101px;
     object-fit: contain;
     margin-left: auto;
-/\`;
+\`;
 
-const AppTitle = styled.h2/\`
+const AppTitle = styled.h2\`
     margin: 20px 0 0 0;
     font-family: "Splunk Platform Sans", "Proxima Nova", Roboto, Droid, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 24px;
     font-weight: 600;
-/\`;
+\`;
 
-const TabsIndent = styled.div/\`
+const TabsIndent = styled.div\`
     margin-left: 10px;
     margin-top: -50px;
-/\`;
+\`;
 
 const AppShell = () => {
     const location = useLocation();
@@ -156,9 +152,6 @@ export default AppShell;
 EOF`}
 />
 
-<Snippet step="17" language="bash"
-    code={`ll`}
-/>
 
 <Snippet step="19" language="jsx"
     code={`import React from 'react';
@@ -173,7 +166,9 @@ getUserTheme().then((theme) => {
             <AppShell />
         </HashRouter>,
         { theme, hideAppBar: true }
-    );`}
+    );
+});
+`}
 />
 
 <Snippet step="23" language="jsx"
@@ -191,7 +186,9 @@ describe('Tabs', () => {
 
     it('renders', () => {
         render(<Tabs {...defaultProps} />);
-    });`}
+    });
+});
+`}
 />
 
 <Snippet step="26" language="jsx"

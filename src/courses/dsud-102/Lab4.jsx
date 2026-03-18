@@ -13,10 +13,6 @@ npx @splunk/create@10.2`}
     code={`yarn install`}
 />
 
-<Snippet step="7" language="jsx"
-    code={`Buttercup Coffee Company';
-<Inventory />`}
-/>
 
 <Snippet step="10" language="jsx"
     code={`import { createGlobalStyle } from 'styled-components';
@@ -291,10 +287,6 @@ import Paginator from '@splunk/react-ui/Paginator';`}
 />
 
 <Snippet step="36" language="jsx"
-    code={`const startIndex = (currentPage - 1) * rowsPerPage;`}
-/>
-
-<Snippet step="43" language="jsx"
     code={`  <SectionTitle>Inventory</SectionTitle>
    <VizRow>
    {/* ===== Table ===== */}
@@ -431,8 +423,8 @@ useEffect(() => {
          : \`| search Country="\${countryToken.replace(/"/g, '\\\\"')}"\`; 
 
  const tableSearch = SearchJob.create({
-    search: \`index=bccscm sourcetype=scm:logistics \${filter}\`}
-`}/>
+    search: \`index=bccscm sourcetype=scm:logistics \${filter}\``}
+/>
 
 <Snippet step="51" language="jsx"
     code={`countryToken`}
