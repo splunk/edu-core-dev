@@ -68,12 +68,13 @@
                 {"id": 1, "name": "Set Up Your Environment"},
                 {"id": 2, "name": "Create a Splunk UI App"},
                 {"id": 3, "name": "Add Visualizations"},
-                {"id": "3a", "name": "Challenge - Add Single Value Visualizations"},
-                {"id": 4, "name": "Add a Table and Dropdown Input"},
+                {"id": "3a", "name": "(Challenge) Add Single Value Visualizations"},
+                {"id": 4, "name": "Add a Dropdown Input"},
+                {"id": "4a", "name": "(Challenge) Connect the Input to Single Value Visualizations"},
                 {"id": 5, "name": "Add a Menu"},
-                {"id": "5a", "name": "Challenge - Create a Map"}
+                {"id": "5a", "name": "(Challenge) Add a Map"}
             ],
-            "downloads": ["SUI_Dashboards10_LabSolutionFiles.zip", "bccIconsLogos.zip"]
+            "downloads": ["suiDash10_labSolutions.zip", "bccIconsLogos.zip"]
         },
         {
             "id": 6,

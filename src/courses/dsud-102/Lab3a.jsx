@@ -3,7 +3,6 @@ import Snippet from "./Snippet";
 function Lab3a() {
   return (
     <div style={{ margin: 50 }}>
-
       <Snippet
         step="3"
         language="jsx"
@@ -23,8 +22,10 @@ const [loadingKilosPurchased, setLoadingKilosPurchased] = useState(true);
 const [loadingShippingCosts, setLoadingShippingCosts] = useState(true);`}
       />
 
-
-      <Snippet step="5" language="jsx" code={`// ==== Single Value 1 Search - Kilos Purchased ====
+      <Snippet
+        step="5"
+        language="jsx"
+        code={`// ==== Single Value 1 Search - Kilos Purchased ====
   useEffect(() => {
    const sv1Search = SearchJob.create({
     search: \`index=bccscm sourcetype=scm:logistics | stats sum(Amount) as KilosPurchased\`,
@@ -50,8 +51,8 @@ const [loadingShippingCosts, setLoadingShippingCosts] = useState(true);`}
   return () => {
     subscription.unsubscribe();
   };
- }, []);`} />
-
+ }, []);`}
+      />
 
       <Snippet
         step="6"
@@ -240,9 +241,8 @@ const [loadingShippingCosts, setLoadingShippingCosts] = useState(true);`}
 </VizContainer>
 </VizRow>`}
       />
-
-
-  </div>);
+    </div>
+  );
 }
 
 export default Lab3a;

@@ -1,41 +1,41 @@
-import Snippet from './Snippet';
+import Snippet from "./Snippet";
 
 function Lab5() {
-
-    return(<div style={{margin:50}}>
-
-
-<Snippet step="3" language="bash"
-    code={`cd ~/code
+  return (
+    <div style={{ margin: 50 }}>
+      <Snippet
+        step="3"
+        language="bash"
+        code={`cd ~/code
 npx @splunk/create@10.2`}
-/>
+      />
 
-<Snippet step="5" language="jsx"
-    code={`yarn add -W @splunk/react-icons@5.9.0`}
-/>
+      <Snippet
+        step="5"
+        language="jsx"
+        code={`yarn add -W @splunk/react-icons@5.9.0`}
+      />
 
-<Snippet step="7" language="js"
-    code={`"react-router-dom": "6.26.2",`}
-/>
+      <Snippet step="7" language="js" code={`"react-router-dom": "6.26.2",`} />
 
-<Snippet step="9" language="bash"
-    code={`yarn install`}
-/>
+      <Snippet step="9" language="bash" code={`yarn install`} />
 
-<Snippet step="14" language="jsx"
-    code={`import React from 'react';
+      <Snippet step="11" language="jsx" code={`Buttercup Coffee Company`} />
+
+      <Snippet
+        step="14"
+        language="bash"
+        code={`import React from 'react';
 import styled from 'styled-components';
 import TabLayout from '@splunk/react-ui/TabLayout';
 import House from '@splunk/react-icons/House';
-import Table from '@splunk/react-icons/Table';
 
-type AppTabId = 'overview' | 'inventory';
+type AppTabId = 'overview';
 
 type Props = {
     activePanelId: AppTabId;
     onChange: (tabId: AppTabId) => void;
     overviewContent: React.ReactNode;
-    inventoryContent: React.ReactNode;
 };
 
 const TabsWrapper = styled.div\`
@@ -45,7 +45,7 @@ const TabsWrapper = styled.div\`
     }
 \`;
 
-const Tabs = ({ activePanelId, onChange, overviewContent, inventoryContent }: Props) => (
+const Tabs = ({ activePanelId, onChange, overviewContent }: Props) => (
     <TabsWrapper>
         <TabLayout
             layout="vertical"
@@ -56,30 +56,28 @@ const Tabs = ({ activePanelId, onChange, overviewContent, inventoryContent }: Pr
                 {overviewContent}
             </TabLayout.Panel>
 
-            <TabLayout.Panel panelId="inventory" label="Inventory" icon={<Table />}>
-                {inventoryContent}
-            </TabLayout.Panel>
-
         </TabLayout>
     </TabsWrapper>
 );
 
 export default Tabs;`}
-/>
+      />
 
-<Snippet step="16" language="bash"
-    code={`cd ~/code/packages/buttercup-coffee/src/main/webapp/
+      <Snippet
+        step="16"
+        language="jsx"
+        code={`cd ~/code/packages/buttercup-coffee/src/main/webapp/
 
-cat > AppShell.tsx <<'EOF'
+            cat > AppShell.tsx <<'EOF'
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
+import styled, { createGlobalStyle } from 'styled-components';
+import { variables } from '@splunk/themes';
+
 import Tabs from '@splunk/tabs';
 import Overview from '@splunk/overview';
-import Inventory from '@splunk/inventory';
-import { createGlobalStyle } from 'styled-components';
-import { variables } from '@splunk/themes';
-type AppTabId = 'overview' | 'inventory';
+
+type AppTabId = 'overview';
 
 const GlobalStyle = createGlobalStyle\`
   html, body, #root {
@@ -118,43 +116,44 @@ const TabsIndent = styled.div\`
 \`;
 
 const AppShell = () => {
-    const location = useLocation();
     const navigate = useNavigate();
-    const activePanelId: AppTabId =
-        location.pathname.includes('/inventory') ? 'inventory' : 'overview';
+    const activePanelId: AppTabId = 'overview';
 
     return (
-     <>
-      <GlobalStyle />
-        <PageWrap>
-        <Header>
-            <AppTitle>Buttercup Coffee Supply Chain</AppTitle>
-            <Logo
-                src="/static/app/buttercup-coffee/bccLogo.png"
-                alt="Buttercup Coffee logo"
-            />
-        </Header>            
-             <TabsIndent>
-                <Tabs
-                    activePanelId={activePanelId}
-                    onChange={(tabId) => navigate(\`/\${tabId}\`)}
-                    overviewContent={<Overview />}
-                    inventoryContent={<Inventory />}
-                />
-            </TabsIndent>
-        </PageWrap>
-     </>
+        <>
+            <GlobalStyle />
+            <PageWrap>
+                <Header>
+                    <AppTitle>Buttercup Coffee Supply Chain</AppTitle>
+                    <Logo
+                        src="/static/app/buttercup-coffee/bccLogo.png"
+                        alt="Buttercup Coffee logo"
+                    />
+                </Header>
+
+                <TabsIndent>
+                    <Tabs
+                        activePanelId={activePanelId}
+                        onChange={(tabId) => navigate(\`/\${tabId}\`)}
+                        overviewContent={<Overview />}
+                    />
+                </TabsIndent>
+            </PageWrap>
+        </>
     );
 };
 
 export default AppShell;
+EOF
 
-EOF`}
-/>
+`}
+      />
 
-
-<Snippet step="19" language="jsx"
-    code={`import React from 'react';
+      <Snippet
+        step="19"
+        language="jsx"
+        code={`Review the default code and replace it with the following:
+import React from 'react';
 import layout from '@splunk/react-page/18';
 import { getUserTheme } from '@splunk/splunk-utils/themes';
 import { HashRouter } from 'react-router-dom';
@@ -163,16 +162,19 @@ import AppShell from '../../AppShell';
 getUserTheme().then((theme) => {
     layout(
         <HashRouter>
-            <AppShell />
+           <AppShell />
         </HashRouter>,
         { theme, hideAppBar: true }
     );
 });
-`}
-/>
 
-<Snippet step="23" language="jsx"
-    code={`import React from 'react';
+`}
+      />
+
+      <Snippet
+        step="23"
+        language="jsx"
+        code={`import React from 'react';
 import { render } from '@testing-library/react';
 import Tabs from '../Tabs';
 
@@ -181,22 +183,24 @@ describe('Tabs', () => {
         activePanelId: 'overview' as const,
         onChange: jest.fn(),
         overviewContent: <div>Overview content</div>,
-        inventoryContent: <div>Inventory content</div>,
     };
 
     it('renders', () => {
         render(<Tabs {...defaultProps} />);
     });
 });
-`}
-/>
 
-<Snippet step="26" language="jsx"
-    code={`import styled from 'styled-components';
+`}
+      />
+
+      <Snippet
+        step="26"
+        language="bash"
+        code={`import styled from 'styled-components';
 import { variables, mixins } from '@splunk/themes';
 
 const StyledContainer = styled.div\`
-    \${mixins.reset('inline')};
+    \${mixins.reset("inline")};
     display: flex;
     flex-direction: column;
     font-size: \${variables.fontSizeLarge};
@@ -210,26 +214,32 @@ const StyledSidebar = styled.div\`
 export { 
   StyledContainer, 
   StyledSidebar
-};`}
-/>
+};
 
-<Snippet step="28" language="bash"
-    code={`cd /opt/splunk/etc/apps/buttercup-coffee/static`}
-/>
 
-<Snippet step="29" language="bash"
-    code={`mv bccLogo.png /opt/splunk/etc/apps/buttercup-coffee/appserver/static`}
-/>
+`}
+      />
 
-<Snippet step="30" language="bash"
-	code={`yarn build
+      <Snippet
+        step="28"
+        language="bash"
+        code={`cd /opt/splunk/etc/apps/buttercup-coffee/static`}
+      />
+
+      <Snippet
+        step="29"
+        language="bash"
+        code={`mv bccLogo.png /opt/splunk/etc/apps/buttercup-coffee/appserver/static`}
+      />
+
+      <Snippet
+        step="30"
+        language="bash"
+        code={`yarn build
 yarn start`}
-/>
-
-
-
-    </div>);
-
+      />
+    </div>
+  );
 }
 
 export default Lab5;
